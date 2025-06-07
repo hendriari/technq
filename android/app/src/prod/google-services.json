@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "719499200002",
+    "project_id": "technq-4d7a9",
+    "storage_bucket": "technq-4d7a9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719499200002:android:6e4656f67a7e1e441ec91b",
+        "android_client_info": {
+          "package_name": "com.spk.ahp.technq"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo2KzjWx3jPbIcK2p0Z4dJbHh1sV5itZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
