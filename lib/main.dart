@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:technq/src/core/config/firebase/firenbase_config.dart';
+import 'package:technq/src/core/config/firenbase_config.dart';
 import 'package:technq/src/core/technq.dart';
 
 Future<void> main() async {
