@@ -1,20 +1,15 @@
 name: technq
 description: "Sistem Pendukung Keputusan Referensi Pemilihan Tujuan Jurusan Teknik Di UPGRIS bagi Siswa Kelas XII SMA & SMK Mengunakan Metode AHP."
-
 publish_to: "none"
-
 version: 1.0.0+1
-
 environment:
   sdk: ">=3.0.1 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-
   flutter_localizations:
     sdk: flutter
-
   cupertino_icons: ^1.0.8
   flutter_decision_making: ^1.0.2
   firebase_core: ^3.13.1
@@ -43,7 +38,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^5.0.0
   freezed: ^3.0.6
   build_runner: ^2.4.15
@@ -51,26 +45,7 @@ dev_dependencies:
   injectable_generator: ^2.7.0
   flutter_launcher_icons: ^0.14.3
 
-flutter_launcher_icons:
-  android: true
-  ios: true
-  remove_alpha_ios: true
-  image_path: "assets/technq_logo_image.png"
-  web:
-    generate: true
-    image_path: "path/to/image.png"
-    background_color: "#fdfcfc"
-    theme_color: "#fdfcfc"
-  windows:
-    generate: true
-    image_path: "assets/technq_logo_image.png"
-    icon_size: 48
-  macos:
-    generate: true
-    image_path: "assets/technq_logo_image.png"
-
 flutter:
   uses-material-design: true
-
   assets:
     - assets/
