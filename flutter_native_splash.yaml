@@ -1,0 +1,17 @@
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+  image: assets/technq_splash_image.png
+  image_dark: assets/technq_splash_dark_image.png
+  fullscreen: true
+  android_gravity: center
+  ios_content_mode: scaleAspectFit
+  color: "#fdfcfc"
+  color_dark: "#121212"
+
+  android_12:
+    image: assets/technq_splash_image.png
+    icon_background_color: "#fdfcfc"
+    image_dark: assets/technq_splash_dark_image.png
+    icon_background_color_dark: "#121212"
