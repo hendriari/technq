@@ -1,0 +1,3 @@
+class EmptyParam {
+  const EmptyParam();
+}

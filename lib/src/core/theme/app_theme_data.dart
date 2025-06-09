@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:technq/src/core/utils/app_text_theme.dart';
-import 'package:technq/src/core/utils/app_theme_color.dart';
-import 'package:technq/src/core/utils/custom_colors.dart';
+import 'package:technq/src/core/theme/app_text_theme.dart';
+import 'package:technq/src/core/theme/app_theme_color.dart';
+import 'package:technq/src/core/theme/custom_colors.dart';
 import 'package:technq/src/core/widgets/decorated_input_border_widget.dart';
 
 class AppThemeData {
@@ -14,7 +14,7 @@ class AppThemeData {
   ThemeData theme({required bool darkTheme}) => ThemeData(
         brightness: darkTheme ? Brightness.dark : Brightness.light,
         primarySwatch:
-            _themeColors.generateMaterialColor(CustomColors.primary500),
+            _themeColors.generateMaterialColor(CustomColors.primary100),
         textTheme: _appTextTheme.theme,
         bottomSheetTheme: const BottomSheetThemeData(
           backgroundColor: Colors.transparent,
