@@ -5,9 +5,9 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:technq/src/core/routes/go_routers_navigator.dart';
-import 'package:technq/src/core/utils/app_text_theme.dart';
-import 'package:technq/src/core/utils/app_theme_color.dart';
-import 'package:technq/src/core/utils/app_theme_data.dart';
+import 'package:technq/src/core/theme/app_text_theme.dart';
+import 'package:technq/src/core/theme/app_theme_color.dart';
+import 'package:technq/src/core/theme/app_theme_data.dart';
 
 class TechnqApp extends StatefulWidget {
   const TechnqApp({super.key});
