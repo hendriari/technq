@@ -10,7 +10,8 @@ class CustomColors {
   static final Color primary400 = HexColor('F3F9FF');
 
   /// DARK
-  static final Color dark = HexColor('211925');
+  static final Color dark = HexColor('121212');
+  static final Color light = HexColor('fdfcfc');
 
   /// BLACK GRAY
   static final Color blackGray100 = HexColor('565656');
