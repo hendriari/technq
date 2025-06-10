@@ -37,12 +37,12 @@ class _SplashPageState extends State<SplashPage> {
               if(valid){
                 context.goNamed('main-menu');
               } else {
-                context.goNamed('login');
+                context.goNamed('landing-page');
               }
             }, failedCheckToken: (_, invalid, message) {
               _helper.showToast(
                   message: message, backGroundColor: CustomColors.redLight);
-              context.goNamed('login');
+              context.goNamed('landing-page');
             });
           },
           child: const Center(

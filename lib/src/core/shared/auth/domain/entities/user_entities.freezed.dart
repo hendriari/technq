@@ -16,12 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UserEntities {
+  String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  bool? get isAnonymous => throw _privateConstructorUsedError;
   String? get schoolType => throw _privateConstructorUsedError;
   String? get schoolName => throw _privateConstructorUsedError;
-  String? get photoUrl => throw _privateConstructorUsedError;
 
   /// Create a copy of UserEntities
   /// with the given fields replaced by the non-null parameter values.
@@ -36,13 +34,7 @@ abstract class $UserEntitiesCopyWith<$Res> {
           UserEntities value, $Res Function(UserEntities) then) =
       _$UserEntitiesCopyWithImpl<$Res, UserEntities>;
   @useResult
-  $Res call(
-      {String? name,
-      String? email,
-      bool? isAnonymous,
-      String? schoolType,
-      String? schoolName,
-      String? photoUrl});
+  $Res call({String? id, String? name, String? schoolType, String? schoolName});
 }
 
 /// @nodoc
@@ -60,26 +52,20 @@ class _$UserEntitiesCopyWithImpl<$Res, $Val extends UserEntities>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
-    Object? email = freezed,
-    Object? isAnonymous = freezed,
     Object? schoolType = freezed,
     Object? schoolName = freezed,
-    Object? photoUrl = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isAnonymous: freezed == isAnonymous
-          ? _value.isAnonymous
-          : isAnonymous // ignore: cast_nullable_to_non_nullable
-              as bool?,
       schoolType: freezed == schoolType
           ? _value.schoolType
           : schoolType // ignore: cast_nullable_to_non_nullable
@@ -87,10 +73,6 @@ class _$UserEntitiesCopyWithImpl<$Res, $Val extends UserEntities>
       schoolName: freezed == schoolName
           ? _value.schoolName
           : schoolName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      photoUrl: freezed == photoUrl
-          ? _value.photoUrl
-          : photoUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -104,13 +86,7 @@ abstract class _$$UserEntitiesImplCopyWith<$Res>
       __$$UserEntitiesImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? name,
-      String? email,
-      bool? isAnonymous,
-      String? schoolType,
-      String? schoolName,
-      String? photoUrl});
+  $Res call({String? id, String? name, String? schoolType, String? schoolName});
 }
 
 /// @nodoc
@@ -126,26 +102,20 @@ class __$$UserEntitiesImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
-    Object? email = freezed,
-    Object? isAnonymous = freezed,
     Object? schoolType = freezed,
     Object? schoolName = freezed,
-    Object? photoUrl = freezed,
   }) {
     return _then(_$UserEntitiesImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isAnonymous: freezed == isAnonymous
-          ? _value.isAnonymous
-          : isAnonymous // ignore: cast_nullable_to_non_nullable
-              as bool?,
       schoolType: freezed == schoolType
           ? _value.schoolType
           : schoolType // ignore: cast_nullable_to_non_nullable
@@ -153,10 +123,6 @@ class __$$UserEntitiesImplCopyWithImpl<$Res>
       schoolName: freezed == schoolName
           ? _value.schoolName
           : schoolName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      photoUrl: freezed == photoUrl
-          ? _value.photoUrl
-          : photoUrl // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -166,29 +132,20 @@ class __$$UserEntitiesImplCopyWithImpl<$Res>
 
 class _$UserEntitiesImpl implements _UserEntities {
   const _$UserEntitiesImpl(
-      {this.name,
-      this.email,
-      this.isAnonymous,
-      this.schoolType,
-      this.schoolName,
-      this.photoUrl});
+      {this.id, this.name, this.schoolType, this.schoolName});
 
   @override
+  final String? id;
+  @override
   final String? name;
-  @override
-  final String? email;
-  @override
-  final bool? isAnonymous;
   @override
   final String? schoolType;
   @override
   final String? schoolName;
-  @override
-  final String? photoUrl;
 
   @override
   String toString() {
-    return 'UserEntities(name: $name, email: $email, isAnonymous: $isAnonymous, schoolType: $schoolType, schoolName: $schoolName, photoUrl: $photoUrl)';
+    return 'UserEntities(id: $id, name: $name, schoolType: $schoolType, schoolName: $schoolName)';
   }
 
   @override
@@ -196,21 +153,17 @@ class _$UserEntitiesImpl implements _UserEntities {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserEntitiesImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.isAnonymous, isAnonymous) ||
-                other.isAnonymous == isAnonymous) &&
             (identical(other.schoolType, schoolType) ||
                 other.schoolType == schoolType) &&
             (identical(other.schoolName, schoolName) ||
-                other.schoolName == schoolName) &&
-            (identical(other.photoUrl, photoUrl) ||
-                other.photoUrl == photoUrl));
+                other.schoolName == schoolName));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, name, email, isAnonymous, schoolType, schoolName, photoUrl);
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, schoolType, schoolName);
 
   /// Create a copy of UserEntities
   /// with the given fields replaced by the non-null parameter values.
@@ -223,25 +176,19 @@ class _$UserEntitiesImpl implements _UserEntities {
 
 abstract class _UserEntities implements UserEntities {
   const factory _UserEntities(
-      {final String? name,
-      final String? email,
-      final bool? isAnonymous,
+      {final String? id,
+      final String? name,
       final String? schoolType,
-      final String? schoolName,
-      final String? photoUrl}) = _$UserEntitiesImpl;
+      final String? schoolName}) = _$UserEntitiesImpl;
 
   @override
+  String? get id;
+  @override
   String? get name;
-  @override
-  String? get email;
-  @override
-  bool? get isAnonymous;
   @override
   String? get schoolType;
   @override
   String? get schoolName;
-  @override
-  String? get photoUrl;
 
   /// Create a copy of UserEntities
   /// with the given fields replaced by the non-null parameter values.

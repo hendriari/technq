@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:technq/src/core/shared/menu/presentation/widget/menu_widget.dart';
-import 'package:technq/src/features/auth_ui/login_page.dart';
-import 'package:technq/src/features/auth_ui/splash_page.dart';
+import 'package:technq/src/features/auth_ui/page/landing_page.dart';
+import 'package:technq/src/features/auth_ui/page/splash_page.dart';
 
 class GoRoutersNavigator {
   late final GoRouter routeConfig;
@@ -16,9 +16,9 @@ class GoRoutersNavigator {
           builder: (_, __) => SplashPage(),
         ),
         GoRoute(
-          name: 'login',
-          path: '/login',
-          builder: (_, __) => LoginPage(),
+          name: 'landing-page',
+          path: '/landing-page',
+          builder: (_, __) => LandingPage(),
         ),
         GoRoute(
           name: 'main-menu',
