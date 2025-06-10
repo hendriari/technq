@@ -23,6 +23,7 @@ class CustomColors {
   static final Color grey100 = HexColor("A1A8CE");
   static final Color grey200 = HexColor("DDE0ED");
   static final Color grey300 = HexColor("ECECEC");
+  static final Color grey400 = HexColor("9FBDD4");
 
   /// PURPLE
   static final Color purple100 = HexColor('6A76B2');
