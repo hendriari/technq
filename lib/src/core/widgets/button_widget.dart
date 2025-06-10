@@ -6,30 +6,49 @@ class ButtonWidget extends StatelessWidget {
   final String buttonText;
   final Function() onTap;
   final Size? minimumSize;
+  final Size? maximumSize;
+  final Color? buttonColor;
+  final Color? buttonTextColor;
+  final Color? borderColor;
 
   const ButtonWidget({
     super.key,
     required this.buttonText,
     required this.onTap,
     this.minimumSize,
+    this.maximumSize,
+    this.buttonColor,
+    this.buttonTextColor,
+    this.borderColor,
   });
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final brightness = Theme.of(context).brightness;
     return ElevatedButton(
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
-        backgroundColor: CustomColors.primary100,
+        backgroundColor: buttonColor,
         minimumSize: minimumSize ?? Size(double.infinity, 40.h),
+        maximumSize: maximumSize ?? Size(double.infinity, 40.h),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.r),
+          side: borderColor != null
+              ? BorderSide(
+                  color: borderColor!,
+                )
+              : BorderSide.none,
         ),
       ),
       child: Text(
         buttonText,
         style: textTheme.bodyLarge?.copyWith(
           fontSize: 18.sp,
+          color: buttonTextColor ??
+              (brightness == Brightness.dark
+                  ? CustomColors.light
+                  : CustomColors.dark),
           fontWeight: FontWeight.bold,
         ),
       ),
