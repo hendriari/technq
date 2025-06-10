@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:technq/src/core/config/firenbase_config.dart';
@@ -24,7 +25,10 @@ Future<void> main() async {
     FirebaseCrashlytics.instance.recordError(e, stack, fatal: true);
     return true;
   };
-
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   MultiBlocProvider initBloc() {
     return MultiBlocProvider(
       providers: [
