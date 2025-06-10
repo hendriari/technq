@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:technq/src/core/theme/custom_colors.dart';
 import 'package:technq/src/core/utils/constants.dart';
 import 'package:technq/src/core/widgets/button_widget.dart';
+import 'package:technq/src/features/auth_ui/widget/login_widget.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -34,6 +36,12 @@ class _LandingPageState extends State<LandingPage> {
     super.didChangeDependencies();
     _textTheme = Theme.of(context).textTheme;
     _brightness = Theme.of(context).brightness;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _indexBg.dispose();
   }
 
   @override
@@ -76,6 +84,8 @@ class _LandingPageState extends State<LandingPage> {
                     return CarouselSlider.builder(
                       itemCount: _bgImages.length,
                       itemBuilder: (context, index, subIndex) => Container(
+                        height: constraints.maxHeight,
+                        width: constraints.maxWidth,
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
@@ -190,7 +200,8 @@ class _LandingPageState extends State<LandingPage> {
                         /// BUTTON WIDGET
                         ButtonWidget(
                           buttonText: 'Mulai',
-                          onTap: () {},
+                          buttonColor: CustomColors.primary100,
+                          onTap: () => showLoginModalBottomSheet(context),
                         ),
                       ],
                     ),
