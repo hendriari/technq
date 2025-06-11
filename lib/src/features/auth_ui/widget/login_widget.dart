@@ -342,6 +342,7 @@ class _LoginWidgetState extends State<LoginWidget> {
           builder: (context, state) => ElevatedButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
+                FocusScope.of(context).requestFocus(FocusNode());
                 context.read<AuthBloc>().add(AuthEvent.createAccountEvent(
                     name: _nameController.text.trim(),
                     schoolType: _schoolType.value,
