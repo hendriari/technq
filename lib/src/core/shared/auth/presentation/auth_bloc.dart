@@ -19,7 +19,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     required this.createAccountUsecase,
     required this.getUserDataUsecase,
   }) : super(AuthState.initial()) {
-    on<AuthEvent>(_checkToken);
+    on<CheckTokenEvent>(_checkToken);
     on<CreateAccountEvent>(_createAccount);
     on<GetDetailUserEvent>(_getDetailUser);
   }
