@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:technq/src/core/shared/auth/presentation/auth_bloc.dart';
+import 'package:technq/src/core/shared/auth/presentation/auth_event.dart';
+import 'package:technq/src/core/shared/auth/presentation/auth_state.dart';
 import 'package:technq/src/core/theme/custom_colors.dart';
+import 'package:technq/src/core/utils/helper.dart';
 import 'package:technq/src/core/widgets/button_widget.dart';
 import 'package:technq/src/core/widgets/form_field_widget.dart';
+import 'package:technq/src/core/widgets/loading_widget.dart';
 
 class LoginWidget extends StatefulWidget {
   const LoginWidget({super.key});
@@ -18,6 +24,8 @@ class _LoginWidgetState extends State<LoginWidget> {
   late TextEditingController _nameController;
   late TextEditingController _schoolController;
   late ValueNotifier<String> _schoolType;
+  late GlobalKey<FormState> _formKey;
+  late Helper _helper;
 
   @override
   void initState() {
@@ -25,6 +33,8 @@ class _LoginWidgetState extends State<LoginWidget> {
     _nameController = TextEditingController();
     _schoolController = TextEditingController();
     _schoolType = ValueNotifier('sma');
+    _formKey = GlobalKey<FormState>();
+    _helper = Helper();
   }
 
   @override
@@ -39,6 +49,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     super.dispose();
     _nameController.dispose();
     _schoolController.dispose();
+    _schoolType.dispose();
   }
 
   @override
@@ -46,57 +57,60 @@ class _LoginWidgetState extends State<LoginWidget> {
     final isDark = _brightness == Brightness.dark;
     final paddingBottom = MediaQuery.of(context).viewInsets.bottom;
     return SafeArea(
-      child: Container(
-        width: double.infinity,
-        padding: EdgeInsets.only(
-          left: 15.w,
-          right: 15.w,
-          top: 15.h,
-          bottom: paddingBottom + 15.h,
-        ),
-        decoration: BoxDecoration(
-          color: isDark ? CustomColors.dark : CustomColors.light,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.r),
-            topRight: Radius.circular(20.r),
+      child: Form(
+        key: _formKey,
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.only(
+            left: 15.w,
+            right: 15.w,
+            top: 15.h,
+            bottom: paddingBottom + 15.h,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: isDark
-                  ? CustomColors.light.withValues(alpha: 2)
-                  : CustomColors.dark,
-              blurStyle: BlurStyle.solid,
-              blurRadius: 5,
+          decoration: BoxDecoration(
+            color: isDark ? CustomColors.dark : CustomColors.light,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.r),
+              topRight: Radius.circular(20.r),
             ),
-          ],
-        ),
-        child: SingleChildScrollView(
-          child: ValueListenableBuilder(
-              valueListenable: _schoolType,
-              builder: (context, c, v) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    /// SCHOOL TYPE
-                    _buildSchoolTypeWidget(isDark),
+            boxShadow: [
+              BoxShadow(
+                color: isDark
+                    ? CustomColors.light.withValues(alpha: 2)
+                    : CustomColors.dark,
+                blurStyle: BlurStyle.solid,
+                blurRadius: 5,
+              ),
+            ],
+          ),
+          child: SingleChildScrollView(
+            child: ValueListenableBuilder(
+                valueListenable: _schoolType,
+                builder: (context, c, v) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      /// SCHOOL TYPE
+                      _buildSchoolTypeWidget(isDark),
 
-                    SizedBox(
-                      height: 20.h,
-                    ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
 
-                    /// CONTENT
-                    _buildContent(isDark),
+                      /// CONTENT
+                      _buildContent(isDark),
 
-                    SizedBox(
-                      height: 20.h,
-                    ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
 
-                    /// BUTTON ACTION
-                    _buildButtonAction(),
-                  ],
-                );
-              }),
+                      /// BUTTON ACTION
+                      _buildButtonAction(),
+                    ],
+                  );
+                }),
+          ),
         ),
       ),
     );
@@ -235,6 +249,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10.w, horizontal: 20.h),
                 fillColor: isDark ? CustomColors.dark : CustomColors.light,
+                formFieldValidator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Nama tidak boleh kosong!';
+                  }
+                  return null;
+                },
               ),
             ),
           ],
@@ -270,6 +290,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10.w, horizontal: 20.h),
                 fillColor: isDark ? CustomColors.dark : CustomColors.light,
+                formFieldValidator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Nama sekolah tidak boleh kosong!';
+                  }
+                  return null;
+                },
               ),
             ),
           ],
@@ -286,7 +312,7 @@ class _LoginWidgetState extends State<LoginWidget> {
         /// CANCEL BUTTON
         ButtonWidget(
           onTap: () => context.pop(),
-          buttonText: 'Cancel',
+          buttonText: 'Batal',
           maximumSize: Size(160.h, 46.w),
           minimumSize: Size(160.h, 46.w),
           buttonTextColor: CustomColors.redLight,
@@ -294,12 +320,58 @@ class _LoginWidgetState extends State<LoginWidget> {
         ),
 
         /// CONFIRM BUTTON
-        ButtonWidget(
-          onTap: () {},
-          buttonText: 'Confirm',
-          maximumSize: Size(160.h, 46.w),
-          minimumSize: Size(160.h, 46.w),
-          buttonColor: CustomColors.primary100,
+        BlocConsumer<AuthBloc, AuthState>(
+          listener: (context, state) {
+            state.whenOrNull(
+              failed: (_, message) {
+                _helper.showToast(
+                    message: message, backGroundColor: CustomColors.redLight);
+              },
+              successCreateAccount: (user) {
+                if (user != null) {
+                  _helper.showToast(message: 'Success created account');
+                  context.goNamed('main-menu');
+                } else {
+                  _helper.showToast(
+                      message: 'Terjadi kesalahan, mohon ulangi lagi',
+                      backGroundColor: CustomColors.redLight);
+                }
+              },
+            );
+          },
+          builder: (context, state) => ElevatedButton(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                context.read<AuthBloc>().add(AuthEvent.createAccountEvent(
+                    name: _nameController.text.trim(),
+                    schoolType: _schoolType.value,
+                    schoolName: _schoolController.text.trim()));
+              }
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: CustomColors.primary100,
+              minimumSize: Size(160.h, 46.w),
+              maximumSize: Size(160.h, 46.w),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16.r),
+              ),
+            ),
+            child: state.maybeWhen(
+              loadingCreateAccount: (_) => LoadingWidget(
+                isWave: false,
+                treeBounceColor: Colors.white,
+                size: 18.sp,
+              ),
+              orElse: () => Text(
+                'Konfirmasi',
+                style: _textTheme.bodyLarge?.copyWith(
+                  fontSize: 18.sp,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
         ),
       ],
     );

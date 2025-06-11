@@ -4,8 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:technq/src/core/shared/auth/presentation/auth_bloc.dart';
 import 'package:technq/src/core/shared/auth/presentation/auth_event.dart';
 import 'package:technq/src/core/shared/auth/presentation/auth_state.dart';
-import 'package:technq/src/core/theme/custom_colors.dart';
-import 'package:technq/src/core/utils/helper.dart';
 import 'package:technq/src/core/widgets/loading_widget.dart';
 
 class SplashPage extends StatefulWidget {
@@ -16,12 +14,9 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  late Helper _helper;
-
   @override
   void initState() {
     super.initState();
-    _helper = Helper();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<AuthBloc>().add(AuthEvent.checkTokenEvent());
     });
@@ -34,14 +29,19 @@ class _SplashPageState extends State<SplashPage> {
         child: BlocListener<AuthBloc, AuthState>(
           listener: (context, state) {
             state.whenOrNull(successCheckToken: (_, valid) {
-              if(valid){
+              if (valid) {
+                context.read<AuthBloc>().add(GetDetailUserEvent());
+              } else {
+                context.goNamed('landing-page');
+              }
+            }, successGetAccount: (user) {
+              if (user != null) {
                 context.goNamed('main-menu');
               } else {
                 context.goNamed('landing-page');
               }
-            }, failedCheckToken: (_, invalid, message) {
-              _helper.showToast(
-                  message: message, backGroundColor: CustomColors.redLight);
+            }, failed: (_, message) {
+              debugPrint(message);
               context.goNamed('landing-page');
             });
           },

@@ -33,7 +33,10 @@ Future<void> main() async {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) => AuthBloc(checkTokenUsecase: getIt()),
+          create: (_) => AuthBloc(
+              checkTokenUsecase: getIt(),
+              createAccountUsecase: getIt(),
+              getUserDataUsecase: getIt()),
         ),
       ],
       child: TechnqApp(),
