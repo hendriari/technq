@@ -18,9 +18,24 @@ sealed class AuthState with _$AuthState {
     required bool isAuthenticated,
   }) = _SuccessCheckToken;
 
-  const factory AuthState.failedCheckToken({
+  const factory AuthState.loadingCreateAccount({
     @Default(null) UserEntities? user,
-    required bool isAuthenticated,
+  }) = _LoadingCreateAccount;
+
+  const factory AuthState.successCreateAccount({
+    @Default(null) UserEntities? user,
+  }) = _SuccessCreateAccount;
+
+  const factory AuthState.loadingGetAccount({
+    @Default(null) UserEntities? user,
+  }) = _LoadingGetAccount;
+
+  const factory AuthState.successGetAccount({
+    @Default(null) UserEntities? user,
+  }) = _SuccessGetAccount;
+
+  const factory AuthState.failed({
+    @Default(null) UserEntities? user,
     required String message,
-  }) = _FailedCheckToken;
+  }) = _Failed;
 }
