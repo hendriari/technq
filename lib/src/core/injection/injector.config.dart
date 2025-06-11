@@ -12,14 +12,17 @@
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:technq/src/core/injection/injector_module.dart' as _i549;
-import 'package:technq/src/core/services/remote/firebase_services.dart'
-    as _i899;
+import 'package:technq/src/core/services/firebase_services.dart' as _i247;
 import 'package:technq/src/core/shared/auth/data/datasource/auth_remote_datasource.dart'
     as _i1030;
 import 'package:technq/src/core/shared/auth/domain/repository/auth_repository.dart'
     as _i941;
 import 'package:technq/src/core/shared/auth/domain/usecase/check_token_usecase.dart'
     as _i620;
+import 'package:technq/src/core/shared/auth/domain/usecase/create_account_usecase.dart'
+    as _i540;
+import 'package:technq/src/core/shared/auth/domain/usecase/get_user_data.usecase.dart'
+    as _i401;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -33,12 +36,16 @@ extension GetItInjectableX on _i174.GetIt {
       environmentFilter,
     );
     final injectorModule = _$InjectorModule(this);
-    gh.singleton<_i899.FirebaseServices>(() => injectorModule.firebaseServices);
+    gh.singleton<_i247.FirebaseServices>(() => injectorModule.firebaseServices);
     gh.lazySingleton<_i1030.AuthRemoteDatasource>(
         () => injectorModule.authRemoteDatasource);
     gh.lazySingleton<_i941.AuthRepository>(() => injectorModule.authRepository);
     gh.lazySingleton<_i620.CheckTokenUsecase>(
         () => injectorModule.checkTokenUsecase);
+    gh.lazySingleton<_i540.CreateAccountUsecase>(
+        () => injectorModule.createAccountUsecase);
+    gh.lazySingleton<_i401.GetUserDataUsecase>(
+        () => injectorModule.getUserDataUsecase);
     return this;
   }
 }
@@ -51,4 +58,12 @@ class _$InjectorModule extends _i549.InjectorModule {
   @override
   _i620.CheckTokenUsecase get checkTokenUsecase =>
       _i620.CheckTokenUsecase(_getIt<_i941.AuthRepository>());
+
+  @override
+  _i540.CreateAccountUsecase get createAccountUsecase =>
+      _i540.CreateAccountUsecase(_getIt<_i941.AuthRepository>());
+
+  @override
+  _i401.GetUserDataUsecase get getUserDataUsecase =>
+      _i401.GetUserDataUsecase(_getIt<_i941.AuthRepository>());
 }

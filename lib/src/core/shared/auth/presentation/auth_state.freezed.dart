@@ -23,9 +23,11 @@ mixin _$AuthState {
     required TResult Function(UserEntities? user) loadingCheckToken,
     required TResult Function(UserEntities? user, bool isAuthenticated)
         successCheckToken,
-    required TResult Function(
-            UserEntities? user, bool isAuthenticated, String message)
-        failedCheckToken,
+    required TResult Function(UserEntities? user) loadingCreateAccount,
+    required TResult Function(UserEntities? user) successCreateAccount,
+    required TResult Function(UserEntities? user) loadingGetAccount,
+    required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user, String message) failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,8 +36,11 @@ mixin _$AuthState {
     TResult? Function(UserEntities? user)? loadingCheckToken,
     TResult? Function(UserEntities? user, bool isAuthenticated)?
         successCheckToken,
-    TResult? Function(UserEntities? user, bool isAuthenticated, String message)?
-        failedCheckToken,
+    TResult? Function(UserEntities? user)? loadingCreateAccount,
+    TResult? Function(UserEntities? user)? successCreateAccount,
+    TResult? Function(UserEntities? user)? loadingGetAccount,
+    TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user, String message)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,8 +49,11 @@ mixin _$AuthState {
     TResult Function(UserEntities? user)? loadingCheckToken,
     TResult Function(UserEntities? user, bool isAuthenticated)?
         successCheckToken,
-    TResult Function(UserEntities? user, bool isAuthenticated, String message)?
-        failedCheckToken,
+    TResult Function(UserEntities? user)? loadingCreateAccount,
+    TResult Function(UserEntities? user)? successCreateAccount,
+    TResult Function(UserEntities? user)? loadingGetAccount,
+    TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,7 +62,11 @@ mixin _$AuthState {
     required TResult Function(_Init value) initial,
     required TResult Function(_LoadingCheckToken value) loadingCheckToken,
     required TResult Function(_SuccessCheckToken value) successCheckToken,
-    required TResult Function(_FailedCheckToken value) failedCheckToken,
+    required TResult Function(_LoadingCreateAccount value) loadingCreateAccount,
+    required TResult Function(_SuccessCreateAccount value) successCreateAccount,
+    required TResult Function(_LoadingGetAccount value) loadingGetAccount,
+    required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_Failed value) failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,7 +74,11 @@ mixin _$AuthState {
     TResult? Function(_Init value)? initial,
     TResult? Function(_LoadingCheckToken value)? loadingCheckToken,
     TResult? Function(_SuccessCheckToken value)? successCheckToken,
-    TResult? Function(_FailedCheckToken value)? failedCheckToken,
+    TResult? Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_Failed value)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,7 +86,11 @@ mixin _$AuthState {
     TResult Function(_Init value)? initial,
     TResult Function(_LoadingCheckToken value)? loadingCheckToken,
     TResult Function(_SuccessCheckToken value)? successCheckToken,
-    TResult Function(_FailedCheckToken value)? failedCheckToken,
+    TResult Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -208,9 +228,11 @@ class _$InitImpl implements _Init {
     required TResult Function(UserEntities? user) loadingCheckToken,
     required TResult Function(UserEntities? user, bool isAuthenticated)
         successCheckToken,
-    required TResult Function(
-            UserEntities? user, bool isAuthenticated, String message)
-        failedCheckToken,
+    required TResult Function(UserEntities? user) loadingCreateAccount,
+    required TResult Function(UserEntities? user) successCreateAccount,
+    required TResult Function(UserEntities? user) loadingGetAccount,
+    required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user, String message) failed,
   }) {
     return initial(user);
   }
@@ -222,8 +244,11 @@ class _$InitImpl implements _Init {
     TResult? Function(UserEntities? user)? loadingCheckToken,
     TResult? Function(UserEntities? user, bool isAuthenticated)?
         successCheckToken,
-    TResult? Function(UserEntities? user, bool isAuthenticated, String message)?
-        failedCheckToken,
+    TResult? Function(UserEntities? user)? loadingCreateAccount,
+    TResult? Function(UserEntities? user)? successCreateAccount,
+    TResult? Function(UserEntities? user)? loadingGetAccount,
+    TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user, String message)? failed,
   }) {
     return initial?.call(user);
   }
@@ -235,8 +260,11 @@ class _$InitImpl implements _Init {
     TResult Function(UserEntities? user)? loadingCheckToken,
     TResult Function(UserEntities? user, bool isAuthenticated)?
         successCheckToken,
-    TResult Function(UserEntities? user, bool isAuthenticated, String message)?
-        failedCheckToken,
+    TResult Function(UserEntities? user)? loadingCreateAccount,
+    TResult Function(UserEntities? user)? successCreateAccount,
+    TResult Function(UserEntities? user)? loadingGetAccount,
+    TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -251,7 +279,11 @@ class _$InitImpl implements _Init {
     required TResult Function(_Init value) initial,
     required TResult Function(_LoadingCheckToken value) loadingCheckToken,
     required TResult Function(_SuccessCheckToken value) successCheckToken,
-    required TResult Function(_FailedCheckToken value) failedCheckToken,
+    required TResult Function(_LoadingCreateAccount value) loadingCreateAccount,
+    required TResult Function(_SuccessCreateAccount value) successCreateAccount,
+    required TResult Function(_LoadingGetAccount value) loadingGetAccount,
+    required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_Failed value) failed,
   }) {
     return initial(this);
   }
@@ -262,7 +294,11 @@ class _$InitImpl implements _Init {
     TResult? Function(_Init value)? initial,
     TResult? Function(_LoadingCheckToken value)? loadingCheckToken,
     TResult? Function(_SuccessCheckToken value)? successCheckToken,
-    TResult? Function(_FailedCheckToken value)? failedCheckToken,
+    TResult? Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_Failed value)? failed,
   }) {
     return initial?.call(this);
   }
@@ -273,7 +309,11 @@ class _$InitImpl implements _Init {
     TResult Function(_Init value)? initial,
     TResult Function(_LoadingCheckToken value)? loadingCheckToken,
     TResult Function(_SuccessCheckToken value)? successCheckToken,
-    TResult Function(_FailedCheckToken value)? failedCheckToken,
+    TResult Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -376,9 +416,11 @@ class _$LoadingCheckTokenImpl implements _LoadingCheckToken {
     required TResult Function(UserEntities? user) loadingCheckToken,
     required TResult Function(UserEntities? user, bool isAuthenticated)
         successCheckToken,
-    required TResult Function(
-            UserEntities? user, bool isAuthenticated, String message)
-        failedCheckToken,
+    required TResult Function(UserEntities? user) loadingCreateAccount,
+    required TResult Function(UserEntities? user) successCreateAccount,
+    required TResult Function(UserEntities? user) loadingGetAccount,
+    required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user, String message) failed,
   }) {
     return loadingCheckToken(user);
   }
@@ -390,8 +432,11 @@ class _$LoadingCheckTokenImpl implements _LoadingCheckToken {
     TResult? Function(UserEntities? user)? loadingCheckToken,
     TResult? Function(UserEntities? user, bool isAuthenticated)?
         successCheckToken,
-    TResult? Function(UserEntities? user, bool isAuthenticated, String message)?
-        failedCheckToken,
+    TResult? Function(UserEntities? user)? loadingCreateAccount,
+    TResult? Function(UserEntities? user)? successCreateAccount,
+    TResult? Function(UserEntities? user)? loadingGetAccount,
+    TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user, String message)? failed,
   }) {
     return loadingCheckToken?.call(user);
   }
@@ -403,8 +448,11 @@ class _$LoadingCheckTokenImpl implements _LoadingCheckToken {
     TResult Function(UserEntities? user)? loadingCheckToken,
     TResult Function(UserEntities? user, bool isAuthenticated)?
         successCheckToken,
-    TResult Function(UserEntities? user, bool isAuthenticated, String message)?
-        failedCheckToken,
+    TResult Function(UserEntities? user)? loadingCreateAccount,
+    TResult Function(UserEntities? user)? successCreateAccount,
+    TResult Function(UserEntities? user)? loadingGetAccount,
+    TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) {
     if (loadingCheckToken != null) {
@@ -419,7 +467,11 @@ class _$LoadingCheckTokenImpl implements _LoadingCheckToken {
     required TResult Function(_Init value) initial,
     required TResult Function(_LoadingCheckToken value) loadingCheckToken,
     required TResult Function(_SuccessCheckToken value) successCheckToken,
-    required TResult Function(_FailedCheckToken value) failedCheckToken,
+    required TResult Function(_LoadingCreateAccount value) loadingCreateAccount,
+    required TResult Function(_SuccessCreateAccount value) successCreateAccount,
+    required TResult Function(_LoadingGetAccount value) loadingGetAccount,
+    required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_Failed value) failed,
   }) {
     return loadingCheckToken(this);
   }
@@ -430,7 +482,11 @@ class _$LoadingCheckTokenImpl implements _LoadingCheckToken {
     TResult? Function(_Init value)? initial,
     TResult? Function(_LoadingCheckToken value)? loadingCheckToken,
     TResult? Function(_SuccessCheckToken value)? successCheckToken,
-    TResult? Function(_FailedCheckToken value)? failedCheckToken,
+    TResult? Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_Failed value)? failed,
   }) {
     return loadingCheckToken?.call(this);
   }
@@ -441,7 +497,11 @@ class _$LoadingCheckTokenImpl implements _LoadingCheckToken {
     TResult Function(_Init value)? initial,
     TResult Function(_LoadingCheckToken value)? loadingCheckToken,
     TResult Function(_SuccessCheckToken value)? successCheckToken,
-    TResult Function(_FailedCheckToken value)? failedCheckToken,
+    TResult Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
     if (loadingCheckToken != null) {
@@ -555,9 +615,11 @@ class _$SuccessCheckTokenImpl implements _SuccessCheckToken {
     required TResult Function(UserEntities? user) loadingCheckToken,
     required TResult Function(UserEntities? user, bool isAuthenticated)
         successCheckToken,
-    required TResult Function(
-            UserEntities? user, bool isAuthenticated, String message)
-        failedCheckToken,
+    required TResult Function(UserEntities? user) loadingCreateAccount,
+    required TResult Function(UserEntities? user) successCreateAccount,
+    required TResult Function(UserEntities? user) loadingGetAccount,
+    required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user, String message) failed,
   }) {
     return successCheckToken(user, isAuthenticated);
   }
@@ -569,8 +631,11 @@ class _$SuccessCheckTokenImpl implements _SuccessCheckToken {
     TResult? Function(UserEntities? user)? loadingCheckToken,
     TResult? Function(UserEntities? user, bool isAuthenticated)?
         successCheckToken,
-    TResult? Function(UserEntities? user, bool isAuthenticated, String message)?
-        failedCheckToken,
+    TResult? Function(UserEntities? user)? loadingCreateAccount,
+    TResult? Function(UserEntities? user)? successCreateAccount,
+    TResult? Function(UserEntities? user)? loadingGetAccount,
+    TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user, String message)? failed,
   }) {
     return successCheckToken?.call(user, isAuthenticated);
   }
@@ -582,8 +647,11 @@ class _$SuccessCheckTokenImpl implements _SuccessCheckToken {
     TResult Function(UserEntities? user)? loadingCheckToken,
     TResult Function(UserEntities? user, bool isAuthenticated)?
         successCheckToken,
-    TResult Function(UserEntities? user, bool isAuthenticated, String message)?
-        failedCheckToken,
+    TResult Function(UserEntities? user)? loadingCreateAccount,
+    TResult Function(UserEntities? user)? successCreateAccount,
+    TResult Function(UserEntities? user)? loadingGetAccount,
+    TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) {
     if (successCheckToken != null) {
@@ -598,7 +666,11 @@ class _$SuccessCheckTokenImpl implements _SuccessCheckToken {
     required TResult Function(_Init value) initial,
     required TResult Function(_LoadingCheckToken value) loadingCheckToken,
     required TResult Function(_SuccessCheckToken value) successCheckToken,
-    required TResult Function(_FailedCheckToken value) failedCheckToken,
+    required TResult Function(_LoadingCreateAccount value) loadingCreateAccount,
+    required TResult Function(_SuccessCreateAccount value) successCreateAccount,
+    required TResult Function(_LoadingGetAccount value) loadingGetAccount,
+    required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_Failed value) failed,
   }) {
     return successCheckToken(this);
   }
@@ -609,7 +681,11 @@ class _$SuccessCheckTokenImpl implements _SuccessCheckToken {
     TResult? Function(_Init value)? initial,
     TResult? Function(_LoadingCheckToken value)? loadingCheckToken,
     TResult? Function(_SuccessCheckToken value)? successCheckToken,
-    TResult? Function(_FailedCheckToken value)? failedCheckToken,
+    TResult? Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_Failed value)? failed,
   }) {
     return successCheckToken?.call(this);
   }
@@ -620,7 +696,11 @@ class _$SuccessCheckTokenImpl implements _SuccessCheckToken {
     TResult Function(_Init value)? initial,
     TResult Function(_LoadingCheckToken value)? loadingCheckToken,
     TResult Function(_SuccessCheckToken value)? successCheckToken,
-    TResult Function(_FailedCheckToken value)? failedCheckToken,
+    TResult Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
     if (successCheckToken != null) {
@@ -648,25 +728,25 @@ abstract class _SuccessCheckToken implements AuthState {
 }
 
 /// @nodoc
-abstract class _$$FailedCheckTokenImplCopyWith<$Res>
+abstract class _$$LoadingCreateAccountImplCopyWith<$Res>
     implements $AuthStateCopyWith<$Res> {
-  factory _$$FailedCheckTokenImplCopyWith(_$FailedCheckTokenImpl value,
-          $Res Function(_$FailedCheckTokenImpl) then) =
-      __$$FailedCheckTokenImplCopyWithImpl<$Res>;
+  factory _$$LoadingCreateAccountImplCopyWith(_$LoadingCreateAccountImpl value,
+          $Res Function(_$LoadingCreateAccountImpl) then) =
+      __$$LoadingCreateAccountImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({UserEntities? user, bool isAuthenticated, String message});
+  $Res call({UserEntities? user});
 
   @override
   $UserEntitiesCopyWith<$Res>? get user;
 }
 
 /// @nodoc
-class __$$FailedCheckTokenImplCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$FailedCheckTokenImpl>
-    implements _$$FailedCheckTokenImplCopyWith<$Res> {
-  __$$FailedCheckTokenImplCopyWithImpl(_$FailedCheckTokenImpl _value,
-      $Res Function(_$FailedCheckTokenImpl) _then)
+class __$$LoadingCreateAccountImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$LoadingCreateAccountImpl>
+    implements _$$LoadingCreateAccountImplCopyWith<$Res> {
+  __$$LoadingCreateAccountImplCopyWithImpl(_$LoadingCreateAccountImpl _value,
+      $Res Function(_$LoadingCreateAccountImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of AuthState
@@ -675,67 +755,50 @@ class __$$FailedCheckTokenImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? user = freezed,
-    Object? isAuthenticated = null,
-    Object? message = null,
   }) {
-    return _then(_$FailedCheckTokenImpl(
+    return _then(_$LoadingCreateAccountImpl(
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as UserEntities?,
-      isAuthenticated: null == isAuthenticated
-          ? _value.isAuthenticated
-          : isAuthenticated // ignore: cast_nullable_to_non_nullable
-              as bool,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$FailedCheckTokenImpl implements _FailedCheckToken {
-  const _$FailedCheckTokenImpl(
-      {this.user = null, required this.isAuthenticated, required this.message});
+class _$LoadingCreateAccountImpl implements _LoadingCreateAccount {
+  const _$LoadingCreateAccountImpl({this.user = null});
 
   @override
   @JsonKey()
   final UserEntities? user;
-  @override
-  final bool isAuthenticated;
-  @override
-  final String message;
 
   @override
   String toString() {
-    return 'AuthState.failedCheckToken(user: $user, isAuthenticated: $isAuthenticated, message: $message)';
+    return 'AuthState.loadingCreateAccount(user: $user)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FailedCheckTokenImpl &&
-            (identical(other.user, user) || other.user == user) &&
-            (identical(other.isAuthenticated, isAuthenticated) ||
-                other.isAuthenticated == isAuthenticated) &&
-            (identical(other.message, message) || other.message == message));
+            other is _$LoadingCreateAccountImpl &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user, isAuthenticated, message);
+  int get hashCode => Object.hash(runtimeType, user);
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$FailedCheckTokenImplCopyWith<_$FailedCheckTokenImpl> get copyWith =>
-      __$$FailedCheckTokenImplCopyWithImpl<_$FailedCheckTokenImpl>(
-          this, _$identity);
+  _$$LoadingCreateAccountImplCopyWith<_$LoadingCreateAccountImpl>
+      get copyWith =>
+          __$$LoadingCreateAccountImplCopyWithImpl<_$LoadingCreateAccountImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -744,11 +807,13 @@ class _$FailedCheckTokenImpl implements _FailedCheckToken {
     required TResult Function(UserEntities? user) loadingCheckToken,
     required TResult Function(UserEntities? user, bool isAuthenticated)
         successCheckToken,
-    required TResult Function(
-            UserEntities? user, bool isAuthenticated, String message)
-        failedCheckToken,
+    required TResult Function(UserEntities? user) loadingCreateAccount,
+    required TResult Function(UserEntities? user) successCreateAccount,
+    required TResult Function(UserEntities? user) loadingGetAccount,
+    required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user, String message) failed,
   }) {
-    return failedCheckToken(user, isAuthenticated, message);
+    return loadingCreateAccount(user);
   }
 
   @override
@@ -758,10 +823,13 @@ class _$FailedCheckTokenImpl implements _FailedCheckToken {
     TResult? Function(UserEntities? user)? loadingCheckToken,
     TResult? Function(UserEntities? user, bool isAuthenticated)?
         successCheckToken,
-    TResult? Function(UserEntities? user, bool isAuthenticated, String message)?
-        failedCheckToken,
+    TResult? Function(UserEntities? user)? loadingCreateAccount,
+    TResult? Function(UserEntities? user)? successCreateAccount,
+    TResult? Function(UserEntities? user)? loadingGetAccount,
+    TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user, String message)? failed,
   }) {
-    return failedCheckToken?.call(user, isAuthenticated, message);
+    return loadingCreateAccount?.call(user);
   }
 
   @override
@@ -771,12 +839,15 @@ class _$FailedCheckTokenImpl implements _FailedCheckToken {
     TResult Function(UserEntities? user)? loadingCheckToken,
     TResult Function(UserEntities? user, bool isAuthenticated)?
         successCheckToken,
-    TResult Function(UserEntities? user, bool isAuthenticated, String message)?
-        failedCheckToken,
+    TResult Function(UserEntities? user)? loadingCreateAccount,
+    TResult Function(UserEntities? user)? successCreateAccount,
+    TResult Function(UserEntities? user)? loadingGetAccount,
+    TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) {
-    if (failedCheckToken != null) {
-      return failedCheckToken(user, isAuthenticated, message);
+    if (loadingCreateAccount != null) {
+      return loadingCreateAccount(user);
     }
     return orElse();
   }
@@ -787,9 +858,13 @@ class _$FailedCheckTokenImpl implements _FailedCheckToken {
     required TResult Function(_Init value) initial,
     required TResult Function(_LoadingCheckToken value) loadingCheckToken,
     required TResult Function(_SuccessCheckToken value) successCheckToken,
-    required TResult Function(_FailedCheckToken value) failedCheckToken,
+    required TResult Function(_LoadingCreateAccount value) loadingCreateAccount,
+    required TResult Function(_SuccessCreateAccount value) successCreateAccount,
+    required TResult Function(_LoadingGetAccount value) loadingGetAccount,
+    required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_Failed value) failed,
   }) {
-    return failedCheckToken(this);
+    return loadingCreateAccount(this);
   }
 
   @override
@@ -798,9 +873,13 @@ class _$FailedCheckTokenImpl implements _FailedCheckToken {
     TResult? Function(_Init value)? initial,
     TResult? Function(_LoadingCheckToken value)? loadingCheckToken,
     TResult? Function(_SuccessCheckToken value)? successCheckToken,
-    TResult? Function(_FailedCheckToken value)? failedCheckToken,
+    TResult? Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_Failed value)? failed,
   }) {
-    return failedCheckToken?.call(this);
+    return loadingCreateAccount?.call(this);
   }
 
   @override
@@ -809,31 +888,795 @@ class _$FailedCheckTokenImpl implements _FailedCheckToken {
     TResult Function(_Init value)? initial,
     TResult Function(_LoadingCheckToken value)? loadingCheckToken,
     TResult Function(_SuccessCheckToken value)? successCheckToken,
-    TResult Function(_FailedCheckToken value)? failedCheckToken,
+    TResult Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
-    if (failedCheckToken != null) {
-      return failedCheckToken(this);
+    if (loadingCreateAccount != null) {
+      return loadingCreateAccount(this);
     }
     return orElse();
   }
 }
 
-abstract class _FailedCheckToken implements AuthState {
-  const factory _FailedCheckToken(
-      {final UserEntities? user,
-      required final bool isAuthenticated,
-      required final String message}) = _$FailedCheckTokenImpl;
+abstract class _LoadingCreateAccount implements AuthState {
+  const factory _LoadingCreateAccount({final UserEntities? user}) =
+      _$LoadingCreateAccountImpl;
 
   @override
   UserEntities? get user;
-  bool get isAuthenticated;
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadingCreateAccountImplCopyWith<_$LoadingCreateAccountImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessCreateAccountImplCopyWith<$Res>
+    implements $AuthStateCopyWith<$Res> {
+  factory _$$SuccessCreateAccountImplCopyWith(_$SuccessCreateAccountImpl value,
+          $Res Function(_$SuccessCreateAccountImpl) then) =
+      __$$SuccessCreateAccountImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({UserEntities? user});
+
+  @override
+  $UserEntitiesCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class __$$SuccessCreateAccountImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$SuccessCreateAccountImpl>
+    implements _$$SuccessCreateAccountImplCopyWith<$Res> {
+  __$$SuccessCreateAccountImplCopyWithImpl(_$SuccessCreateAccountImpl _value,
+      $Res Function(_$SuccessCreateAccountImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_$SuccessCreateAccountImpl(
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserEntities?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessCreateAccountImpl implements _SuccessCreateAccount {
+  const _$SuccessCreateAccountImpl({this.user = null});
+
+  @override
+  @JsonKey()
+  final UserEntities? user;
+
+  @override
+  String toString() {
+    return 'AuthState.successCreateAccount(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessCreateAccountImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessCreateAccountImplCopyWith<_$SuccessCreateAccountImpl>
+      get copyWith =>
+          __$$SuccessCreateAccountImplCopyWithImpl<_$SuccessCreateAccountImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserEntities? user) initial,
+    required TResult Function(UserEntities? user) loadingCheckToken,
+    required TResult Function(UserEntities? user, bool isAuthenticated)
+        successCheckToken,
+    required TResult Function(UserEntities? user) loadingCreateAccount,
+    required TResult Function(UserEntities? user) successCreateAccount,
+    required TResult Function(UserEntities? user) loadingGetAccount,
+    required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user, String message) failed,
+  }) {
+    return successCreateAccount(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(UserEntities? user)? initial,
+    TResult? Function(UserEntities? user)? loadingCheckToken,
+    TResult? Function(UserEntities? user, bool isAuthenticated)?
+        successCheckToken,
+    TResult? Function(UserEntities? user)? loadingCreateAccount,
+    TResult? Function(UserEntities? user)? successCreateAccount,
+    TResult? Function(UserEntities? user)? loadingGetAccount,
+    TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user, String message)? failed,
+  }) {
+    return successCreateAccount?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserEntities? user)? initial,
+    TResult Function(UserEntities? user)? loadingCheckToken,
+    TResult Function(UserEntities? user, bool isAuthenticated)?
+        successCheckToken,
+    TResult Function(UserEntities? user)? loadingCreateAccount,
+    TResult Function(UserEntities? user)? successCreateAccount,
+    TResult Function(UserEntities? user)? loadingGetAccount,
+    TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user, String message)? failed,
+    required TResult orElse(),
+  }) {
+    if (successCreateAccount != null) {
+      return successCreateAccount(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Init value) initial,
+    required TResult Function(_LoadingCheckToken value) loadingCheckToken,
+    required TResult Function(_SuccessCheckToken value) successCheckToken,
+    required TResult Function(_LoadingCreateAccount value) loadingCreateAccount,
+    required TResult Function(_SuccessCreateAccount value) successCreateAccount,
+    required TResult Function(_LoadingGetAccount value) loadingGetAccount,
+    required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return successCreateAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Init value)? initial,
+    TResult? Function(_LoadingCheckToken value)? loadingCheckToken,
+    TResult? Function(_SuccessCheckToken value)? successCheckToken,
+    TResult? Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return successCreateAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Init value)? initial,
+    TResult Function(_LoadingCheckToken value)? loadingCheckToken,
+    TResult Function(_SuccessCheckToken value)? successCheckToken,
+    TResult Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (successCreateAccount != null) {
+      return successCreateAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessCreateAccount implements AuthState {
+  const factory _SuccessCreateAccount({final UserEntities? user}) =
+      _$SuccessCreateAccountImpl;
+
+  @override
+  UserEntities? get user;
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessCreateAccountImplCopyWith<_$SuccessCreateAccountImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadingGetAccountImplCopyWith<$Res>
+    implements $AuthStateCopyWith<$Res> {
+  factory _$$LoadingGetAccountImplCopyWith(_$LoadingGetAccountImpl value,
+          $Res Function(_$LoadingGetAccountImpl) then) =
+      __$$LoadingGetAccountImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({UserEntities? user});
+
+  @override
+  $UserEntitiesCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class __$$LoadingGetAccountImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$LoadingGetAccountImpl>
+    implements _$$LoadingGetAccountImplCopyWith<$Res> {
+  __$$LoadingGetAccountImplCopyWithImpl(_$LoadingGetAccountImpl _value,
+      $Res Function(_$LoadingGetAccountImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_$LoadingGetAccountImpl(
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserEntities?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadingGetAccountImpl implements _LoadingGetAccount {
+  const _$LoadingGetAccountImpl({this.user = null});
+
+  @override
+  @JsonKey()
+  final UserEntities? user;
+
+  @override
+  String toString() {
+    return 'AuthState.loadingGetAccount(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingGetAccountImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadingGetAccountImplCopyWith<_$LoadingGetAccountImpl> get copyWith =>
+      __$$LoadingGetAccountImplCopyWithImpl<_$LoadingGetAccountImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserEntities? user) initial,
+    required TResult Function(UserEntities? user) loadingCheckToken,
+    required TResult Function(UserEntities? user, bool isAuthenticated)
+        successCheckToken,
+    required TResult Function(UserEntities? user) loadingCreateAccount,
+    required TResult Function(UserEntities? user) successCreateAccount,
+    required TResult Function(UserEntities? user) loadingGetAccount,
+    required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user, String message) failed,
+  }) {
+    return loadingGetAccount(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(UserEntities? user)? initial,
+    TResult? Function(UserEntities? user)? loadingCheckToken,
+    TResult? Function(UserEntities? user, bool isAuthenticated)?
+        successCheckToken,
+    TResult? Function(UserEntities? user)? loadingCreateAccount,
+    TResult? Function(UserEntities? user)? successCreateAccount,
+    TResult? Function(UserEntities? user)? loadingGetAccount,
+    TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user, String message)? failed,
+  }) {
+    return loadingGetAccount?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserEntities? user)? initial,
+    TResult Function(UserEntities? user)? loadingCheckToken,
+    TResult Function(UserEntities? user, bool isAuthenticated)?
+        successCheckToken,
+    TResult Function(UserEntities? user)? loadingCreateAccount,
+    TResult Function(UserEntities? user)? successCreateAccount,
+    TResult Function(UserEntities? user)? loadingGetAccount,
+    TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user, String message)? failed,
+    required TResult orElse(),
+  }) {
+    if (loadingGetAccount != null) {
+      return loadingGetAccount(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Init value) initial,
+    required TResult Function(_LoadingCheckToken value) loadingCheckToken,
+    required TResult Function(_SuccessCheckToken value) successCheckToken,
+    required TResult Function(_LoadingCreateAccount value) loadingCreateAccount,
+    required TResult Function(_SuccessCreateAccount value) successCreateAccount,
+    required TResult Function(_LoadingGetAccount value) loadingGetAccount,
+    required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return loadingGetAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Init value)? initial,
+    TResult? Function(_LoadingCheckToken value)? loadingCheckToken,
+    TResult? Function(_SuccessCheckToken value)? successCheckToken,
+    TResult? Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return loadingGetAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Init value)? initial,
+    TResult Function(_LoadingCheckToken value)? loadingCheckToken,
+    TResult Function(_SuccessCheckToken value)? successCheckToken,
+    TResult Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (loadingGetAccount != null) {
+      return loadingGetAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingGetAccount implements AuthState {
+  const factory _LoadingGetAccount({final UserEntities? user}) =
+      _$LoadingGetAccountImpl;
+
+  @override
+  UserEntities? get user;
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadingGetAccountImplCopyWith<_$LoadingGetAccountImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessGetAccountImplCopyWith<$Res>
+    implements $AuthStateCopyWith<$Res> {
+  factory _$$SuccessGetAccountImplCopyWith(_$SuccessGetAccountImpl value,
+          $Res Function(_$SuccessGetAccountImpl) then) =
+      __$$SuccessGetAccountImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({UserEntities? user});
+
+  @override
+  $UserEntitiesCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class __$$SuccessGetAccountImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$SuccessGetAccountImpl>
+    implements _$$SuccessGetAccountImplCopyWith<$Res> {
+  __$$SuccessGetAccountImplCopyWithImpl(_$SuccessGetAccountImpl _value,
+      $Res Function(_$SuccessGetAccountImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_$SuccessGetAccountImpl(
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserEntities?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessGetAccountImpl implements _SuccessGetAccount {
+  const _$SuccessGetAccountImpl({this.user = null});
+
+  @override
+  @JsonKey()
+  final UserEntities? user;
+
+  @override
+  String toString() {
+    return 'AuthState.successGetAccount(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessGetAccountImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessGetAccountImplCopyWith<_$SuccessGetAccountImpl> get copyWith =>
+      __$$SuccessGetAccountImplCopyWithImpl<_$SuccessGetAccountImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserEntities? user) initial,
+    required TResult Function(UserEntities? user) loadingCheckToken,
+    required TResult Function(UserEntities? user, bool isAuthenticated)
+        successCheckToken,
+    required TResult Function(UserEntities? user) loadingCreateAccount,
+    required TResult Function(UserEntities? user) successCreateAccount,
+    required TResult Function(UserEntities? user) loadingGetAccount,
+    required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user, String message) failed,
+  }) {
+    return successGetAccount(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(UserEntities? user)? initial,
+    TResult? Function(UserEntities? user)? loadingCheckToken,
+    TResult? Function(UserEntities? user, bool isAuthenticated)?
+        successCheckToken,
+    TResult? Function(UserEntities? user)? loadingCreateAccount,
+    TResult? Function(UserEntities? user)? successCreateAccount,
+    TResult? Function(UserEntities? user)? loadingGetAccount,
+    TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user, String message)? failed,
+  }) {
+    return successGetAccount?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserEntities? user)? initial,
+    TResult Function(UserEntities? user)? loadingCheckToken,
+    TResult Function(UserEntities? user, bool isAuthenticated)?
+        successCheckToken,
+    TResult Function(UserEntities? user)? loadingCreateAccount,
+    TResult Function(UserEntities? user)? successCreateAccount,
+    TResult Function(UserEntities? user)? loadingGetAccount,
+    TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user, String message)? failed,
+    required TResult orElse(),
+  }) {
+    if (successGetAccount != null) {
+      return successGetAccount(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Init value) initial,
+    required TResult Function(_LoadingCheckToken value) loadingCheckToken,
+    required TResult Function(_SuccessCheckToken value) successCheckToken,
+    required TResult Function(_LoadingCreateAccount value) loadingCreateAccount,
+    required TResult Function(_SuccessCreateAccount value) successCreateAccount,
+    required TResult Function(_LoadingGetAccount value) loadingGetAccount,
+    required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return successGetAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Init value)? initial,
+    TResult? Function(_LoadingCheckToken value)? loadingCheckToken,
+    TResult? Function(_SuccessCheckToken value)? successCheckToken,
+    TResult? Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return successGetAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Init value)? initial,
+    TResult Function(_LoadingCheckToken value)? loadingCheckToken,
+    TResult Function(_SuccessCheckToken value)? successCheckToken,
+    TResult Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (successGetAccount != null) {
+      return successGetAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessGetAccount implements AuthState {
+  const factory _SuccessGetAccount({final UserEntities? user}) =
+      _$SuccessGetAccountImpl;
+
+  @override
+  UserEntities? get user;
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessGetAccountImplCopyWith<_$SuccessGetAccountImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FailedImplCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
+  factory _$$FailedImplCopyWith(
+          _$FailedImpl value, $Res Function(_$FailedImpl) then) =
+      __$$FailedImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({UserEntities? user, String message});
+
+  @override
+  $UserEntitiesCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class __$$FailedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$FailedImpl>
+    implements _$$FailedImplCopyWith<$Res> {
+  __$$FailedImplCopyWithImpl(
+      _$FailedImpl _value, $Res Function(_$FailedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+    Object? message = null,
+  }) {
+    return _then(_$FailedImpl(
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserEntities?,
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FailedImpl implements _Failed {
+  const _$FailedImpl({this.user = null, required this.message});
+
+  @override
+  @JsonKey()
+  final UserEntities? user;
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'AuthState.failed(user: $user, message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FailedImpl &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user, message);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
+      __$$FailedImplCopyWithImpl<_$FailedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserEntities? user) initial,
+    required TResult Function(UserEntities? user) loadingCheckToken,
+    required TResult Function(UserEntities? user, bool isAuthenticated)
+        successCheckToken,
+    required TResult Function(UserEntities? user) loadingCreateAccount,
+    required TResult Function(UserEntities? user) successCreateAccount,
+    required TResult Function(UserEntities? user) loadingGetAccount,
+    required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user, String message) failed,
+  }) {
+    return failed(user, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(UserEntities? user)? initial,
+    TResult? Function(UserEntities? user)? loadingCheckToken,
+    TResult? Function(UserEntities? user, bool isAuthenticated)?
+        successCheckToken,
+    TResult? Function(UserEntities? user)? loadingCreateAccount,
+    TResult? Function(UserEntities? user)? successCreateAccount,
+    TResult? Function(UserEntities? user)? loadingGetAccount,
+    TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user, String message)? failed,
+  }) {
+    return failed?.call(user, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserEntities? user)? initial,
+    TResult Function(UserEntities? user)? loadingCheckToken,
+    TResult Function(UserEntities? user, bool isAuthenticated)?
+        successCheckToken,
+    TResult Function(UserEntities? user)? loadingCreateAccount,
+    TResult Function(UserEntities? user)? successCreateAccount,
+    TResult Function(UserEntities? user)? loadingGetAccount,
+    TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user, String message)? failed,
+    required TResult orElse(),
+  }) {
+    if (failed != null) {
+      return failed(user, message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Init value) initial,
+    required TResult Function(_LoadingCheckToken value) loadingCheckToken,
+    required TResult Function(_SuccessCheckToken value) successCheckToken,
+    required TResult Function(_LoadingCreateAccount value) loadingCreateAccount,
+    required TResult Function(_SuccessCreateAccount value) successCreateAccount,
+    required TResult Function(_LoadingGetAccount value) loadingGetAccount,
+    required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return failed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Init value)? initial,
+    TResult? Function(_LoadingCheckToken value)? loadingCheckToken,
+    TResult? Function(_SuccessCheckToken value)? successCheckToken,
+    TResult? Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return failed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Init value)? initial,
+    TResult Function(_LoadingCheckToken value)? loadingCheckToken,
+    TResult Function(_SuccessCheckToken value)? successCheckToken,
+    TResult Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (failed != null) {
+      return failed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Failed implements AuthState {
+  const factory _Failed(
+      {final UserEntities? user, required final String message}) = _$FailedImpl;
+
+  @override
+  UserEntities? get user;
   String get message;
 
   /// Create a copy of AuthState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FailedCheckTokenImplCopyWith<_$FailedCheckTokenImpl> get copyWith =>
+  _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

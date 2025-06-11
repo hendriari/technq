@@ -10,6 +10,7 @@ class ButtonWidget extends StatelessWidget {
   final Color? buttonColor;
   final Color? buttonTextColor;
   final Color? borderColor;
+  final Widget? otherChild;
 
   const ButtonWidget({
     super.key,
@@ -20,6 +21,7 @@ class ButtonWidget extends StatelessWidget {
     this.buttonColor,
     this.buttonTextColor,
     this.borderColor,
+    this.otherChild,
   });
 
   @override
@@ -41,17 +43,18 @@ class ButtonWidget extends StatelessWidget {
               : BorderSide.none,
         ),
       ),
-      child: Text(
-        buttonText,
-        style: textTheme.bodyLarge?.copyWith(
-          fontSize: 18.sp,
-          color: buttonTextColor ??
-              (brightness == Brightness.dark
-                  ? CustomColors.light
-                  : CustomColors.dark),
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      child: otherChild ??
+          Text(
+            buttonText,
+            style: textTheme.bodyLarge?.copyWith(
+              fontSize: 18.sp,
+              color: buttonTextColor ??
+                  (brightness == Brightness.dark
+                      ? CustomColors.light
+                      : CustomColors.dark),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
     );
   }
 }
