@@ -19,7 +19,7 @@ class AppThemeData {
         bottomSheetTheme: const BottomSheetThemeData(
           backgroundColor: Colors.transparent,
         ),
-        scaffoldBackgroundColor: darkTheme ? null : CustomColors.greyBgColor,
+        scaffoldBackgroundColor: darkTheme ? CustomColors.dark.withValues(alpha: 1.5) : CustomColors.greyBgColor,
         appBarTheme: const AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarColor: Colors.transparent,
