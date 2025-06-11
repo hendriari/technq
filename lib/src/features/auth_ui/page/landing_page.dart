@@ -165,6 +165,7 @@ class _LandingPageState extends State<LandingPage> {
                           textAlign: TextAlign.center,
                           style: _textTheme.bodyMedium?.copyWith(
                             fontSize: 14.sp,
+                            color: Colors.white,
                           ),
                         ),
 
@@ -201,6 +202,7 @@ class _LandingPageState extends State<LandingPage> {
                         ButtonWidget(
                           buttonText: 'Mulai',
                           buttonColor: CustomColors.primary100,
+                          buttonTextColor: Colors.white,
                           onTap: () => showLoginModalBottomSheet(context),
                         ),
                       ],

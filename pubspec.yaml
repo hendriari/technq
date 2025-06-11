@@ -37,6 +37,7 @@ dependencies:
   flutter_native_splash: ^2.4.6
   freezed_annotation: ^2.4.4
   carousel_slider: ^5.1.1
+  flutter_svg: ^2.1.0
 #  shared_preferences: ^2.5.3
 
 dev_dependencies:
@@ -52,4 +53,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/
+    - assets/image/
+    - assets/icon/
