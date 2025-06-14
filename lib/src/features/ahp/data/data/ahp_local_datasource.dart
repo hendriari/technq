@@ -36,7 +36,7 @@ class AhpLocalDatasourceImpl extends AhpLocalDatasource {
       if (schoolType != null) {
         final criteria = <Criteria>[];
 
-        if (schoolType == 'sma') {
+        if (schoolType.toLowerCase() == 'sma') {
           for (int i = 0; i < 5; i++) {
             final p = 'Pelajaran';
             criteria.add(
@@ -53,7 +53,7 @@ class AhpLocalDatasourceImpl extends AhpLocalDatasource {
               ),
             );
           }
-        } else if (schoolType == 'smk') {
+        } else if (schoolType.toLowerCase() == 'smk') {
           for (int i = 0; i < 3; i++) {
             criteria.add(
               Criteria(
