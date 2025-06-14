@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import 'package:technq/src/core/theme/custom_colors.dart';
 import 'package:technq/src/core/utils/constants.dart';
 import 'package:technq/src/core/widgets/button_widget.dart';
 import 'package:technq/src/core/widgets/common_appbar_widget.dart';
+import 'package:technq/src/features/ahp/presentation/bloc/ahp_bloc.dart';
+import 'package:technq/src/features/ahp/presentation/bloc/ahp_event.dart';
 
 class AhpPage extends StatelessWidget {
   const AhpPage({super.key});
@@ -59,7 +62,9 @@ class AhpPage extends StatelessWidget {
               buttonText: 'Mulai',
               buttonColor: CustomColors.primary100,
               buttonTextColor: Colors.white,
-              onTap: () {},
+              onTap: () {
+                context.read<AhpBloc>().add(AhpEvent.generatePairwiseMatrixInput(schoolType: 'sma'));
+              },
             ),
 
             SizedBox(

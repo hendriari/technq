@@ -50,6 +50,9 @@ class AhpBloc extends Bloc<AhpEvent, AhpState> {
             message: failure.message,
             pairwiseInputs: state.pairwiseInputs,
             ahpResult: state.ahpResult)), (data) {
+
+          print('TOTAL KRITERIA ==>> ${data?.inputCriteria.length} - TOTAL ALTERNATIVE ==>> ${data?.inputAlternative.length}');
+
       emit(AhpState.successGeneratePairwiseInput(
           ahpResult: null, pairwiseInputs: data));
     });
