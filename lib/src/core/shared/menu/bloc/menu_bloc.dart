@@ -27,7 +27,7 @@ class MenuBloc extends Bloc<MenuEvent, MenuState> {
           emit(MenuState.exitApp(exit: true, timeExit: now));
         }
       }, orElse: () {
-        emit(MenuState.exitApp(exit: true, timeExit: now));
+        emit(MenuState.exitApp(exit: false, timeExit: now));
       });
     } catch (e) {
       emit(MenuState.failed(message: e.toString(), indexMenu: state.indexMenu));

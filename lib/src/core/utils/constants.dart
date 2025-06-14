@@ -8,6 +8,8 @@ class Constants {
   static String pmb2Image = '${_imagePath}pmb_2_image.png';
   static String pmb3Image = '${_imagePath}pmb_3_image.png';
   static String pmb4Image = '${_imagePath}pmb_4_image.png';
+  static String dashboardHeaderImage = '${_imagePath}dashboard_header_image.jpg';
+  static String notFoundImage = '${_imagePath}image_not_found.jpg';
 
   /// ICON
   static final String _iconPath = 'assets/icon/';
