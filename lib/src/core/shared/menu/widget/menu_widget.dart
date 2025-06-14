@@ -37,6 +37,11 @@ class _MenuWidgetState extends State<MenuWidget> {
     super.initState();
     _indexMenu = widget.indexMenu;
     _helper = Helper();
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: CustomColors.dark,
+      systemNavigationBarColor: CustomColors.dark,
+      systemNavigationBarDividerColor: Colors.white,
+    ));
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<MenuBloc>().add(ChangeIndexMenuEvent(index: _indexMenu));
     });

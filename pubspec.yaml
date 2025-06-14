@@ -11,7 +11,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  flutter_decision_making: ^1.0.2
+  flutter_decision_making: ^1.0.4
   firebase_core: ^3.13.1
   firebase_crashlytics: ^4.3.6
   cloud_firestore: ^5.6.8
@@ -38,6 +38,7 @@ dependencies:
   freezed_annotation: ^2.4.4
   carousel_slider: ^5.1.1
   flutter_svg: ^2.1.0
+  lottie: ^3.3.1
 #  shared_preferences: ^2.5.3
 
 dev_dependencies:
@@ -55,3 +56,4 @@ flutter:
   assets:
     - assets/image/
     - assets/icon/
+    - assets/animation/
