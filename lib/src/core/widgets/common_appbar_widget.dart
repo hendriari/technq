@@ -5,10 +5,12 @@ import 'package:technq/src/core/theme/custom_colors.dart';
 class CommonAppbarWidget extends StatelessWidget
     implements PreferredSizeWidget {
   final String title;
+  final bool? centerTitle;
 
   const CommonAppbarWidget({
     super.key,
     required this.title,
+    this.centerTitle,
   });
 
   @override
@@ -29,7 +31,7 @@ class CommonAppbarWidget extends StatelessWidget
       backgroundColor: brightness == Brightness.dark
           ? CustomColors.dark
           : CustomColors.light,
-      centerTitle: true,
+      centerTitle: centerTitle ?? true,
     );
   }
 }
