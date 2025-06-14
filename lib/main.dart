@@ -9,6 +9,7 @@ import 'package:technq/src/core/config/firenbase_config.dart';
 import 'package:technq/src/core/injection/injector.dart';
 import 'package:technq/src/core/shared/auth/presentation/auth_bloc.dart';
 import 'package:technq/src/core/shared/menu/bloc/menu_bloc.dart';
+import 'package:technq/src/features/ahp/presentation/bloc/ahp_bloc.dart';
 import 'package:technq/src/technq_app.dart';
 import 'package:technq/src/technq_bloc_observer.dart';
 
@@ -40,6 +41,14 @@ Future<void> main() async {
               getUserDataUsecase: getIt()),
         ),
         BlocProvider(create: (_) => MenuBloc()),
+        BlocProvider(
+          create: (_) => AhpBloc(
+              getAhpResultUsecase: getIt(),
+              updatePairwiseCriteriaInputUsecase: getIt(),
+              updatePairwiseAlternativeInputUsecase: getIt(),
+              getPairwiseInputUsecase: getIt(),
+              resetAhpDataUsecase: getIt()),
+        ),
       ],
       child: TechnqApp(),
     );
