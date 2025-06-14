@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+// import 'package:device_preview/device_preview.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -58,5 +59,10 @@ Future<void> main() async {
     );
   }
 
-  runApp(initBloc());
+  runApp(
+    // DevicePreview(
+    //   builder: (context) => initBloc(),
+    // ),
+    initBloc(),
+  );
 }
