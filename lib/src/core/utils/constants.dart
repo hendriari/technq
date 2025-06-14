@@ -15,4 +15,8 @@ class Constants {
   static String menuAhpIcon = '${_iconPath}menu_ahp_icon.svg';
   static String menuHistoryIcon = '${_iconPath}menu_history_icon.svg';
   static String menuSettingIcon = '${_iconPath}menu_setting_icon.svg';
+
+  /// ANIMATION
+  static final String _animationPath = 'assets/animation/';
+  static String learningAnimation = '${_animationPath}learning.json';
 }

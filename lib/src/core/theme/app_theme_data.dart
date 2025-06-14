@@ -19,11 +19,23 @@ class AppThemeData {
         bottomSheetTheme: const BottomSheetThemeData(
           backgroundColor: Colors.transparent,
         ),
-        scaffoldBackgroundColor: darkTheme ? CustomColors.dark.withValues(alpha: 1.5) : CustomColors.greyBgColor,
-        appBarTheme: const AppBarTheme(
+        scaffoldBackgroundColor: darkTheme
+            ? CustomColors.dark.withValues(alpha: 1.5)
+            : CustomColors.greyBgColor,
+        appBarTheme: AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
+            statusBarColor: CustomColors.dark,
+            systemNavigationBarColor: CustomColors.dark,
+            systemNavigationBarDividerColor: Colors.white,
           ),
+        ),
+        scrollbarTheme: ScrollbarThemeData(
+          thumbColor: WidgetStateProperty.all(CustomColors.blackGray300),
+        ),
+        pageTransitionsTheme: const PageTransitionsTheme(
+          builders: <TargetPlatform, PageTransitionsBuilder>{
+            TargetPlatform.android: PredictiveBackPageTransitionsBuilder(),
+          },
         ),
         inputDecorationTheme: InputDecorationTheme(
           border: DecoratedInputBorder(
