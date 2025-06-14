@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,57 +37,52 @@ class _TechnqAppState extends State<TechnqApp> {
 
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-      ),
-      child: ScreenUtilInit(
-        designSize: Size(360, 690),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (context, child) => ResponsiveBreakpoints.builder(
-          breakpoints: [
-            const Breakpoint(start: 0, end: 450, name: MOBILE),
-            const Breakpoint(start: 451, end: 800, name: TABLET),
-            const Breakpoint(start: 801, end: 1920, name: DESKTOP),
-            const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
+    return ScreenUtilInit(
+      designSize: Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) => ResponsiveBreakpoints.builder(
+        breakpoints: [
+          const Breakpoint(start: 0, end: 450, name: MOBILE),
+          const Breakpoint(start: 451, end: 800, name: TABLET),
+          const Breakpoint(start: 801, end: 1920, name: DESKTOP),
+          const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
+        ],
+        child: MaterialApp.router(
+          themeMode: ThemeMode.system,
+          theme: _themeData.theme(darkTheme: false),
+          darkTheme: _themeData.theme(darkTheme: true),
+          routerConfig: _routers.routeConfig,
+          debugShowCheckedModeBanner: false,
+          supportedLocales: const [
+            Locale('id'),
+            Locale('en'),
           ],
-          child: MaterialApp.router(
-            themeMode: ThemeMode.system,
-            theme: _themeData.theme(darkTheme: false),
-            darkTheme: _themeData.theme(darkTheme: true),
-            routerConfig: _routers.routeConfig,
-            debugShowCheckedModeBanner: false,
-            supportedLocales: const [
-              Locale('id'),
-              Locale('en'),
-            ],
-            localizationsDelegates: [
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            locale: Locale('id'),
-            builder: (context, widget) => MaxWidthBox(
-              maxWidth: 1920,
-              child: ResponsiveScaledBox(
-                width: ResponsiveValue<double>(context,
-                        conditionalValues: [
-                          const Condition.equals(name: MOBILE, value: 450),
-                          const Condition.between(
-                              start: 451, end: 800, value: 800),
-                          const Condition.between(
-                              start: 801, end: 1100, value: 1100),
-                          const Condition.between(
-                              start: 1101, end: 1920, value: 1920),
-                        ],
-                        defaultValue: 360)
-                    .value,
-                child: BouncingScrollWrapper.builder(
-                  context,
-                  widget ?? SizedBox.shrink(),
-                  dragWithMouse: true,
-                ),
+          localizationsDelegates: [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          locale: Locale('id'),
+          builder: (context, widget) => MaxWidthBox(
+            maxWidth: 1920,
+            child: ResponsiveScaledBox(
+              width: ResponsiveValue<double>(context,
+                      conditionalValues: [
+                        const Condition.equals(name: MOBILE, value: 450),
+                        const Condition.between(
+                            start: 451, end: 800, value: 800),
+                        const Condition.between(
+                            start: 801, end: 1100, value: 1100),
+                        const Condition.between(
+                            start: 1101, end: 1920, value: 1920),
+                      ],
+                      defaultValue: 360)
+                  .value,
+              child: BouncingScrollWrapper.builder(
+                context,
+                widget ?? SizedBox.shrink(),
+                dragWithMouse: true,
               ),
             ),
           ),
