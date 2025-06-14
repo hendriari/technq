@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:technq/src/core/shared/menu/bloc/menu_bloc.dart';
 import 'package:technq/src/core/shared/menu/bloc/menu_event.dart';
 import 'package:technq/src/core/shared/menu/bloc/menu_state.dart';
@@ -63,30 +62,36 @@ class _MenuWidgetState extends State<MenuWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocConsumer<MenuBloc, MenuState>(
-        listener: (context, state) {
-          state.whenOrNull(
-            exitApp: (indexMenu, exit, time) {
-              if (!exit) {
-                _helper.showToast(
-                  message: 'Tekan lagi untuk keluar dari aplikasi',
-                  toastGravity: ToastGravity.BOTTOM,
-                  backGroundColor: _brightness == Brightness.dark
-                      ? Colors.black
-                      : Colors.white,
-                  textColor: _brightness == Brightness.dark
-                      ? Colors.white
-                      : Colors.black,
-                );
-              } else {
-                SystemChannels.platform.invokeMethod('SystemNavigator.pop');
-              }
-            },
-          );
+      body: PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (didPop, result) {
+          if (didPop) return;
+          context.read<MenuBloc>().add(MenuEvent.exitAppEvent());
         },
-        builder: (context, state) {
-          return SafeArea(child: _listMenu[state.indexMenu]);
-        },
+        child: BlocConsumer<MenuBloc, MenuState>(
+          listener: (context, state) {
+            state.whenOrNull(
+              exitApp: (indexMenu, exit, time) {
+                if (!exit) {
+                  _helper.showToast(
+                    message: 'Tekan lagi untuk keluar dari aplikasi',
+                    backGroundColor: _brightness == Brightness.dark
+                        ? Colors.black
+                        : Colors.white,
+                    textColor: _brightness == Brightness.dark
+                        ? Colors.white
+                        : Colors.black,
+                  );
+                } else {
+                  SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+                }
+              },
+            );
+          },
+          builder: (context, state) {
+            return SafeArea(child: _listMenu[state.indexMenu]);
+          },
+        ),
       ),
       bottomNavigationBar: _buildMenu(context),
     );

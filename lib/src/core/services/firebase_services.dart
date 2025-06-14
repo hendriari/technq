@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+// import 'package:firebase_storage/firebase_storage.dart';
 
 abstract class FirebaseServices {
   FirebaseAuth get firebaseAuth;
   FirebaseFirestore get firebaseFirestore;
-  FirebaseStorage get firebaseStorage;
+  // FirebaseStorage get firebaseStorage;
 }
 
 class FirebaseServicesImpl implements FirebaseServices {
@@ -15,7 +15,7 @@ class FirebaseServicesImpl implements FirebaseServices {
   @override
   FirebaseFirestore get firebaseFirestore => FirebaseFirestore.instance;
 
-  @override
-  FirebaseStorage get firebaseStorage => FirebaseStorage.instance;
+  // @override
+  // FirebaseStorage get firebaseStorage => FirebaseStorage.instance;
 }
 
