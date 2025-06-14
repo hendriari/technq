@@ -161,7 +161,7 @@ class _LandingPageState extends State<LandingPage> {
                       children: [
                         /// INFO
                         Text(
-                          'Sistem Pendukung Keputusan\nRekomendasi fakultas teknik di Universitas PGRI Semarang',
+                          'Sistem Pendukung Keputusan\nFakultas teknik dan informatika Universitas PGRI Semarang',
                           textAlign: TextAlign.center,
                           style: _textTheme.bodyMedium?.copyWith(
                             fontSize: 14.sp,

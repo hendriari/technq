@@ -37,6 +37,12 @@ import 'package:technq/src/features/ahp/domain/usecase/update_pairwise_alternati
     as _i449;
 import 'package:technq/src/features/ahp/domain/usecase/update_pairwise_criteria_input_usecase.dart'
     as _i279;
+import 'package:technq/src/features/dashboard/data/datasource/dashboard_local_datasource.dart'
+    as _i910;
+import 'package:technq/src/features/dashboard/domain/repository/dashboard_repository.dart'
+    as _i601;
+import 'package:technq/src/features/dashboard/domain/usecase/get_list_fakultas_usecase.dart'
+    as _i528;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -54,9 +60,15 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i1030.AuthRemoteDatasource>(
         () => injectorModule.authRemoteDatasource);
     gh.lazySingleton<_i941.AuthRepository>(() => injectorModule.authRepository);
+    gh.lazySingleton<_i910.DashboardLocalDatasource>(
+        () => injectorModule.dashboardLocalDatasource);
+    gh.lazySingleton<_i601.DashboardRepository>(
+        () => injectorModule.dashboardRepository);
     gh.lazySingleton<_i636.AhpLocalDatasource>(
         () => injectorModule.ahpLocalDatasource);
     gh.lazySingleton<_i959.AhpRepository>(() => injectorModule.ahpRepository);
+    gh.lazySingleton<_i528.GetListFakultasUsecase>(
+        () => injectorModule.getListFakultasUsecase);
     gh.lazySingleton<_i946.GetPairwiseInputUsecase>(
         () => injectorModule.getPairwiseInputUsecase);
     gh.lazySingleton<_i279.UpdatePairwiseCriteriaInputUsecase>(
@@ -81,6 +93,10 @@ class _$InjectorModule extends _i549.InjectorModule {
   _$InjectorModule(this._getIt);
 
   final _i174.GetIt _getIt;
+
+  @override
+  _i528.GetListFakultasUsecase get getListFakultasUsecase =>
+      _i528.GetListFakultasUsecase(_getIt<_i601.DashboardRepository>());
 
   @override
   _i946.GetPairwiseInputUsecase get getPairwiseInputUsecase =>

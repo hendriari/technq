@@ -16,6 +16,10 @@ import 'package:technq/src/features/ahp/domain/usecase/get_pairwise_input_usecas
 import 'package:technq/src/features/ahp/domain/usecase/reset_ahp_data_usecase.dart';
 import 'package:technq/src/features/ahp/domain/usecase/update_pairwise_alternative_input_usecase.dart';
 import 'package:technq/src/features/ahp/domain/usecase/update_pairwise_criteria_input_usecase.dart';
+import 'package:technq/src/features/dashboard/data/datasource/dashboard_local_datasource.dart';
+import 'package:technq/src/features/dashboard/data/repository_impl/dashboard_repository_impl.dart';
+import 'package:technq/src/features/dashboard/domain/repository/dashboard_repository.dart';
+import 'package:technq/src/features/dashboard/domain/usecase/get_list_fakultas_usecase.dart';
 
 @module
 abstract class InjectorModule {
@@ -39,6 +43,19 @@ abstract class InjectorModule {
 
   @lazySingleton
   GetUserDataUsecase get getUserDataUsecase;
+
+  /// DASHBOARD
+
+  @lazySingleton
+  DashboardLocalDatasource get dashboardLocalDatasource =>
+      DashboardLocalDatasourceImpl();
+
+  @lazySingleton
+  DashboardRepository get dashboardRepository =>
+      DashboardRepositoryImpl(getIt<DashboardLocalDatasource>());
+
+  @lazySingleton
+  GetListFakultasUsecase get getListFakultasUsecase;
 
   /// AHP
   @lazySingleton
