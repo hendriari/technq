@@ -1,0 +1,83 @@
+import 'package:dartz/dartz.dart';
+import 'package:flutter_decision_making/ahp/domain/entities/ahp_result.dart';
+import 'package:flutter_decision_making/ahp/domain/entities/criteria.dart';
+import 'package:flutter_decision_making/ahp/domain/entities/pairwise_alternative_input.dart';
+import 'package:flutter_decision_making/ahp/domain/entities/pairwise_comparison_input.dart';
+import 'package:technq/src/core/failure/failure.dart';
+import 'package:technq/src/features/ahp/data/data/ahp_local_datasource.dart';
+import 'package:technq/src/features/ahp/data/mapper/ahp_pairwise_matrix_extension.dart';
+import 'package:technq/src/features/ahp/domain/entities/ahp_pairwise_matrix_input_entities.dart';
+import 'package:technq/src/features/ahp/domain/repository/ahp_repository.dart';
+
+class AhpRepositoryImpl extends AhpRepository {
+  final AhpLocalDatasource _ahpLocalDatasource;
+
+  AhpRepositoryImpl(this._ahpLocalDatasource);
+
+  @override
+  Future<Either<Failure, AhpPairwiseMatrixInputEntities?>> getPairwiseInput(
+      String? schoolType) async {
+    try {
+      final result = await _ahpLocalDatasource.getPairwiseInput(schoolType);
+
+      if (result != null) {
+        return Right(result.toEntities());
+      }
+
+      return Right(null);
+    } catch (e) {
+      return Left(GeneralFailure(message: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<PairwiseComparisonInput<Criteria>>?>> updatePairwiseCriteriaInput(
+      String? id, bool isLeftMoreImportant, int referenceValue) async {
+    try {
+      final result = await _ahpLocalDatasource.updatePairwiseCriteriaInput(
+          id, isLeftMoreImportant, referenceValue);
+
+      return Right(result);
+    } catch (e) {
+      return Left(GeneralFailure(message: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<PairwiseAlternativeInput>?>> updatePairwiseAlternativeInput(
+      String? id,
+      String? alternativeId,
+      bool isLeftMoreImportant,
+      int referenceValue) async {
+    try {
+      final result = await _ahpLocalDatasource.updatePairwiseAlternativeInput(
+          id, alternativeId, isLeftMoreImportant, referenceValue);
+
+      return Right(result);
+    } catch (e) {
+      return Left(GeneralFailure(message: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, AhpResult?>> getAhpResult() async {
+    try {
+      final result = await _ahpLocalDatasource.getAhpResult();
+
+      return Right(result);
+    } catch (e) {
+      return Left(GeneralFailure(message: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, String?>> resetAhpData() async {
+    try {
+      final result = await _ahpLocalDatasource.resetAhpData();
+
+      return Right(result);
+    } catch (e) {
+      return Left(GeneralFailure(message: e.toString()));
+    }
+  }
+}
