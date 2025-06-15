@@ -2,12 +2,18 @@ import 'package:flutter_decision_making/flutter_decision_making.dart';
 import 'package:injectable/injectable.dart';
 import 'package:technq/src/core/injection/injector.dart';
 import 'package:technq/src/core/services/firebase_services.dart';
+import 'package:technq/src/core/services/shared_preference_services.dart';
 import 'package:technq/src/core/shared/auth/data/datasource/auth_remote_datasource.dart';
 import 'package:technq/src/core/shared/auth/data/repository_impl/auth_repository_impl.dart';
 import 'package:technq/src/core/shared/auth/domain/repository/auth_repository.dart';
 import 'package:technq/src/core/shared/auth/domain/usecase/check_token_usecase.dart';
 import 'package:technq/src/core/shared/auth/domain/usecase/create_account_usecase.dart';
 import 'package:technq/src/core/shared/auth/domain/usecase/get_user_data.usecase.dart';
+import 'package:technq/src/core/shared/brightness_theme/data/datasource/brightness_theme_local_datasource.dart';
+import 'package:technq/src/core/shared/brightness_theme/data/repository_impl/brightness_theme_repository_impl.dart';
+import 'package:technq/src/core/shared/brightness_theme/domain/repository/brightness_theme_repository.dart';
+import 'package:technq/src/core/shared/brightness_theme/domain/usecase/get_current_theme_usecase.dart';
+import 'package:technq/src/core/shared/brightness_theme/domain/usecase/save_theme_usecase.dart';
 import 'package:technq/src/features/ahp/data/data/ahp_local_datasource.dart';
 import 'package:technq/src/features/ahp/data/repository_impl/ahp_repository_impl.dart';
 import 'package:technq/src/features/ahp/domain/repository/ahp_repository.dart';
@@ -25,6 +31,25 @@ import 'package:technq/src/features/dashboard/domain/usecase/get_list_fakultas_u
 abstract class InjectorModule {
   @singleton
   FirebaseServices get firebaseServices => FirebaseServicesImpl();
+
+  @singleton
+  SharedPreferenceService get sharedPreferenceService =>
+      SharedPreferenceServiceImpl();
+
+  /// THEME
+  @lazySingleton
+  BrightnessThemeLocalDatasource get brightnessThemeLocalDatasource =>
+      BrightnessThemeLocalDatasourceImpl(getIt<SharedPreferenceService>());
+
+  @lazySingleton
+  BrightnessThemeRepository get brightnessThemeRepository =>
+      BrightnessThemeRepositoryImpl(getIt<BrightnessThemeLocalDatasource>());
+
+  @lazySingleton
+  GetCurrentThemeUsecase get getCurrentThemeUsecase;
+
+  @lazySingleton
+  SaveThemeUsecase get saveThemeUsecase;
 
   /// AUTH
   @lazySingleton
