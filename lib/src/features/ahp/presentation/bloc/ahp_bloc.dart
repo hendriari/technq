@@ -144,4 +144,8 @@ class AhpBloc extends Bloc<AhpEvent, AhpState> {
       emit(AhpState.successResetResult());
     });
   }
+
+  // Future<void> _updateImportant() async {}
+  //
+  // Future<void> _updateScale() async {}
 }
