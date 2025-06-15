@@ -13,6 +13,8 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:technq/src/core/injection/injector_module.dart' as _i549;
 import 'package:technq/src/core/services/firebase_services.dart' as _i247;
+import 'package:technq/src/core/services/shared_preference_services.dart'
+    as _i900;
 import 'package:technq/src/core/shared/auth/data/datasource/auth_remote_datasource.dart'
     as _i1030;
 import 'package:technq/src/core/shared/auth/domain/repository/auth_repository.dart'
@@ -23,6 +25,16 @@ import 'package:technq/src/core/shared/auth/domain/usecase/create_account_usecas
     as _i540;
 import 'package:technq/src/core/shared/auth/domain/usecase/get_user_data.usecase.dart'
     as _i401;
+import 'package:technq/src/core/shared/auth/domain/usecase/update_user_school_usecase.dart'
+    as _i917;
+import 'package:technq/src/core/shared/brightness_theme/data/datasource/brightness_theme_local_datasource.dart'
+    as _i564;
+import 'package:technq/src/core/shared/brightness_theme/domain/repository/brightness_theme_repository.dart'
+    as _i6;
+import 'package:technq/src/core/shared/brightness_theme/domain/usecase/get_current_theme_usecase.dart'
+    as _i465;
+import 'package:technq/src/core/shared/brightness_theme/domain/usecase/save_theme_usecase.dart'
+    as _i443;
 import 'package:technq/src/features/ahp/data/data/ahp_local_datasource.dart'
     as _i636;
 import 'package:technq/src/features/ahp/domain/repository/ahp_repository.dart'
@@ -57,6 +69,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     final injectorModule = _$InjectorModule(this);
     gh.singleton<_i247.FirebaseServices>(() => injectorModule.firebaseServices);
+    gh.singleton<_i900.SharedPreferenceService>(
+        () => injectorModule.sharedPreferenceService);
+    gh.lazySingleton<_i564.BrightnessThemeLocalDatasource>(
+        () => injectorModule.brightnessThemeLocalDatasource);
+    gh.lazySingleton<_i6.BrightnessThemeRepository>(
+        () => injectorModule.brightnessThemeRepository);
     gh.lazySingleton<_i1030.AuthRemoteDatasource>(
         () => injectorModule.authRemoteDatasource);
     gh.lazySingleton<_i941.AuthRepository>(() => injectorModule.authRepository);
@@ -67,8 +85,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i636.AhpLocalDatasource>(
         () => injectorModule.ahpLocalDatasource);
     gh.lazySingleton<_i959.AhpRepository>(() => injectorModule.ahpRepository);
+    gh.lazySingleton<_i465.GetCurrentThemeUsecase>(
+        () => injectorModule.getCurrentThemeUsecase);
     gh.lazySingleton<_i528.GetListFakultasUsecase>(
         () => injectorModule.getListFakultasUsecase);
+    gh.lazySingleton<_i443.SaveThemeUsecase>(
+        () => injectorModule.saveThemeUsecase);
     gh.lazySingleton<_i946.GetPairwiseInputUsecase>(
         () => injectorModule.getPairwiseInputUsecase);
     gh.lazySingleton<_i279.UpdatePairwiseCriteriaInputUsecase>(
@@ -85,6 +107,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => injectorModule.createAccountUsecase);
     gh.lazySingleton<_i401.GetUserDataUsecase>(
         () => injectorModule.getUserDataUsecase);
+    gh.lazySingleton<_i917.UpdateUserSchoolUsecase>(
+        () => injectorModule.updateUserSchoolUsecase);
     return this;
   }
 }
@@ -95,8 +119,16 @@ class _$InjectorModule extends _i549.InjectorModule {
   final _i174.GetIt _getIt;
 
   @override
+  _i465.GetCurrentThemeUsecase get getCurrentThemeUsecase =>
+      _i465.GetCurrentThemeUsecase(_getIt<_i6.BrightnessThemeRepository>());
+
+  @override
   _i528.GetListFakultasUsecase get getListFakultasUsecase =>
       _i528.GetListFakultasUsecase(_getIt<_i601.DashboardRepository>());
+
+  @override
+  _i443.SaveThemeUsecase get saveThemeUsecase =>
+      _i443.SaveThemeUsecase(_getIt<_i6.BrightnessThemeRepository>());
 
   @override
   _i946.GetPairwiseInputUsecase get getPairwiseInputUsecase =>
@@ -133,4 +165,8 @@ class _$InjectorModule extends _i549.InjectorModule {
   @override
   _i401.GetUserDataUsecase get getUserDataUsecase =>
       _i401.GetUserDataUsecase(_getIt<_i941.AuthRepository>());
+
+  @override
+  _i917.UpdateUserSchoolUsecase get updateUserSchoolUsecase =>
+      _i917.UpdateUserSchoolUsecase(_getIt<_i941.AuthRepository>());
 }

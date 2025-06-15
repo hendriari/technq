@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:technq/src/core/shared/auth/presentation/auth_bloc.dart';
-import 'package:technq/src/core/shared/auth/presentation/auth_event.dart';
-import 'package:technq/src/core/shared/auth/presentation/auth_state.dart';
+import 'package:technq/src/core/shared/auth/presentation/bloc/auth_bloc.dart';
+import 'package:technq/src/core/shared/auth/presentation/bloc/auth_event.dart';
+import 'package:technq/src/core/shared/auth/presentation/bloc/auth_state.dart';
 import 'package:technq/src/core/widgets/loading_widget.dart';
 
 class SplashPage extends StatefulWidget {
