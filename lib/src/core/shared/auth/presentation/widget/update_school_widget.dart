@@ -11,17 +11,16 @@ import 'package:technq/src/core/widgets/button_widget.dart';
 import 'package:technq/src/core/widgets/form_field_widget.dart';
 import 'package:technq/src/core/widgets/loading_widget.dart';
 
-class LoginWidget extends StatefulWidget {
-  const LoginWidget({super.key});
+class UpdateSchoolWidget extends StatefulWidget {
+  const UpdateSchoolWidget({super.key});
 
   @override
-  State<LoginWidget> createState() => _LoginWidgetState();
+  State<UpdateSchoolWidget> createState() => _UpdateSchoolWidgetState();
 }
 
-class _LoginWidgetState extends State<LoginWidget> {
+class _UpdateSchoolWidgetState extends State<UpdateSchoolWidget> {
   late TextTheme _textTheme;
   late Brightness _brightness;
-  late TextEditingController _nameController;
   late TextEditingController _schoolController;
   late ValueNotifier<String> _schoolType;
   late GlobalKey<FormState> _formKey;
@@ -30,11 +29,15 @@ class _LoginWidgetState extends State<LoginWidget> {
   @override
   void initState() {
     super.initState();
-    _nameController = TextEditingController();
     _schoolController = TextEditingController();
     _schoolType = ValueNotifier('sma');
     _formKey = GlobalKey<FormState>();
     _helper = Helper();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final user = context.read<AuthBloc>().state;
+      _schoolType.value = user.user?.schoolType ?? 'sma';
+      _schoolController.text = user.user?.schoolName ?? '';
+    });
   }
 
   @override
@@ -47,7 +50,6 @@ class _LoginWidgetState extends State<LoginWidget> {
   @override
   void dispose() {
     super.dispose();
-    _nameController.dispose();
     _schoolController.dispose();
     _schoolType.dispose();
   }
@@ -91,6 +93,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      Text(
+                        'Update Data Sekolah',
+                        style: _textTheme.bodyLarge?.copyWith(
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+
                       /// SCHOOL TYPE
                       _buildSchoolTypeWidget(isDark),
 
@@ -137,7 +147,6 @@ class _LoginWidgetState extends State<LoginWidget> {
             child: InkWell(
               onTap: () {
                 _schoolType.value = 'sma';
-                _nameController.clear();
                 _schoolController.clear();
               },
               child: Container(
@@ -179,7 +188,6 @@ class _LoginWidgetState extends State<LoginWidget> {
             child: InkWell(
               onTap: () {
                 _schoolType.value = 'smk';
-                _nameController.clear();
                 _schoolController.clear();
               },
               child: Container(
@@ -229,47 +237,6 @@ class _LoginWidgetState extends State<LoginWidget> {
       },
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       children: [
-        /// NAMA
-        TableRow(
-          children: [
-            TableCell(
-              child: Text(
-                'Nama',
-                style: _textTheme.bodyMedium?.copyWith(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            TableCell(
-              child: FormFieldWidget(
-                textEditingController: _nameController,
-                outlineBorderColor: CustomColors.grey400,
-                borderWidth: 1,
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.w, horizontal: 20.h),
-                fillColor: isDark ? CustomColors.dark : CustomColors.light,
-                formFieldValidator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Nama tidak boleh kosong!';
-                  }
-                  return null;
-                },
-              ),
-            ),
-          ],
-        ),
-
-        /// SPACING
-        TableRow(
-          children: List.generate(
-            2,
-            (i) => SizedBox(
-              height: 15.w,
-            ),
-          ),
-        ),
-
         /// SEKOLAH
         TableRow(
           children: [
@@ -327,15 +294,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                 _helper.showToast(
                     message: message, backGroundColor: CustomColors.redLight);
               },
-              successCreateAccount: (user) {
-                if (user != null) {
-                  _helper.showToast(message: 'Success created account');
-                  context.goNamed('main-menu');
-                } else {
-                  _helper.showToast(
-                      message: 'Terjadi kesalahan, mohon ulangi lagi',
-                      backGroundColor: CustomColors.redLight);
-                }
+              successUpdateSchool: (user, message) {
+                _helper.showToast(message: message);
+                context.pop();
               },
             );
           },
@@ -343,8 +304,7 @@ class _LoginWidgetState extends State<LoginWidget> {
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 FocusScope.of(context).requestFocus(FocusNode());
-                context.read<AuthBloc>().add(AuthEvent.createAccountEvent(
-                    name: _nameController.text.trim(),
+                context.read<AuthBloc>().add(AuthEvent.updateUserSchool(
                     schoolType: _schoolType.value,
                     schoolName: _schoolController.text.trim()));
               }
@@ -358,13 +318,13 @@ class _LoginWidgetState extends State<LoginWidget> {
               ),
             ),
             child: state.maybeWhen(
-              loadingCreateAccount: (_) => LoadingWidget(
+              loadingUpdateSchool: (_) => LoadingWidget(
                 isWave: false,
                 treeBounceColor: Colors.white,
                 size: 18.sp,
               ),
               orElse: () => Text(
-                'Konfirmasi',
+                'Update',
                 style: _textTheme.bodyLarge?.copyWith(
                   fontSize: 18.sp,
                   color: Colors.white,
@@ -379,11 +339,11 @@ class _LoginWidgetState extends State<LoginWidget> {
   }
 }
 
-Future<bool?> showLoginModalBottomSheet(BuildContext context) async {
+Future<bool?> showUpdateSchoolModalBottomSheet(BuildContext context) async {
   return showModalBottomSheet(
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
-    builder: (context) => LoginWidget(),
+    builder: (context) => UpdateSchoolWidget(),
   );
 }

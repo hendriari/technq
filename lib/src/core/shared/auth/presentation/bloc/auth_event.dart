@@ -13,4 +13,9 @@ sealed class AuthEvent with _$AuthEvent {
   }) = CreateAccountEvent;
 
   const factory AuthEvent.getDetailUserEvent() = GetDetailUserEvent;
+
+  const factory AuthEvent.updateUserSchool({
+    required String schoolName,
+    required String schoolType,
+  }) = UpdateUserSchoolEvent;
 }

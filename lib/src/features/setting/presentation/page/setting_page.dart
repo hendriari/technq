@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:technq/src/core/shared/auth/presentation/auth_bloc.dart';
-import 'package:technq/src/core/shared/auth/presentation/auth_state.dart';
+import 'package:technq/src/core/shared/auth/presentation/bloc/auth_bloc.dart';
+import 'package:technq/src/core/shared/auth/presentation/bloc/auth_state.dart';
+import 'package:technq/src/core/shared/auth/presentation/widget/update_school_widget.dart';
 import 'package:technq/src/core/shared/brightness_theme/presentation/bloc/brightness_theme_bloc.dart';
 import 'package:technq/src/core/shared/brightness_theme/presentation/bloc/brightness_theme_event.dart';
 import 'package:technq/src/core/shared/brightness_theme/presentation/bloc/brightness_theme_state.dart';
@@ -97,7 +98,9 @@ class _SettingPageState extends State<SettingPage> {
 
             /// UPDATE SEKOLAH
             Bounceable(
-              onTap: () {},
+              onTap: () {
+                showUpdateSchoolModalBottomSheet(context);
+              },
               child: _buildRowWidget(
                 icon: CupertinoIcons.pen,
                 title: 'Update Sekolah',

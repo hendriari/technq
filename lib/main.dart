@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:technq/src/core/config/firenbase_config.dart';
 import 'package:technq/src/core/injection/injector.dart';
-import 'package:technq/src/core/shared/auth/presentation/auth_bloc.dart';
+import 'package:technq/src/core/shared/auth/presentation/bloc/auth_bloc.dart';
 import 'package:technq/src/core/shared/brightness_theme/presentation/bloc/brightness_theme_bloc.dart';
 import 'package:technq/src/core/shared/menu/bloc/menu_bloc.dart';
 import 'package:technq/src/features/ahp/presentation/bloc/ahp_bloc.dart';
@@ -45,7 +45,8 @@ Future<void> main() async {
           create: (_) => AuthBloc(
               checkTokenUsecase: getIt(),
               createAccountUsecase: getIt(),
-              getUserDataUsecase: getIt()),
+              getUserDataUsecase: getIt(),
+              updateUserSchoolUsecase: getIt()),
         ),
         BlocProvider(create: (_) => MenuBloc()),
         BlocProvider(

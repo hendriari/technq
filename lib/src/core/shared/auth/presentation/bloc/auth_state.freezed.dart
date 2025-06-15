@@ -27,6 +27,9 @@ mixin _$AuthState {
     required TResult Function(UserEntities? user) successCreateAccount,
     required TResult Function(UserEntities? user) loadingGetAccount,
     required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user) loadingUpdateSchool,
+    required TResult Function(UserEntities? user, String message)
+        successUpdateSchool,
     required TResult Function(UserEntities? user, String message) failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -40,6 +43,8 @@ mixin _$AuthState {
     TResult? Function(UserEntities? user)? successCreateAccount,
     TResult? Function(UserEntities? user)? loadingGetAccount,
     TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user)? loadingUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? successUpdateSchool,
     TResult? Function(UserEntities? user, String message)? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +58,8 @@ mixin _$AuthState {
     TResult Function(UserEntities? user)? successCreateAccount,
     TResult Function(UserEntities? user)? loadingGetAccount,
     TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user)? loadingUpdateSchool,
+    TResult Function(UserEntities? user, String message)? successUpdateSchool,
     TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) =>
@@ -66,6 +73,8 @@ mixin _$AuthState {
     required TResult Function(_SuccessCreateAccount value) successCreateAccount,
     required TResult Function(_LoadingGetAccount value) loadingGetAccount,
     required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_LoadingUpdateSchool value) loadingUpdateSchool,
+    required TResult Function(_SuccessUpdateSchool value) successUpdateSchool,
     required TResult Function(_Failed value) failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -78,6 +87,8 @@ mixin _$AuthState {
     TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult? Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult? Function(_Failed value)? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -90,6 +101,8 @@ mixin _$AuthState {
     TResult Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) =>
@@ -232,6 +245,9 @@ class _$InitImpl implements _Init {
     required TResult Function(UserEntities? user) successCreateAccount,
     required TResult Function(UserEntities? user) loadingGetAccount,
     required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user) loadingUpdateSchool,
+    required TResult Function(UserEntities? user, String message)
+        successUpdateSchool,
     required TResult Function(UserEntities? user, String message) failed,
   }) {
     return initial(user);
@@ -248,6 +264,8 @@ class _$InitImpl implements _Init {
     TResult? Function(UserEntities? user)? successCreateAccount,
     TResult? Function(UserEntities? user)? loadingGetAccount,
     TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user)? loadingUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? successUpdateSchool,
     TResult? Function(UserEntities? user, String message)? failed,
   }) {
     return initial?.call(user);
@@ -264,6 +282,8 @@ class _$InitImpl implements _Init {
     TResult Function(UserEntities? user)? successCreateAccount,
     TResult Function(UserEntities? user)? loadingGetAccount,
     TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user)? loadingUpdateSchool,
+    TResult Function(UserEntities? user, String message)? successUpdateSchool,
     TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) {
@@ -283,6 +303,8 @@ class _$InitImpl implements _Init {
     required TResult Function(_SuccessCreateAccount value) successCreateAccount,
     required TResult Function(_LoadingGetAccount value) loadingGetAccount,
     required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_LoadingUpdateSchool value) loadingUpdateSchool,
+    required TResult Function(_SuccessUpdateSchool value) successUpdateSchool,
     required TResult Function(_Failed value) failed,
   }) {
     return initial(this);
@@ -298,6 +320,8 @@ class _$InitImpl implements _Init {
     TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult? Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult? Function(_Failed value)? failed,
   }) {
     return initial?.call(this);
@@ -313,6 +337,8 @@ class _$InitImpl implements _Init {
     TResult Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -420,6 +446,9 @@ class _$LoadingCheckTokenImpl implements _LoadingCheckToken {
     required TResult Function(UserEntities? user) successCreateAccount,
     required TResult Function(UserEntities? user) loadingGetAccount,
     required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user) loadingUpdateSchool,
+    required TResult Function(UserEntities? user, String message)
+        successUpdateSchool,
     required TResult Function(UserEntities? user, String message) failed,
   }) {
     return loadingCheckToken(user);
@@ -436,6 +465,8 @@ class _$LoadingCheckTokenImpl implements _LoadingCheckToken {
     TResult? Function(UserEntities? user)? successCreateAccount,
     TResult? Function(UserEntities? user)? loadingGetAccount,
     TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user)? loadingUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? successUpdateSchool,
     TResult? Function(UserEntities? user, String message)? failed,
   }) {
     return loadingCheckToken?.call(user);
@@ -452,6 +483,8 @@ class _$LoadingCheckTokenImpl implements _LoadingCheckToken {
     TResult Function(UserEntities? user)? successCreateAccount,
     TResult Function(UserEntities? user)? loadingGetAccount,
     TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user)? loadingUpdateSchool,
+    TResult Function(UserEntities? user, String message)? successUpdateSchool,
     TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) {
@@ -471,6 +504,8 @@ class _$LoadingCheckTokenImpl implements _LoadingCheckToken {
     required TResult Function(_SuccessCreateAccount value) successCreateAccount,
     required TResult Function(_LoadingGetAccount value) loadingGetAccount,
     required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_LoadingUpdateSchool value) loadingUpdateSchool,
+    required TResult Function(_SuccessUpdateSchool value) successUpdateSchool,
     required TResult Function(_Failed value) failed,
   }) {
     return loadingCheckToken(this);
@@ -486,6 +521,8 @@ class _$LoadingCheckTokenImpl implements _LoadingCheckToken {
     TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult? Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult? Function(_Failed value)? failed,
   }) {
     return loadingCheckToken?.call(this);
@@ -501,6 +538,8 @@ class _$LoadingCheckTokenImpl implements _LoadingCheckToken {
     TResult Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -619,6 +658,9 @@ class _$SuccessCheckTokenImpl implements _SuccessCheckToken {
     required TResult Function(UserEntities? user) successCreateAccount,
     required TResult Function(UserEntities? user) loadingGetAccount,
     required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user) loadingUpdateSchool,
+    required TResult Function(UserEntities? user, String message)
+        successUpdateSchool,
     required TResult Function(UserEntities? user, String message) failed,
   }) {
     return successCheckToken(user, isAuthenticated);
@@ -635,6 +677,8 @@ class _$SuccessCheckTokenImpl implements _SuccessCheckToken {
     TResult? Function(UserEntities? user)? successCreateAccount,
     TResult? Function(UserEntities? user)? loadingGetAccount,
     TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user)? loadingUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? successUpdateSchool,
     TResult? Function(UserEntities? user, String message)? failed,
   }) {
     return successCheckToken?.call(user, isAuthenticated);
@@ -651,6 +695,8 @@ class _$SuccessCheckTokenImpl implements _SuccessCheckToken {
     TResult Function(UserEntities? user)? successCreateAccount,
     TResult Function(UserEntities? user)? loadingGetAccount,
     TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user)? loadingUpdateSchool,
+    TResult Function(UserEntities? user, String message)? successUpdateSchool,
     TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) {
@@ -670,6 +716,8 @@ class _$SuccessCheckTokenImpl implements _SuccessCheckToken {
     required TResult Function(_SuccessCreateAccount value) successCreateAccount,
     required TResult Function(_LoadingGetAccount value) loadingGetAccount,
     required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_LoadingUpdateSchool value) loadingUpdateSchool,
+    required TResult Function(_SuccessUpdateSchool value) successUpdateSchool,
     required TResult Function(_Failed value) failed,
   }) {
     return successCheckToken(this);
@@ -685,6 +733,8 @@ class _$SuccessCheckTokenImpl implements _SuccessCheckToken {
     TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult? Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult? Function(_Failed value)? failed,
   }) {
     return successCheckToken?.call(this);
@@ -700,6 +750,8 @@ class _$SuccessCheckTokenImpl implements _SuccessCheckToken {
     TResult Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -811,6 +863,9 @@ class _$LoadingCreateAccountImpl implements _LoadingCreateAccount {
     required TResult Function(UserEntities? user) successCreateAccount,
     required TResult Function(UserEntities? user) loadingGetAccount,
     required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user) loadingUpdateSchool,
+    required TResult Function(UserEntities? user, String message)
+        successUpdateSchool,
     required TResult Function(UserEntities? user, String message) failed,
   }) {
     return loadingCreateAccount(user);
@@ -827,6 +882,8 @@ class _$LoadingCreateAccountImpl implements _LoadingCreateAccount {
     TResult? Function(UserEntities? user)? successCreateAccount,
     TResult? Function(UserEntities? user)? loadingGetAccount,
     TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user)? loadingUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? successUpdateSchool,
     TResult? Function(UserEntities? user, String message)? failed,
   }) {
     return loadingCreateAccount?.call(user);
@@ -843,6 +900,8 @@ class _$LoadingCreateAccountImpl implements _LoadingCreateAccount {
     TResult Function(UserEntities? user)? successCreateAccount,
     TResult Function(UserEntities? user)? loadingGetAccount,
     TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user)? loadingUpdateSchool,
+    TResult Function(UserEntities? user, String message)? successUpdateSchool,
     TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) {
@@ -862,6 +921,8 @@ class _$LoadingCreateAccountImpl implements _LoadingCreateAccount {
     required TResult Function(_SuccessCreateAccount value) successCreateAccount,
     required TResult Function(_LoadingGetAccount value) loadingGetAccount,
     required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_LoadingUpdateSchool value) loadingUpdateSchool,
+    required TResult Function(_SuccessUpdateSchool value) successUpdateSchool,
     required TResult Function(_Failed value) failed,
   }) {
     return loadingCreateAccount(this);
@@ -877,6 +938,8 @@ class _$LoadingCreateAccountImpl implements _LoadingCreateAccount {
     TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult? Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult? Function(_Failed value)? failed,
   }) {
     return loadingCreateAccount?.call(this);
@@ -892,6 +955,8 @@ class _$LoadingCreateAccountImpl implements _LoadingCreateAccount {
     TResult Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -1001,6 +1066,9 @@ class _$SuccessCreateAccountImpl implements _SuccessCreateAccount {
     required TResult Function(UserEntities? user) successCreateAccount,
     required TResult Function(UserEntities? user) loadingGetAccount,
     required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user) loadingUpdateSchool,
+    required TResult Function(UserEntities? user, String message)
+        successUpdateSchool,
     required TResult Function(UserEntities? user, String message) failed,
   }) {
     return successCreateAccount(user);
@@ -1017,6 +1085,8 @@ class _$SuccessCreateAccountImpl implements _SuccessCreateAccount {
     TResult? Function(UserEntities? user)? successCreateAccount,
     TResult? Function(UserEntities? user)? loadingGetAccount,
     TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user)? loadingUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? successUpdateSchool,
     TResult? Function(UserEntities? user, String message)? failed,
   }) {
     return successCreateAccount?.call(user);
@@ -1033,6 +1103,8 @@ class _$SuccessCreateAccountImpl implements _SuccessCreateAccount {
     TResult Function(UserEntities? user)? successCreateAccount,
     TResult Function(UserEntities? user)? loadingGetAccount,
     TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user)? loadingUpdateSchool,
+    TResult Function(UserEntities? user, String message)? successUpdateSchool,
     TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) {
@@ -1052,6 +1124,8 @@ class _$SuccessCreateAccountImpl implements _SuccessCreateAccount {
     required TResult Function(_SuccessCreateAccount value) successCreateAccount,
     required TResult Function(_LoadingGetAccount value) loadingGetAccount,
     required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_LoadingUpdateSchool value) loadingUpdateSchool,
+    required TResult Function(_SuccessUpdateSchool value) successUpdateSchool,
     required TResult Function(_Failed value) failed,
   }) {
     return successCreateAccount(this);
@@ -1067,6 +1141,8 @@ class _$SuccessCreateAccountImpl implements _SuccessCreateAccount {
     TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult? Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult? Function(_Failed value)? failed,
   }) {
     return successCreateAccount?.call(this);
@@ -1082,6 +1158,8 @@ class _$SuccessCreateAccountImpl implements _SuccessCreateAccount {
     TResult Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -1190,6 +1268,9 @@ class _$LoadingGetAccountImpl implements _LoadingGetAccount {
     required TResult Function(UserEntities? user) successCreateAccount,
     required TResult Function(UserEntities? user) loadingGetAccount,
     required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user) loadingUpdateSchool,
+    required TResult Function(UserEntities? user, String message)
+        successUpdateSchool,
     required TResult Function(UserEntities? user, String message) failed,
   }) {
     return loadingGetAccount(user);
@@ -1206,6 +1287,8 @@ class _$LoadingGetAccountImpl implements _LoadingGetAccount {
     TResult? Function(UserEntities? user)? successCreateAccount,
     TResult? Function(UserEntities? user)? loadingGetAccount,
     TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user)? loadingUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? successUpdateSchool,
     TResult? Function(UserEntities? user, String message)? failed,
   }) {
     return loadingGetAccount?.call(user);
@@ -1222,6 +1305,8 @@ class _$LoadingGetAccountImpl implements _LoadingGetAccount {
     TResult Function(UserEntities? user)? successCreateAccount,
     TResult Function(UserEntities? user)? loadingGetAccount,
     TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user)? loadingUpdateSchool,
+    TResult Function(UserEntities? user, String message)? successUpdateSchool,
     TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) {
@@ -1241,6 +1326,8 @@ class _$LoadingGetAccountImpl implements _LoadingGetAccount {
     required TResult Function(_SuccessCreateAccount value) successCreateAccount,
     required TResult Function(_LoadingGetAccount value) loadingGetAccount,
     required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_LoadingUpdateSchool value) loadingUpdateSchool,
+    required TResult Function(_SuccessUpdateSchool value) successUpdateSchool,
     required TResult Function(_Failed value) failed,
   }) {
     return loadingGetAccount(this);
@@ -1256,6 +1343,8 @@ class _$LoadingGetAccountImpl implements _LoadingGetAccount {
     TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult? Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult? Function(_Failed value)? failed,
   }) {
     return loadingGetAccount?.call(this);
@@ -1271,6 +1360,8 @@ class _$LoadingGetAccountImpl implements _LoadingGetAccount {
     TResult Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -1379,6 +1470,9 @@ class _$SuccessGetAccountImpl implements _SuccessGetAccount {
     required TResult Function(UserEntities? user) successCreateAccount,
     required TResult Function(UserEntities? user) loadingGetAccount,
     required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user) loadingUpdateSchool,
+    required TResult Function(UserEntities? user, String message)
+        successUpdateSchool,
     required TResult Function(UserEntities? user, String message) failed,
   }) {
     return successGetAccount(user);
@@ -1395,6 +1489,8 @@ class _$SuccessGetAccountImpl implements _SuccessGetAccount {
     TResult? Function(UserEntities? user)? successCreateAccount,
     TResult? Function(UserEntities? user)? loadingGetAccount,
     TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user)? loadingUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? successUpdateSchool,
     TResult? Function(UserEntities? user, String message)? failed,
   }) {
     return successGetAccount?.call(user);
@@ -1411,6 +1507,8 @@ class _$SuccessGetAccountImpl implements _SuccessGetAccount {
     TResult Function(UserEntities? user)? successCreateAccount,
     TResult Function(UserEntities? user)? loadingGetAccount,
     TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user)? loadingUpdateSchool,
+    TResult Function(UserEntities? user, String message)? successUpdateSchool,
     TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) {
@@ -1430,6 +1528,8 @@ class _$SuccessGetAccountImpl implements _SuccessGetAccount {
     required TResult Function(_SuccessCreateAccount value) successCreateAccount,
     required TResult Function(_LoadingGetAccount value) loadingGetAccount,
     required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_LoadingUpdateSchool value) loadingUpdateSchool,
+    required TResult Function(_SuccessUpdateSchool value) successUpdateSchool,
     required TResult Function(_Failed value) failed,
   }) {
     return successGetAccount(this);
@@ -1445,6 +1545,8 @@ class _$SuccessGetAccountImpl implements _SuccessGetAccount {
     TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult? Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult? Function(_Failed value)? failed,
   }) {
     return successGetAccount?.call(this);
@@ -1460,6 +1562,8 @@ class _$SuccessGetAccountImpl implements _SuccessGetAccount {
     TResult Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -1482,6 +1586,420 @@ abstract class _SuccessGetAccount implements AuthState {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessGetAccountImplCopyWith<_$SuccessGetAccountImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadingUpdateSchoolImplCopyWith<$Res>
+    implements $AuthStateCopyWith<$Res> {
+  factory _$$LoadingUpdateSchoolImplCopyWith(_$LoadingUpdateSchoolImpl value,
+          $Res Function(_$LoadingUpdateSchoolImpl) then) =
+      __$$LoadingUpdateSchoolImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({UserEntities? user});
+
+  @override
+  $UserEntitiesCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class __$$LoadingUpdateSchoolImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$LoadingUpdateSchoolImpl>
+    implements _$$LoadingUpdateSchoolImplCopyWith<$Res> {
+  __$$LoadingUpdateSchoolImplCopyWithImpl(_$LoadingUpdateSchoolImpl _value,
+      $Res Function(_$LoadingUpdateSchoolImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_$LoadingUpdateSchoolImpl(
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserEntities?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadingUpdateSchoolImpl implements _LoadingUpdateSchool {
+  const _$LoadingUpdateSchoolImpl({this.user = null});
+
+  @override
+  @JsonKey()
+  final UserEntities? user;
+
+  @override
+  String toString() {
+    return 'AuthState.loadingUpdateSchool(user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingUpdateSchoolImpl &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadingUpdateSchoolImplCopyWith<_$LoadingUpdateSchoolImpl> get copyWith =>
+      __$$LoadingUpdateSchoolImplCopyWithImpl<_$LoadingUpdateSchoolImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserEntities? user) initial,
+    required TResult Function(UserEntities? user) loadingCheckToken,
+    required TResult Function(UserEntities? user, bool isAuthenticated)
+        successCheckToken,
+    required TResult Function(UserEntities? user) loadingCreateAccount,
+    required TResult Function(UserEntities? user) successCreateAccount,
+    required TResult Function(UserEntities? user) loadingGetAccount,
+    required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user) loadingUpdateSchool,
+    required TResult Function(UserEntities? user, String message)
+        successUpdateSchool,
+    required TResult Function(UserEntities? user, String message) failed,
+  }) {
+    return loadingUpdateSchool(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(UserEntities? user)? initial,
+    TResult? Function(UserEntities? user)? loadingCheckToken,
+    TResult? Function(UserEntities? user, bool isAuthenticated)?
+        successCheckToken,
+    TResult? Function(UserEntities? user)? loadingCreateAccount,
+    TResult? Function(UserEntities? user)? successCreateAccount,
+    TResult? Function(UserEntities? user)? loadingGetAccount,
+    TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user)? loadingUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? successUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? failed,
+  }) {
+    return loadingUpdateSchool?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserEntities? user)? initial,
+    TResult Function(UserEntities? user)? loadingCheckToken,
+    TResult Function(UserEntities? user, bool isAuthenticated)?
+        successCheckToken,
+    TResult Function(UserEntities? user)? loadingCreateAccount,
+    TResult Function(UserEntities? user)? successCreateAccount,
+    TResult Function(UserEntities? user)? loadingGetAccount,
+    TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user)? loadingUpdateSchool,
+    TResult Function(UserEntities? user, String message)? successUpdateSchool,
+    TResult Function(UserEntities? user, String message)? failed,
+    required TResult orElse(),
+  }) {
+    if (loadingUpdateSchool != null) {
+      return loadingUpdateSchool(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Init value) initial,
+    required TResult Function(_LoadingCheckToken value) loadingCheckToken,
+    required TResult Function(_SuccessCheckToken value) successCheckToken,
+    required TResult Function(_LoadingCreateAccount value) loadingCreateAccount,
+    required TResult Function(_SuccessCreateAccount value) successCreateAccount,
+    required TResult Function(_LoadingGetAccount value) loadingGetAccount,
+    required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_LoadingUpdateSchool value) loadingUpdateSchool,
+    required TResult Function(_SuccessUpdateSchool value) successUpdateSchool,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return loadingUpdateSchool(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Init value)? initial,
+    TResult? Function(_LoadingCheckToken value)? loadingCheckToken,
+    TResult? Function(_SuccessCheckToken value)? successCheckToken,
+    TResult? Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult? Function(_SuccessUpdateSchool value)? successUpdateSchool,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return loadingUpdateSchool?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Init value)? initial,
+    TResult Function(_LoadingCheckToken value)? loadingCheckToken,
+    TResult Function(_SuccessCheckToken value)? successCheckToken,
+    TResult Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult Function(_SuccessUpdateSchool value)? successUpdateSchool,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (loadingUpdateSchool != null) {
+      return loadingUpdateSchool(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingUpdateSchool implements AuthState {
+  const factory _LoadingUpdateSchool({final UserEntities? user}) =
+      _$LoadingUpdateSchoolImpl;
+
+  @override
+  UserEntities? get user;
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadingUpdateSchoolImplCopyWith<_$LoadingUpdateSchoolImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessUpdateSchoolImplCopyWith<$Res>
+    implements $AuthStateCopyWith<$Res> {
+  factory _$$SuccessUpdateSchoolImplCopyWith(_$SuccessUpdateSchoolImpl value,
+          $Res Function(_$SuccessUpdateSchoolImpl) then) =
+      __$$SuccessUpdateSchoolImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({UserEntities? user, String message});
+
+  @override
+  $UserEntitiesCopyWith<$Res>? get user;
+}
+
+/// @nodoc
+class __$$SuccessUpdateSchoolImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$SuccessUpdateSchoolImpl>
+    implements _$$SuccessUpdateSchoolImplCopyWith<$Res> {
+  __$$SuccessUpdateSchoolImplCopyWithImpl(_$SuccessUpdateSchoolImpl _value,
+      $Res Function(_$SuccessUpdateSchoolImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? user = freezed,
+    Object? message = null,
+  }) {
+    return _then(_$SuccessUpdateSchoolImpl(
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as UserEntities?,
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessUpdateSchoolImpl implements _SuccessUpdateSchool {
+  const _$SuccessUpdateSchoolImpl({this.user = null, required this.message});
+
+  @override
+  @JsonKey()
+  final UserEntities? user;
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'AuthState.successUpdateSchool(user: $user, message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessUpdateSchoolImpl &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, user, message);
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessUpdateSchoolImplCopyWith<_$SuccessUpdateSchoolImpl> get copyWith =>
+      __$$SuccessUpdateSchoolImplCopyWithImpl<_$SuccessUpdateSchoolImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserEntities? user) initial,
+    required TResult Function(UserEntities? user) loadingCheckToken,
+    required TResult Function(UserEntities? user, bool isAuthenticated)
+        successCheckToken,
+    required TResult Function(UserEntities? user) loadingCreateAccount,
+    required TResult Function(UserEntities? user) successCreateAccount,
+    required TResult Function(UserEntities? user) loadingGetAccount,
+    required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user) loadingUpdateSchool,
+    required TResult Function(UserEntities? user, String message)
+        successUpdateSchool,
+    required TResult Function(UserEntities? user, String message) failed,
+  }) {
+    return successUpdateSchool(user, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(UserEntities? user)? initial,
+    TResult? Function(UserEntities? user)? loadingCheckToken,
+    TResult? Function(UserEntities? user, bool isAuthenticated)?
+        successCheckToken,
+    TResult? Function(UserEntities? user)? loadingCreateAccount,
+    TResult? Function(UserEntities? user)? successCreateAccount,
+    TResult? Function(UserEntities? user)? loadingGetAccount,
+    TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user)? loadingUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? successUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? failed,
+  }) {
+    return successUpdateSchool?.call(user, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserEntities? user)? initial,
+    TResult Function(UserEntities? user)? loadingCheckToken,
+    TResult Function(UserEntities? user, bool isAuthenticated)?
+        successCheckToken,
+    TResult Function(UserEntities? user)? loadingCreateAccount,
+    TResult Function(UserEntities? user)? successCreateAccount,
+    TResult Function(UserEntities? user)? loadingGetAccount,
+    TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user)? loadingUpdateSchool,
+    TResult Function(UserEntities? user, String message)? successUpdateSchool,
+    TResult Function(UserEntities? user, String message)? failed,
+    required TResult orElse(),
+  }) {
+    if (successUpdateSchool != null) {
+      return successUpdateSchool(user, message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Init value) initial,
+    required TResult Function(_LoadingCheckToken value) loadingCheckToken,
+    required TResult Function(_SuccessCheckToken value) successCheckToken,
+    required TResult Function(_LoadingCreateAccount value) loadingCreateAccount,
+    required TResult Function(_SuccessCreateAccount value) successCreateAccount,
+    required TResult Function(_LoadingGetAccount value) loadingGetAccount,
+    required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_LoadingUpdateSchool value) loadingUpdateSchool,
+    required TResult Function(_SuccessUpdateSchool value) successUpdateSchool,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return successUpdateSchool(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Init value)? initial,
+    TResult? Function(_LoadingCheckToken value)? loadingCheckToken,
+    TResult? Function(_SuccessCheckToken value)? successCheckToken,
+    TResult? Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult? Function(_SuccessUpdateSchool value)? successUpdateSchool,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return successUpdateSchool?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Init value)? initial,
+    TResult Function(_LoadingCheckToken value)? loadingCheckToken,
+    TResult Function(_SuccessCheckToken value)? successCheckToken,
+    TResult Function(_LoadingCreateAccount value)? loadingCreateAccount,
+    TResult Function(_SuccessCreateAccount value)? successCreateAccount,
+    TResult Function(_LoadingGetAccount value)? loadingGetAccount,
+    TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult Function(_SuccessUpdateSchool value)? successUpdateSchool,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (successUpdateSchool != null) {
+      return successUpdateSchool(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessUpdateSchool implements AuthState {
+  const factory _SuccessUpdateSchool(
+      {final UserEntities? user,
+      required final String message}) = _$SuccessUpdateSchoolImpl;
+
+  @override
+  UserEntities? get user;
+  String get message;
+
+  /// Create a copy of AuthState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessUpdateSchoolImplCopyWith<_$SuccessUpdateSchoolImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1574,6 +2092,9 @@ class _$FailedImpl implements _Failed {
     required TResult Function(UserEntities? user) successCreateAccount,
     required TResult Function(UserEntities? user) loadingGetAccount,
     required TResult Function(UserEntities? user) successGetAccount,
+    required TResult Function(UserEntities? user) loadingUpdateSchool,
+    required TResult Function(UserEntities? user, String message)
+        successUpdateSchool,
     required TResult Function(UserEntities? user, String message) failed,
   }) {
     return failed(user, message);
@@ -1590,6 +2111,8 @@ class _$FailedImpl implements _Failed {
     TResult? Function(UserEntities? user)? successCreateAccount,
     TResult? Function(UserEntities? user)? loadingGetAccount,
     TResult? Function(UserEntities? user)? successGetAccount,
+    TResult? Function(UserEntities? user)? loadingUpdateSchool,
+    TResult? Function(UserEntities? user, String message)? successUpdateSchool,
     TResult? Function(UserEntities? user, String message)? failed,
   }) {
     return failed?.call(user, message);
@@ -1606,6 +2129,8 @@ class _$FailedImpl implements _Failed {
     TResult Function(UserEntities? user)? successCreateAccount,
     TResult Function(UserEntities? user)? loadingGetAccount,
     TResult Function(UserEntities? user)? successGetAccount,
+    TResult Function(UserEntities? user)? loadingUpdateSchool,
+    TResult Function(UserEntities? user, String message)? successUpdateSchool,
     TResult Function(UserEntities? user, String message)? failed,
     required TResult orElse(),
   }) {
@@ -1625,6 +2150,8 @@ class _$FailedImpl implements _Failed {
     required TResult Function(_SuccessCreateAccount value) successCreateAccount,
     required TResult Function(_LoadingGetAccount value) loadingGetAccount,
     required TResult Function(_SuccessGetAccount value) successGetAccount,
+    required TResult Function(_LoadingUpdateSchool value) loadingUpdateSchool,
+    required TResult Function(_SuccessUpdateSchool value) successUpdateSchool,
     required TResult Function(_Failed value) failed,
   }) {
     return failed(this);
@@ -1640,6 +2167,8 @@ class _$FailedImpl implements _Failed {
     TResult? Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult? Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult? Function(_SuccessGetAccount value)? successGetAccount,
+    TResult? Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult? Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult? Function(_Failed value)? failed,
   }) {
     return failed?.call(this);
@@ -1655,6 +2184,8 @@ class _$FailedImpl implements _Failed {
     TResult Function(_SuccessCreateAccount value)? successCreateAccount,
     TResult Function(_LoadingGetAccount value)? loadingGetAccount,
     TResult Function(_SuccessGetAccount value)? successGetAccount,
+    TResult Function(_LoadingUpdateSchool value)? loadingUpdateSchool,
+    TResult Function(_SuccessUpdateSchool value)? successUpdateSchool,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
