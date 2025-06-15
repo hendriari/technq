@@ -25,6 +25,8 @@ import 'package:technq/src/core/shared/auth/domain/usecase/create_account_usecas
     as _i540;
 import 'package:technq/src/core/shared/auth/domain/usecase/get_user_data.usecase.dart'
     as _i401;
+import 'package:technq/src/core/shared/auth/domain/usecase/update_user_school_usecase.dart'
+    as _i917;
 import 'package:technq/src/core/shared/brightness_theme/data/datasource/brightness_theme_local_datasource.dart'
     as _i564;
 import 'package:technq/src/core/shared/brightness_theme/domain/repository/brightness_theme_repository.dart'
@@ -105,6 +107,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => injectorModule.createAccountUsecase);
     gh.lazySingleton<_i401.GetUserDataUsecase>(
         () => injectorModule.getUserDataUsecase);
+    gh.lazySingleton<_i917.UpdateUserSchoolUsecase>(
+        () => injectorModule.updateUserSchoolUsecase);
     return this;
   }
 }
@@ -161,4 +165,8 @@ class _$InjectorModule extends _i549.InjectorModule {
   @override
   _i401.GetUserDataUsecase get getUserDataUsecase =>
       _i401.GetUserDataUsecase(_getIt<_i941.AuthRepository>());
+
+  @override
+  _i917.UpdateUserSchoolUsecase get updateUserSchoolUsecase =>
+      _i917.UpdateUserSchoolUsecase(_getIt<_i941.AuthRepository>());
 }

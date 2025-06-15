@@ -9,6 +9,7 @@ import 'package:technq/src/core/shared/auth/domain/repository/auth_repository.da
 import 'package:technq/src/core/shared/auth/domain/usecase/check_token_usecase.dart';
 import 'package:technq/src/core/shared/auth/domain/usecase/create_account_usecase.dart';
 import 'package:technq/src/core/shared/auth/domain/usecase/get_user_data.usecase.dart';
+import 'package:technq/src/core/shared/auth/domain/usecase/update_user_school_usecase.dart';
 import 'package:technq/src/core/shared/brightness_theme/data/datasource/brightness_theme_local_datasource.dart';
 import 'package:technq/src/core/shared/brightness_theme/data/repository_impl/brightness_theme_repository_impl.dart';
 import 'package:technq/src/core/shared/brightness_theme/domain/repository/brightness_theme_repository.dart';
@@ -68,6 +69,9 @@ abstract class InjectorModule {
 
   @lazySingleton
   GetUserDataUsecase get getUserDataUsecase;
+
+  @lazySingleton
+  UpdateUserSchoolUsecase get updateUserSchoolUsecase;
 
   /// DASHBOARD
 

@@ -5,23 +5,27 @@ import 'package:technq/src/core/shared/auth/domain/entities/user_entities.dart';
 import 'package:technq/src/core/shared/auth/domain/usecase/check_token_usecase.dart';
 import 'package:technq/src/core/shared/auth/domain/usecase/create_account_usecase.dart';
 import 'package:technq/src/core/shared/auth/domain/usecase/get_user_data.usecase.dart';
-import 'package:technq/src/core/shared/auth/presentation/auth_event.dart';
-import 'package:technq/src/core/shared/auth/presentation/auth_state.dart';
+import 'package:technq/src/core/shared/auth/domain/usecase/update_user_school_usecase.dart';
+import 'package:technq/src/core/shared/auth/presentation/bloc/auth_event.dart';
+import 'package:technq/src/core/shared/auth/presentation/bloc/auth_state.dart';
 import 'package:technq/src/core/usecase/empty_param.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final CheckTokenUsecase checkTokenUsecase;
   final CreateAccountUsecase createAccountUsecase;
   final GetUserDataUsecase getUserDataUsecase;
+  final UpdateUserSchoolUsecase updateUserSchoolUsecase;
 
   AuthBloc({
     required this.checkTokenUsecase,
     required this.createAccountUsecase,
     required this.getUserDataUsecase,
+    required this.updateUserSchoolUsecase,
   }) : super(AuthState.initial()) {
     on<CheckTokenEvent>(_checkToken);
     on<CreateAccountEvent>(_createAccount);
     on<GetDetailUserEvent>(_getDetailUser);
+    on<UpdateUserSchoolEvent>(_updateSchool);
   }
 
   Future<void> _checkToken(AuthEvent event, Emitter<AuthState> emit) async {
@@ -64,6 +68,28 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     result.fold((failure) => AuthState.failed(message: failure.message),
         (data) {
       emit(AuthState.successGetAccount(user: data));
+    });
+  }
+
+  Future<void> _updateSchool(
+      UpdateUserSchoolEvent event, Emitter<AuthState> emit) async {
+    emit(AuthState.loadingUpdateSchool(user: state.user));
+
+    Either<Failure, String?> result = await updateUserSchoolUsecase.call(
+        UpdateUserSchoolParams(
+            schoolName: event.schoolName, schoolType: event.schoolType));
+
+    result.fold(
+        (failure) =>
+            emit(AuthState.failed(message: failure.message, user: state.user)),
+        (data) {
+      emit(
+        AuthState.successUpdateSchool(
+          message: data ?? 'Something wrong',
+          user: state.user?.copyWith(
+              schoolName: event.schoolName, schoolType: event.schoolType),
+        ),
+      );
     });
   }
 }

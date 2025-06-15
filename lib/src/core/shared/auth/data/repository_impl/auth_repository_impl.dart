@@ -56,4 +56,17 @@ class AuthRepositoryImpl extends AuthRepository {
       return Left(FailureMapper.firebaseError(e));
     }
   }
+
+  @override
+  Future<Either<Failure, String?>> updateUserSchool(
+      String schoolName, String schoolType) async {
+    try {
+      final result =
+          await _authRemoteDatasource.updateSchool(schoolName, schoolType);
+
+      return Right(result);
+    } catch (e) {
+      return Left(FailureMapper.firebaseError(e));
+    }
+  }
 }
