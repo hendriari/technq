@@ -12,4 +12,7 @@ abstract class AuthRepository {
   );
 
   Future<Either<Failure, UserEntities?>> getUserData();
+
+  Future<Either<Failure, String?>> updateUserSchool(
+      String schoolName, String schoolType);
 }

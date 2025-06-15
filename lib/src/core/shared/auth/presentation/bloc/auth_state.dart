@@ -34,6 +34,15 @@ sealed class AuthState with _$AuthState {
     @Default(null) UserEntities? user,
   }) = _SuccessGetAccount;
 
+  const factory AuthState.loadingUpdateSchool({
+    @Default(null) UserEntities? user,
+  }) = _LoadingUpdateSchool;
+
+  const factory AuthState.successUpdateSchool({
+    @Default(null) UserEntities? user,
+    required String message,
+  }) = _SuccessUpdateSchool;
+
   const factory AuthState.failed({
     @Default(null) UserEntities? user,
     required String message,

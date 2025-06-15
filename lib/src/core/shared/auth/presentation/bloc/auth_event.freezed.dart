@@ -22,6 +22,8 @@ mixin _$AuthEvent {
     required TResult Function(String name, String schoolType, String schoolName)
         createAccountEvent,
     required TResult Function() getDetailUserEvent,
+    required TResult Function(String schoolName, String schoolType)
+        updateUserSchool,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +32,7 @@ mixin _$AuthEvent {
     TResult? Function(String name, String schoolType, String schoolName)?
         createAccountEvent,
     TResult? Function()? getDetailUserEvent,
+    TResult? Function(String schoolName, String schoolType)? updateUserSchool,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +41,7 @@ mixin _$AuthEvent {
     TResult Function(String name, String schoolType, String schoolName)?
         createAccountEvent,
     TResult Function()? getDetailUserEvent,
+    TResult Function(String schoolName, String schoolType)? updateUserSchool,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -46,6 +50,7 @@ mixin _$AuthEvent {
     required TResult Function(CheckTokenEvent value) checkTokenEvent,
     required TResult Function(CreateAccountEvent value) createAccountEvent,
     required TResult Function(GetDetailUserEvent value) getDetailUserEvent,
+    required TResult Function(UpdateUserSchoolEvent value) updateUserSchool,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +58,7 @@ mixin _$AuthEvent {
     TResult? Function(CheckTokenEvent value)? checkTokenEvent,
     TResult? Function(CreateAccountEvent value)? createAccountEvent,
     TResult? Function(GetDetailUserEvent value)? getDetailUserEvent,
+    TResult? Function(UpdateUserSchoolEvent value)? updateUserSchool,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +66,7 @@ mixin _$AuthEvent {
     TResult Function(CheckTokenEvent value)? checkTokenEvent,
     TResult Function(CreateAccountEvent value)? createAccountEvent,
     TResult Function(GetDetailUserEvent value)? getDetailUserEvent,
+    TResult Function(UpdateUserSchoolEvent value)? updateUserSchool,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -130,6 +137,8 @@ class _$CheckTokenEventImpl implements CheckTokenEvent {
     required TResult Function(String name, String schoolType, String schoolName)
         createAccountEvent,
     required TResult Function() getDetailUserEvent,
+    required TResult Function(String schoolName, String schoolType)
+        updateUserSchool,
   }) {
     return checkTokenEvent();
   }
@@ -141,6 +150,7 @@ class _$CheckTokenEventImpl implements CheckTokenEvent {
     TResult? Function(String name, String schoolType, String schoolName)?
         createAccountEvent,
     TResult? Function()? getDetailUserEvent,
+    TResult? Function(String schoolName, String schoolType)? updateUserSchool,
   }) {
     return checkTokenEvent?.call();
   }
@@ -152,6 +162,7 @@ class _$CheckTokenEventImpl implements CheckTokenEvent {
     TResult Function(String name, String schoolType, String schoolName)?
         createAccountEvent,
     TResult Function()? getDetailUserEvent,
+    TResult Function(String schoolName, String schoolType)? updateUserSchool,
     required TResult orElse(),
   }) {
     if (checkTokenEvent != null) {
@@ -166,6 +177,7 @@ class _$CheckTokenEventImpl implements CheckTokenEvent {
     required TResult Function(CheckTokenEvent value) checkTokenEvent,
     required TResult Function(CreateAccountEvent value) createAccountEvent,
     required TResult Function(GetDetailUserEvent value) getDetailUserEvent,
+    required TResult Function(UpdateUserSchoolEvent value) updateUserSchool,
   }) {
     return checkTokenEvent(this);
   }
@@ -176,6 +188,7 @@ class _$CheckTokenEventImpl implements CheckTokenEvent {
     TResult? Function(CheckTokenEvent value)? checkTokenEvent,
     TResult? Function(CreateAccountEvent value)? createAccountEvent,
     TResult? Function(GetDetailUserEvent value)? getDetailUserEvent,
+    TResult? Function(UpdateUserSchoolEvent value)? updateUserSchool,
   }) {
     return checkTokenEvent?.call(this);
   }
@@ -186,6 +199,7 @@ class _$CheckTokenEventImpl implements CheckTokenEvent {
     TResult Function(CheckTokenEvent value)? checkTokenEvent,
     TResult Function(CreateAccountEvent value)? createAccountEvent,
     TResult Function(GetDetailUserEvent value)? getDetailUserEvent,
+    TResult Function(UpdateUserSchoolEvent value)? updateUserSchool,
     required TResult orElse(),
   }) {
     if (checkTokenEvent != null) {
@@ -291,6 +305,8 @@ class _$CreateAccountEventImpl implements CreateAccountEvent {
     required TResult Function(String name, String schoolType, String schoolName)
         createAccountEvent,
     required TResult Function() getDetailUserEvent,
+    required TResult Function(String schoolName, String schoolType)
+        updateUserSchool,
   }) {
     return createAccountEvent(name, schoolType, schoolName);
   }
@@ -302,6 +318,7 @@ class _$CreateAccountEventImpl implements CreateAccountEvent {
     TResult? Function(String name, String schoolType, String schoolName)?
         createAccountEvent,
     TResult? Function()? getDetailUserEvent,
+    TResult? Function(String schoolName, String schoolType)? updateUserSchool,
   }) {
     return createAccountEvent?.call(name, schoolType, schoolName);
   }
@@ -313,6 +330,7 @@ class _$CreateAccountEventImpl implements CreateAccountEvent {
     TResult Function(String name, String schoolType, String schoolName)?
         createAccountEvent,
     TResult Function()? getDetailUserEvent,
+    TResult Function(String schoolName, String schoolType)? updateUserSchool,
     required TResult orElse(),
   }) {
     if (createAccountEvent != null) {
@@ -327,6 +345,7 @@ class _$CreateAccountEventImpl implements CreateAccountEvent {
     required TResult Function(CheckTokenEvent value) checkTokenEvent,
     required TResult Function(CreateAccountEvent value) createAccountEvent,
     required TResult Function(GetDetailUserEvent value) getDetailUserEvent,
+    required TResult Function(UpdateUserSchoolEvent value) updateUserSchool,
   }) {
     return createAccountEvent(this);
   }
@@ -337,6 +356,7 @@ class _$CreateAccountEventImpl implements CreateAccountEvent {
     TResult? Function(CheckTokenEvent value)? checkTokenEvent,
     TResult? Function(CreateAccountEvent value)? createAccountEvent,
     TResult? Function(GetDetailUserEvent value)? getDetailUserEvent,
+    TResult? Function(UpdateUserSchoolEvent value)? updateUserSchool,
   }) {
     return createAccountEvent?.call(this);
   }
@@ -347,6 +367,7 @@ class _$CreateAccountEventImpl implements CreateAccountEvent {
     TResult Function(CheckTokenEvent value)? checkTokenEvent,
     TResult Function(CreateAccountEvent value)? createAccountEvent,
     TResult Function(GetDetailUserEvent value)? getDetailUserEvent,
+    TResult Function(UpdateUserSchoolEvent value)? updateUserSchool,
     required TResult orElse(),
   }) {
     if (createAccountEvent != null) {
@@ -418,6 +439,8 @@ class _$GetDetailUserEventImpl implements GetDetailUserEvent {
     required TResult Function(String name, String schoolType, String schoolName)
         createAccountEvent,
     required TResult Function() getDetailUserEvent,
+    required TResult Function(String schoolName, String schoolType)
+        updateUserSchool,
   }) {
     return getDetailUserEvent();
   }
@@ -429,6 +452,7 @@ class _$GetDetailUserEventImpl implements GetDetailUserEvent {
     TResult? Function(String name, String schoolType, String schoolName)?
         createAccountEvent,
     TResult? Function()? getDetailUserEvent,
+    TResult? Function(String schoolName, String schoolType)? updateUserSchool,
   }) {
     return getDetailUserEvent?.call();
   }
@@ -440,6 +464,7 @@ class _$GetDetailUserEventImpl implements GetDetailUserEvent {
     TResult Function(String name, String schoolType, String schoolName)?
         createAccountEvent,
     TResult Function()? getDetailUserEvent,
+    TResult Function(String schoolName, String schoolType)? updateUserSchool,
     required TResult orElse(),
   }) {
     if (getDetailUserEvent != null) {
@@ -454,6 +479,7 @@ class _$GetDetailUserEventImpl implements GetDetailUserEvent {
     required TResult Function(CheckTokenEvent value) checkTokenEvent,
     required TResult Function(CreateAccountEvent value) createAccountEvent,
     required TResult Function(GetDetailUserEvent value) getDetailUserEvent,
+    required TResult Function(UpdateUserSchoolEvent value) updateUserSchool,
   }) {
     return getDetailUserEvent(this);
   }
@@ -464,6 +490,7 @@ class _$GetDetailUserEventImpl implements GetDetailUserEvent {
     TResult? Function(CheckTokenEvent value)? checkTokenEvent,
     TResult? Function(CreateAccountEvent value)? createAccountEvent,
     TResult? Function(GetDetailUserEvent value)? getDetailUserEvent,
+    TResult? Function(UpdateUserSchoolEvent value)? updateUserSchool,
   }) {
     return getDetailUserEvent?.call(this);
   }
@@ -474,6 +501,7 @@ class _$GetDetailUserEventImpl implements GetDetailUserEvent {
     TResult Function(CheckTokenEvent value)? checkTokenEvent,
     TResult Function(CreateAccountEvent value)? createAccountEvent,
     TResult Function(GetDetailUserEvent value)? getDetailUserEvent,
+    TResult Function(UpdateUserSchoolEvent value)? updateUserSchool,
     required TResult orElse(),
   }) {
     if (getDetailUserEvent != null) {
@@ -485,4 +513,176 @@ class _$GetDetailUserEventImpl implements GetDetailUserEvent {
 
 abstract class GetDetailUserEvent implements AuthEvent {
   const factory GetDetailUserEvent() = _$GetDetailUserEventImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateUserSchoolEventImplCopyWith<$Res> {
+  factory _$$UpdateUserSchoolEventImplCopyWith(
+          _$UpdateUserSchoolEventImpl value,
+          $Res Function(_$UpdateUserSchoolEventImpl) then) =
+      __$$UpdateUserSchoolEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String schoolName, String schoolType});
+}
+
+/// @nodoc
+class __$$UpdateUserSchoolEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$UpdateUserSchoolEventImpl>
+    implements _$$UpdateUserSchoolEventImplCopyWith<$Res> {
+  __$$UpdateUserSchoolEventImplCopyWithImpl(_$UpdateUserSchoolEventImpl _value,
+      $Res Function(_$UpdateUserSchoolEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? schoolName = null,
+    Object? schoolType = null,
+  }) {
+    return _then(_$UpdateUserSchoolEventImpl(
+      schoolName: null == schoolName
+          ? _value.schoolName
+          : schoolName // ignore: cast_nullable_to_non_nullable
+              as String,
+      schoolType: null == schoolType
+          ? _value.schoolType
+          : schoolType // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateUserSchoolEventImpl implements UpdateUserSchoolEvent {
+  const _$UpdateUserSchoolEventImpl(
+      {required this.schoolName, required this.schoolType});
+
+  @override
+  final String schoolName;
+  @override
+  final String schoolType;
+
+  @override
+  String toString() {
+    return 'AuthEvent.updateUserSchool(schoolName: $schoolName, schoolType: $schoolType)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateUserSchoolEventImpl &&
+            (identical(other.schoolName, schoolName) ||
+                other.schoolName == schoolName) &&
+            (identical(other.schoolType, schoolType) ||
+                other.schoolType == schoolType));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, schoolName, schoolType);
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateUserSchoolEventImplCopyWith<_$UpdateUserSchoolEventImpl>
+      get copyWith => __$$UpdateUserSchoolEventImplCopyWithImpl<
+          _$UpdateUserSchoolEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() checkTokenEvent,
+    required TResult Function(String name, String schoolType, String schoolName)
+        createAccountEvent,
+    required TResult Function() getDetailUserEvent,
+    required TResult Function(String schoolName, String schoolType)
+        updateUserSchool,
+  }) {
+    return updateUserSchool(schoolName, schoolType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? checkTokenEvent,
+    TResult? Function(String name, String schoolType, String schoolName)?
+        createAccountEvent,
+    TResult? Function()? getDetailUserEvent,
+    TResult? Function(String schoolName, String schoolType)? updateUserSchool,
+  }) {
+    return updateUserSchool?.call(schoolName, schoolType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? checkTokenEvent,
+    TResult Function(String name, String schoolType, String schoolName)?
+        createAccountEvent,
+    TResult Function()? getDetailUserEvent,
+    TResult Function(String schoolName, String schoolType)? updateUserSchool,
+    required TResult orElse(),
+  }) {
+    if (updateUserSchool != null) {
+      return updateUserSchool(schoolName, schoolType);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CheckTokenEvent value) checkTokenEvent,
+    required TResult Function(CreateAccountEvent value) createAccountEvent,
+    required TResult Function(GetDetailUserEvent value) getDetailUserEvent,
+    required TResult Function(UpdateUserSchoolEvent value) updateUserSchool,
+  }) {
+    return updateUserSchool(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CheckTokenEvent value)? checkTokenEvent,
+    TResult? Function(CreateAccountEvent value)? createAccountEvent,
+    TResult? Function(GetDetailUserEvent value)? getDetailUserEvent,
+    TResult? Function(UpdateUserSchoolEvent value)? updateUserSchool,
+  }) {
+    return updateUserSchool?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CheckTokenEvent value)? checkTokenEvent,
+    TResult Function(CreateAccountEvent value)? createAccountEvent,
+    TResult Function(GetDetailUserEvent value)? getDetailUserEvent,
+    TResult Function(UpdateUserSchoolEvent value)? updateUserSchool,
+    required TResult orElse(),
+  }) {
+    if (updateUserSchool != null) {
+      return updateUserSchool(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateUserSchoolEvent implements AuthEvent {
+  const factory UpdateUserSchoolEvent(
+      {required final String schoolName,
+      required final String schoolType}) = _$UpdateUserSchoolEventImpl;
+
+  String get schoolName;
+  String get schoolType;
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UpdateUserSchoolEventImplCopyWith<_$UpdateUserSchoolEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

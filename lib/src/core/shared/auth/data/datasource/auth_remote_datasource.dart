@@ -12,6 +12,8 @@ abstract class AuthRemoteDatasource {
   );
 
   Future<UserDto?> getUserData();
+
+  Future<String?> updateSchool(String schoolName, String schoolType);
 }
 
 class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
@@ -84,6 +86,29 @@ class AuthRemoteDatasourceImpl extends AuthRemoteDatasource {
       }
 
       return null;
+    } catch (e) {
+      throw FailureMapper.firebaseError(e);
+    }
+  }
+
+  @override
+  Future<String?> updateSchool(String schoolName, String schoolType) async {
+    try {
+      final user = _firebaseServices.firebaseAuth.currentUser;
+
+      if (user != null) {
+        await _firebaseServices.firebaseFirestore
+            .collection('user')
+            .doc(user.uid)
+            .update({
+          "school_name": schoolName,
+          "school_type": schoolType,
+        });
+
+        return 'Success update school data';
+      }
+
+      return "User not found";
     } catch (e) {
       throw FailureMapper.firebaseError(e);
     }
