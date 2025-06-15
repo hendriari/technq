@@ -38,18 +38,17 @@ class AhpLocalDatasourceImpl extends AhpLocalDatasource {
 
         if (schoolType.toLowerCase() == 'sma') {
           for (int i = 0; i < 5; i++) {
-            final p = 'Pelajaran';
             criteria.add(
               Criteria(
                 name: i == 0
-                    ? '$p Matematika'
+                    ? 'Matematika'
                     : i == 1
-                        ? '$p Fisika'
+                        ? 'Fisika'
                         : i == 2
-                            ? '$p Kimia'
+                            ? 'Kimia'
                             : i == 3
-                                ? '$p Bahasa Inggris'
-                                : '$p Biologi',
+                                ? 'B. Inggris'
+                                : 'Biologi',
               ),
             );
           }
@@ -70,19 +69,18 @@ class AhpLocalDatasourceImpl extends AhpLocalDatasource {
         final alternative = <Alternative>[];
 
         for (int i = 0; i < 6; i++) {
-          final f = 'Fakultas Teknik';
           alternative.add(Alternative(
             name: i == 0
-                ? '$f Sipil'
+                ? 'Sipil'
                 : i == 1
-                    ? '$f Mesin'
+                    ? 'Mesin'
                     : i == 2
-                        ? '$f Elektro'
+                        ? 'Elektro'
                         : i == 3
-                            ? '$f Arsitektur'
+                            ? 'Arsitektur'
                             : i == 4
-                                ? '$f Informatika'
-                                : '$f Teknologi Pangan',
+                                ? 'Informatika'
+                                : 'Teknologi Pangan',
           ));
         }
 
