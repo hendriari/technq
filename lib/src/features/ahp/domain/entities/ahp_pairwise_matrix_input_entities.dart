@@ -8,7 +8,7 @@ part 'ahp_pairwise_matrix_input_entities.freezed.dart';
 @freezed
 class AhpPairwiseMatrixInputEntities with _$AhpPairwiseMatrixInputEntities {
   factory AhpPairwiseMatrixInputEntities({
-    required List<PairwiseComparisonInput<Criteria>> inputCriteria,
-    required List<PairwiseAlternativeInput> inputAlternative,
+    @Default([]) List<PairwiseComparisonInput<Criteria>> inputCriteria,
+    @Default([]) List<PairwiseAlternativeInput> inputAlternative,
   }) = _AhpPairwiseMatrixInputEntities;
 }

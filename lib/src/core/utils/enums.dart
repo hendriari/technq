@@ -3,3 +3,9 @@ enum SharedPreferenceDataType {
   bool,
   int,
 }
+
+enum ChoiceMoreImportant {
+  left,
+  same,
+  right,
+}

@@ -3,19 +3,19 @@ import 'package:injectable/injectable.dart';
 import 'package:technq/src/core/injection/injector.dart';
 import 'package:technq/src/core/services/firebase_services.dart';
 import 'package:technq/src/core/services/shared_preference_services.dart';
-import 'package:technq/src/core/shared/auth/data/datasource/auth_remote_datasource.dart';
-import 'package:technq/src/core/shared/auth/data/repository_impl/auth_repository_impl.dart';
-import 'package:technq/src/core/shared/auth/domain/repository/auth_repository.dart';
-import 'package:technq/src/core/shared/auth/domain/usecase/check_token_usecase.dart';
-import 'package:technq/src/core/shared/auth/domain/usecase/create_account_usecase.dart';
-import 'package:technq/src/core/shared/auth/domain/usecase/get_user_data.usecase.dart';
-import 'package:technq/src/core/shared/auth/domain/usecase/update_user_school_usecase.dart';
-import 'package:technq/src/core/shared/brightness_theme/data/datasource/brightness_theme_local_datasource.dart';
-import 'package:technq/src/core/shared/brightness_theme/data/repository_impl/brightness_theme_repository_impl.dart';
-import 'package:technq/src/core/shared/brightness_theme/domain/repository/brightness_theme_repository.dart';
-import 'package:technq/src/core/shared/brightness_theme/domain/usecase/get_current_theme_usecase.dart';
-import 'package:technq/src/core/shared/brightness_theme/domain/usecase/save_theme_usecase.dart';
-import 'package:technq/src/features/ahp/data/data/ahp_local_datasource.dart';
+import 'package:technq/src/core/shared/features/auth/data/datasource/auth_remote_datasource.dart';
+import 'package:technq/src/core/shared/features/auth/data/repository_impl/auth_repository_impl.dart';
+import 'package:technq/src/core/shared/features/auth/domain/repository/auth_repository.dart';
+import 'package:technq/src/core/shared/features/auth/domain/usecase/check_token_usecase.dart';
+import 'package:technq/src/core/shared/features/auth/domain/usecase/create_account_usecase.dart';
+import 'package:technq/src/core/shared/features/auth/domain/usecase/get_user_data.usecase.dart';
+import 'package:technq/src/core/shared/features/auth/domain/usecase/update_user_school_usecase.dart';
+import 'package:technq/src/core/shared/features/brightness_theme/data/datasource/brightness_theme_local_datasource.dart';
+import 'package:technq/src/core/shared/features/brightness_theme/data/repository_impl/brightness_theme_repository_impl.dart';
+import 'package:technq/src/core/shared/features/brightness_theme/domain/repository/brightness_theme_repository.dart';
+import 'package:technq/src/core/shared/features/brightness_theme/domain/usecase/get_current_theme_usecase.dart';
+import 'package:technq/src/core/shared/features/brightness_theme/domain/usecase/save_theme_usecase.dart';
+import 'package:technq/src/features/ahp/data/data/ahp_remote_datasource.dart';
 import 'package:technq/src/features/ahp/data/repository_impl/ahp_repository_impl.dart';
 import 'package:technq/src/features/ahp/domain/repository/ahp_repository.dart';
 import 'package:technq/src/features/ahp/domain/usecase/get_ahp_result_usecase.dart';
@@ -74,7 +74,6 @@ abstract class InjectorModule {
   UpdateUserSchoolUsecase get updateUserSchoolUsecase;
 
   /// DASHBOARD
-
   @lazySingleton
   DashboardLocalDatasource get dashboardLocalDatasource =>
       DashboardLocalDatasourceImpl();
@@ -88,12 +87,12 @@ abstract class InjectorModule {
 
   /// AHP
   @lazySingleton
-  AhpLocalDatasource get ahpLocalDatasource =>
-      AhpLocalDatasourceImpl(FlutterDecisionMaking());
+  AhpRemoteDatasource get ahpLocalDatasource => AhpRemoteDatasourceImpl(
+      FlutterDecisionMaking(), getIt<FirebaseServices>());
 
   @lazySingleton
   AhpRepository get ahpRepository =>
-      AhpRepositoryImpl(getIt<AhpLocalDatasource>());
+      AhpRepositoryImpl(getIt<AhpRemoteDatasource>());
 
   @lazySingleton
   GetPairwiseInputUsecase get getPairwiseInputUsecase;

@@ -22,10 +22,11 @@ mixin _$AhpEvent {
     required TResult Function(
             String? id, bool isLeftMoreImportant, int referenceValue)
         updatePairwiseMatrixCriteria,
+    required TResult Function(bool isNext) changePairwiseChoice,
     required TResult Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)
         updatePairwiseMatrixAlternative,
-    required TResult Function() getAhpResult,
+    required TResult Function(String? userId, String? userName) getAhpResult,
     required TResult Function() resetAhpResult,
   }) =>
       throw _privateConstructorUsedError;
@@ -34,10 +35,11 @@ mixin _$AhpEvent {
     TResult? Function(String schoolType)? generatePairwiseMatrixInput,
     TResult? Function(String? id, bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixCriteria,
+    TResult? Function(bool isNext)? changePairwiseChoice,
     TResult? Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixAlternative,
-    TResult? Function()? getAhpResult,
+    TResult? Function(String? userId, String? userName)? getAhpResult,
     TResult? Function()? resetAhpResult,
   }) =>
       throw _privateConstructorUsedError;
@@ -46,10 +48,11 @@ mixin _$AhpEvent {
     TResult Function(String schoolType)? generatePairwiseMatrixInput,
     TResult Function(String? id, bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixCriteria,
+    TResult Function(bool isNext)? changePairwiseChoice,
     TResult Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixAlternative,
-    TResult Function()? getAhpResult,
+    TResult Function(String? userId, String? userName)? getAhpResult,
     TResult Function()? resetAhpResult,
     required TResult orElse(),
   }) =>
@@ -60,6 +63,8 @@ mixin _$AhpEvent {
         generatePairwiseMatrixInput,
     required TResult Function(UpdatePairwiseMatrixCriteriaEvent value)
         updatePairwiseMatrixCriteria,
+    required TResult Function(ChangePairwiseChoiceEvent value)
+        changePairwiseChoice,
     required TResult Function(UpdatePairwiseMatrixAlternativeEvent value)
         updatePairwiseMatrixAlternative,
     required TResult Function(GetAhpResultEvent value) getAhpResult,
@@ -72,6 +77,7 @@ mixin _$AhpEvent {
         generatePairwiseMatrixInput,
     TResult? Function(UpdatePairwiseMatrixCriteriaEvent value)?
         updatePairwiseMatrixCriteria,
+    TResult? Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
     TResult? Function(UpdatePairwiseMatrixAlternativeEvent value)?
         updatePairwiseMatrixAlternative,
     TResult? Function(GetAhpResultEvent value)? getAhpResult,
@@ -84,6 +90,7 @@ mixin _$AhpEvent {
         generatePairwiseMatrixInput,
     TResult Function(UpdatePairwiseMatrixCriteriaEvent value)?
         updatePairwiseMatrixCriteria,
+    TResult Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
     TResult Function(UpdatePairwiseMatrixAlternativeEvent value)?
         updatePairwiseMatrixAlternative,
     TResult Function(GetAhpResultEvent value)? getAhpResult,
@@ -191,10 +198,11 @@ class _$GeneratePairwiseMatrixInputEventImpl
     required TResult Function(
             String? id, bool isLeftMoreImportant, int referenceValue)
         updatePairwiseMatrixCriteria,
+    required TResult Function(bool isNext) changePairwiseChoice,
     required TResult Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)
         updatePairwiseMatrixAlternative,
-    required TResult Function() getAhpResult,
+    required TResult Function(String? userId, String? userName) getAhpResult,
     required TResult Function() resetAhpResult,
   }) {
     return generatePairwiseMatrixInput(schoolType);
@@ -206,10 +214,11 @@ class _$GeneratePairwiseMatrixInputEventImpl
     TResult? Function(String schoolType)? generatePairwiseMatrixInput,
     TResult? Function(String? id, bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixCriteria,
+    TResult? Function(bool isNext)? changePairwiseChoice,
     TResult? Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixAlternative,
-    TResult? Function()? getAhpResult,
+    TResult? Function(String? userId, String? userName)? getAhpResult,
     TResult? Function()? resetAhpResult,
   }) {
     return generatePairwiseMatrixInput?.call(schoolType);
@@ -221,10 +230,11 @@ class _$GeneratePairwiseMatrixInputEventImpl
     TResult Function(String schoolType)? generatePairwiseMatrixInput,
     TResult Function(String? id, bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixCriteria,
+    TResult Function(bool isNext)? changePairwiseChoice,
     TResult Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixAlternative,
-    TResult Function()? getAhpResult,
+    TResult Function(String? userId, String? userName)? getAhpResult,
     TResult Function()? resetAhpResult,
     required TResult orElse(),
   }) {
@@ -241,6 +251,8 @@ class _$GeneratePairwiseMatrixInputEventImpl
         generatePairwiseMatrixInput,
     required TResult Function(UpdatePairwiseMatrixCriteriaEvent value)
         updatePairwiseMatrixCriteria,
+    required TResult Function(ChangePairwiseChoiceEvent value)
+        changePairwiseChoice,
     required TResult Function(UpdatePairwiseMatrixAlternativeEvent value)
         updatePairwiseMatrixAlternative,
     required TResult Function(GetAhpResultEvent value) getAhpResult,
@@ -256,6 +268,7 @@ class _$GeneratePairwiseMatrixInputEventImpl
         generatePairwiseMatrixInput,
     TResult? Function(UpdatePairwiseMatrixCriteriaEvent value)?
         updatePairwiseMatrixCriteria,
+    TResult? Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
     TResult? Function(UpdatePairwiseMatrixAlternativeEvent value)?
         updatePairwiseMatrixAlternative,
     TResult? Function(GetAhpResultEvent value)? getAhpResult,
@@ -271,6 +284,7 @@ class _$GeneratePairwiseMatrixInputEventImpl
         generatePairwiseMatrixInput,
     TResult Function(UpdatePairwiseMatrixCriteriaEvent value)?
         updatePairwiseMatrixCriteria,
+    TResult Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
     TResult Function(UpdatePairwiseMatrixAlternativeEvent value)?
         updatePairwiseMatrixAlternative,
     TResult Function(GetAhpResultEvent value)? getAhpResult,
@@ -399,10 +413,11 @@ class _$UpdatePairwiseMatrixCriteriaEventImpl
     required TResult Function(
             String? id, bool isLeftMoreImportant, int referenceValue)
         updatePairwiseMatrixCriteria,
+    required TResult Function(bool isNext) changePairwiseChoice,
     required TResult Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)
         updatePairwiseMatrixAlternative,
-    required TResult Function() getAhpResult,
+    required TResult Function(String? userId, String? userName) getAhpResult,
     required TResult Function() resetAhpResult,
   }) {
     return updatePairwiseMatrixCriteria(
@@ -415,10 +430,11 @@ class _$UpdatePairwiseMatrixCriteriaEventImpl
     TResult? Function(String schoolType)? generatePairwiseMatrixInput,
     TResult? Function(String? id, bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixCriteria,
+    TResult? Function(bool isNext)? changePairwiseChoice,
     TResult? Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixAlternative,
-    TResult? Function()? getAhpResult,
+    TResult? Function(String? userId, String? userName)? getAhpResult,
     TResult? Function()? resetAhpResult,
   }) {
     return updatePairwiseMatrixCriteria?.call(
@@ -431,10 +447,11 @@ class _$UpdatePairwiseMatrixCriteriaEventImpl
     TResult Function(String schoolType)? generatePairwiseMatrixInput,
     TResult Function(String? id, bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixCriteria,
+    TResult Function(bool isNext)? changePairwiseChoice,
     TResult Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixAlternative,
-    TResult Function()? getAhpResult,
+    TResult Function(String? userId, String? userName)? getAhpResult,
     TResult Function()? resetAhpResult,
     required TResult orElse(),
   }) {
@@ -452,6 +469,8 @@ class _$UpdatePairwiseMatrixCriteriaEventImpl
         generatePairwiseMatrixInput,
     required TResult Function(UpdatePairwiseMatrixCriteriaEvent value)
         updatePairwiseMatrixCriteria,
+    required TResult Function(ChangePairwiseChoiceEvent value)
+        changePairwiseChoice,
     required TResult Function(UpdatePairwiseMatrixAlternativeEvent value)
         updatePairwiseMatrixAlternative,
     required TResult Function(GetAhpResultEvent value) getAhpResult,
@@ -467,6 +486,7 @@ class _$UpdatePairwiseMatrixCriteriaEventImpl
         generatePairwiseMatrixInput,
     TResult? Function(UpdatePairwiseMatrixCriteriaEvent value)?
         updatePairwiseMatrixCriteria,
+    TResult? Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
     TResult? Function(UpdatePairwiseMatrixAlternativeEvent value)?
         updatePairwiseMatrixAlternative,
     TResult? Function(GetAhpResultEvent value)? getAhpResult,
@@ -482,6 +502,7 @@ class _$UpdatePairwiseMatrixCriteriaEventImpl
         generatePairwiseMatrixInput,
     TResult Function(UpdatePairwiseMatrixCriteriaEvent value)?
         updatePairwiseMatrixCriteria,
+    TResult Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
     TResult Function(UpdatePairwiseMatrixAlternativeEvent value)?
         updatePairwiseMatrixAlternative,
     TResult Function(GetAhpResultEvent value)? getAhpResult,
@@ -511,6 +532,194 @@ abstract class UpdatePairwiseMatrixCriteriaEvent implements AhpEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdatePairwiseMatrixCriteriaEventImplCopyWith<
           _$UpdatePairwiseMatrixCriteriaEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangePairwiseChoiceEventImplCopyWith<$Res> {
+  factory _$$ChangePairwiseChoiceEventImplCopyWith(
+          _$ChangePairwiseChoiceEventImpl value,
+          $Res Function(_$ChangePairwiseChoiceEventImpl) then) =
+      __$$ChangePairwiseChoiceEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isNext});
+}
+
+/// @nodoc
+class __$$ChangePairwiseChoiceEventImplCopyWithImpl<$Res>
+    extends _$AhpEventCopyWithImpl<$Res, _$ChangePairwiseChoiceEventImpl>
+    implements _$$ChangePairwiseChoiceEventImplCopyWith<$Res> {
+  __$$ChangePairwiseChoiceEventImplCopyWithImpl(
+      _$ChangePairwiseChoiceEventImpl _value,
+      $Res Function(_$ChangePairwiseChoiceEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AhpEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isNext = null,
+  }) {
+    return _then(_$ChangePairwiseChoiceEventImpl(
+      isNext: null == isNext
+          ? _value.isNext
+          : isNext // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangePairwiseChoiceEventImpl implements ChangePairwiseChoiceEvent {
+  const _$ChangePairwiseChoiceEventImpl({required this.isNext});
+
+  @override
+  final bool isNext;
+
+  @override
+  String toString() {
+    return 'AhpEvent.changePairwiseChoice(isNext: $isNext)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangePairwiseChoiceEventImpl &&
+            (identical(other.isNext, isNext) || other.isNext == isNext));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isNext);
+
+  /// Create a copy of AhpEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangePairwiseChoiceEventImplCopyWith<_$ChangePairwiseChoiceEventImpl>
+      get copyWith => __$$ChangePairwiseChoiceEventImplCopyWithImpl<
+          _$ChangePairwiseChoiceEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String schoolType) generatePairwiseMatrixInput,
+    required TResult Function(
+            String? id, bool isLeftMoreImportant, int referenceValue)
+        updatePairwiseMatrixCriteria,
+    required TResult Function(bool isNext) changePairwiseChoice,
+    required TResult Function(String? id, String? alternativeId,
+            bool isLeftMoreImportant, int referenceValue)
+        updatePairwiseMatrixAlternative,
+    required TResult Function(String? userId, String? userName) getAhpResult,
+    required TResult Function() resetAhpResult,
+  }) {
+    return changePairwiseChoice(isNext);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String schoolType)? generatePairwiseMatrixInput,
+    TResult? Function(String? id, bool isLeftMoreImportant, int referenceValue)?
+        updatePairwiseMatrixCriteria,
+    TResult? Function(bool isNext)? changePairwiseChoice,
+    TResult? Function(String? id, String? alternativeId,
+            bool isLeftMoreImportant, int referenceValue)?
+        updatePairwiseMatrixAlternative,
+    TResult? Function(String? userId, String? userName)? getAhpResult,
+    TResult? Function()? resetAhpResult,
+  }) {
+    return changePairwiseChoice?.call(isNext);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String schoolType)? generatePairwiseMatrixInput,
+    TResult Function(String? id, bool isLeftMoreImportant, int referenceValue)?
+        updatePairwiseMatrixCriteria,
+    TResult Function(bool isNext)? changePairwiseChoice,
+    TResult Function(String? id, String? alternativeId,
+            bool isLeftMoreImportant, int referenceValue)?
+        updatePairwiseMatrixAlternative,
+    TResult Function(String? userId, String? userName)? getAhpResult,
+    TResult Function()? resetAhpResult,
+    required TResult orElse(),
+  }) {
+    if (changePairwiseChoice != null) {
+      return changePairwiseChoice(isNext);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GeneratePairwiseMatrixInputEvent value)
+        generatePairwiseMatrixInput,
+    required TResult Function(UpdatePairwiseMatrixCriteriaEvent value)
+        updatePairwiseMatrixCriteria,
+    required TResult Function(ChangePairwiseChoiceEvent value)
+        changePairwiseChoice,
+    required TResult Function(UpdatePairwiseMatrixAlternativeEvent value)
+        updatePairwiseMatrixAlternative,
+    required TResult Function(GetAhpResultEvent value) getAhpResult,
+    required TResult Function(ResetAhpResultEvent value) resetAhpResult,
+  }) {
+    return changePairwiseChoice(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GeneratePairwiseMatrixInputEvent value)?
+        generatePairwiseMatrixInput,
+    TResult? Function(UpdatePairwiseMatrixCriteriaEvent value)?
+        updatePairwiseMatrixCriteria,
+    TResult? Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
+    TResult? Function(UpdatePairwiseMatrixAlternativeEvent value)?
+        updatePairwiseMatrixAlternative,
+    TResult? Function(GetAhpResultEvent value)? getAhpResult,
+    TResult? Function(ResetAhpResultEvent value)? resetAhpResult,
+  }) {
+    return changePairwiseChoice?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GeneratePairwiseMatrixInputEvent value)?
+        generatePairwiseMatrixInput,
+    TResult Function(UpdatePairwiseMatrixCriteriaEvent value)?
+        updatePairwiseMatrixCriteria,
+    TResult Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
+    TResult Function(UpdatePairwiseMatrixAlternativeEvent value)?
+        updatePairwiseMatrixAlternative,
+    TResult Function(GetAhpResultEvent value)? getAhpResult,
+    TResult Function(ResetAhpResultEvent value)? resetAhpResult,
+    required TResult orElse(),
+  }) {
+    if (changePairwiseChoice != null) {
+      return changePairwiseChoice(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangePairwiseChoiceEvent implements AhpEvent {
+  const factory ChangePairwiseChoiceEvent({required final bool isNext}) =
+      _$ChangePairwiseChoiceEventImpl;
+
+  bool get isNext;
+
+  /// Create a copy of AhpEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChangePairwiseChoiceEventImplCopyWith<_$ChangePairwiseChoiceEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -628,10 +837,11 @@ class _$UpdatePairwiseMatrixAlternativeEventImpl
     required TResult Function(
             String? id, bool isLeftMoreImportant, int referenceValue)
         updatePairwiseMatrixCriteria,
+    required TResult Function(bool isNext) changePairwiseChoice,
     required TResult Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)
         updatePairwiseMatrixAlternative,
-    required TResult Function() getAhpResult,
+    required TResult Function(String? userId, String? userName) getAhpResult,
     required TResult Function() resetAhpResult,
   }) {
     return updatePairwiseMatrixAlternative(
@@ -644,10 +854,11 @@ class _$UpdatePairwiseMatrixAlternativeEventImpl
     TResult? Function(String schoolType)? generatePairwiseMatrixInput,
     TResult? Function(String? id, bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixCriteria,
+    TResult? Function(bool isNext)? changePairwiseChoice,
     TResult? Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixAlternative,
-    TResult? Function()? getAhpResult,
+    TResult? Function(String? userId, String? userName)? getAhpResult,
     TResult? Function()? resetAhpResult,
   }) {
     return updatePairwiseMatrixAlternative?.call(
@@ -660,10 +871,11 @@ class _$UpdatePairwiseMatrixAlternativeEventImpl
     TResult Function(String schoolType)? generatePairwiseMatrixInput,
     TResult Function(String? id, bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixCriteria,
+    TResult Function(bool isNext)? changePairwiseChoice,
     TResult Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixAlternative,
-    TResult Function()? getAhpResult,
+    TResult Function(String? userId, String? userName)? getAhpResult,
     TResult Function()? resetAhpResult,
     required TResult orElse(),
   }) {
@@ -681,6 +893,8 @@ class _$UpdatePairwiseMatrixAlternativeEventImpl
         generatePairwiseMatrixInput,
     required TResult Function(UpdatePairwiseMatrixCriteriaEvent value)
         updatePairwiseMatrixCriteria,
+    required TResult Function(ChangePairwiseChoiceEvent value)
+        changePairwiseChoice,
     required TResult Function(UpdatePairwiseMatrixAlternativeEvent value)
         updatePairwiseMatrixAlternative,
     required TResult Function(GetAhpResultEvent value) getAhpResult,
@@ -696,6 +910,7 @@ class _$UpdatePairwiseMatrixAlternativeEventImpl
         generatePairwiseMatrixInput,
     TResult? Function(UpdatePairwiseMatrixCriteriaEvent value)?
         updatePairwiseMatrixCriteria,
+    TResult? Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
     TResult? Function(UpdatePairwiseMatrixAlternativeEvent value)?
         updatePairwiseMatrixAlternative,
     TResult? Function(GetAhpResultEvent value)? getAhpResult,
@@ -711,6 +926,7 @@ class _$UpdatePairwiseMatrixAlternativeEventImpl
         generatePairwiseMatrixInput,
     TResult Function(UpdatePairwiseMatrixCriteriaEvent value)?
         updatePairwiseMatrixCriteria,
+    TResult Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
     TResult Function(UpdatePairwiseMatrixAlternativeEvent value)?
         updatePairwiseMatrixAlternative,
     TResult Function(GetAhpResultEvent value)? getAhpResult,
@@ -750,6 +966,8 @@ abstract class _$$GetAhpResultEventImplCopyWith<$Res> {
   factory _$$GetAhpResultEventImplCopyWith(_$GetAhpResultEventImpl value,
           $Res Function(_$GetAhpResultEventImpl) then) =
       __$$GetAhpResultEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? userId, String? userName});
 }
 
 /// @nodoc
@@ -762,26 +980,61 @@ class __$$GetAhpResultEventImplCopyWithImpl<$Res>
 
   /// Create a copy of AhpEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = freezed,
+    Object? userName = freezed,
+  }) {
+    return _then(_$GetAhpResultEventImpl(
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userName: freezed == userName
+          ? _value.userName
+          : userName // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GetAhpResultEventImpl implements GetAhpResultEvent {
-  const _$GetAhpResultEventImpl();
+  const _$GetAhpResultEventImpl({required this.userId, required this.userName});
+
+  @override
+  final String? userId;
+  @override
+  final String? userName;
 
   @override
   String toString() {
-    return 'AhpEvent.getAhpResult()';
+    return 'AhpEvent.getAhpResult(userId: $userId, userName: $userName)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAhpResultEventImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$GetAhpResultEventImpl &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.userName, userName) ||
+                other.userName == userName));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, userId, userName);
+
+  /// Create a copy of AhpEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetAhpResultEventImplCopyWith<_$GetAhpResultEventImpl> get copyWith =>
+      __$$GetAhpResultEventImplCopyWithImpl<_$GetAhpResultEventImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -790,13 +1043,14 @@ class _$GetAhpResultEventImpl implements GetAhpResultEvent {
     required TResult Function(
             String? id, bool isLeftMoreImportant, int referenceValue)
         updatePairwiseMatrixCriteria,
+    required TResult Function(bool isNext) changePairwiseChoice,
     required TResult Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)
         updatePairwiseMatrixAlternative,
-    required TResult Function() getAhpResult,
+    required TResult Function(String? userId, String? userName) getAhpResult,
     required TResult Function() resetAhpResult,
   }) {
-    return getAhpResult();
+    return getAhpResult(userId, userName);
   }
 
   @override
@@ -805,13 +1059,14 @@ class _$GetAhpResultEventImpl implements GetAhpResultEvent {
     TResult? Function(String schoolType)? generatePairwiseMatrixInput,
     TResult? Function(String? id, bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixCriteria,
+    TResult? Function(bool isNext)? changePairwiseChoice,
     TResult? Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixAlternative,
-    TResult? Function()? getAhpResult,
+    TResult? Function(String? userId, String? userName)? getAhpResult,
     TResult? Function()? resetAhpResult,
   }) {
-    return getAhpResult?.call();
+    return getAhpResult?.call(userId, userName);
   }
 
   @override
@@ -820,15 +1075,16 @@ class _$GetAhpResultEventImpl implements GetAhpResultEvent {
     TResult Function(String schoolType)? generatePairwiseMatrixInput,
     TResult Function(String? id, bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixCriteria,
+    TResult Function(bool isNext)? changePairwiseChoice,
     TResult Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixAlternative,
-    TResult Function()? getAhpResult,
+    TResult Function(String? userId, String? userName)? getAhpResult,
     TResult Function()? resetAhpResult,
     required TResult orElse(),
   }) {
     if (getAhpResult != null) {
-      return getAhpResult();
+      return getAhpResult(userId, userName);
     }
     return orElse();
   }
@@ -840,6 +1096,8 @@ class _$GetAhpResultEventImpl implements GetAhpResultEvent {
         generatePairwiseMatrixInput,
     required TResult Function(UpdatePairwiseMatrixCriteriaEvent value)
         updatePairwiseMatrixCriteria,
+    required TResult Function(ChangePairwiseChoiceEvent value)
+        changePairwiseChoice,
     required TResult Function(UpdatePairwiseMatrixAlternativeEvent value)
         updatePairwiseMatrixAlternative,
     required TResult Function(GetAhpResultEvent value) getAhpResult,
@@ -855,6 +1113,7 @@ class _$GetAhpResultEventImpl implements GetAhpResultEvent {
         generatePairwiseMatrixInput,
     TResult? Function(UpdatePairwiseMatrixCriteriaEvent value)?
         updatePairwiseMatrixCriteria,
+    TResult? Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
     TResult? Function(UpdatePairwiseMatrixAlternativeEvent value)?
         updatePairwiseMatrixAlternative,
     TResult? Function(GetAhpResultEvent value)? getAhpResult,
@@ -870,6 +1129,7 @@ class _$GetAhpResultEventImpl implements GetAhpResultEvent {
         generatePairwiseMatrixInput,
     TResult Function(UpdatePairwiseMatrixCriteriaEvent value)?
         updatePairwiseMatrixCriteria,
+    TResult Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
     TResult Function(UpdatePairwiseMatrixAlternativeEvent value)?
         updatePairwiseMatrixAlternative,
     TResult Function(GetAhpResultEvent value)? getAhpResult,
@@ -884,7 +1144,18 @@ class _$GetAhpResultEventImpl implements GetAhpResultEvent {
 }
 
 abstract class GetAhpResultEvent implements AhpEvent {
-  const factory GetAhpResultEvent() = _$GetAhpResultEventImpl;
+  const factory GetAhpResultEvent(
+      {required final String? userId,
+      required final String? userName}) = _$GetAhpResultEventImpl;
+
+  String? get userId;
+  String? get userName;
+
+  /// Create a copy of AhpEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetAhpResultEventImplCopyWith<_$GetAhpResultEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -933,10 +1204,11 @@ class _$ResetAhpResultEventImpl implements ResetAhpResultEvent {
     required TResult Function(
             String? id, bool isLeftMoreImportant, int referenceValue)
         updatePairwiseMatrixCriteria,
+    required TResult Function(bool isNext) changePairwiseChoice,
     required TResult Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)
         updatePairwiseMatrixAlternative,
-    required TResult Function() getAhpResult,
+    required TResult Function(String? userId, String? userName) getAhpResult,
     required TResult Function() resetAhpResult,
   }) {
     return resetAhpResult();
@@ -948,10 +1220,11 @@ class _$ResetAhpResultEventImpl implements ResetAhpResultEvent {
     TResult? Function(String schoolType)? generatePairwiseMatrixInput,
     TResult? Function(String? id, bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixCriteria,
+    TResult? Function(bool isNext)? changePairwiseChoice,
     TResult? Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixAlternative,
-    TResult? Function()? getAhpResult,
+    TResult? Function(String? userId, String? userName)? getAhpResult,
     TResult? Function()? resetAhpResult,
   }) {
     return resetAhpResult?.call();
@@ -963,10 +1236,11 @@ class _$ResetAhpResultEventImpl implements ResetAhpResultEvent {
     TResult Function(String schoolType)? generatePairwiseMatrixInput,
     TResult Function(String? id, bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixCriteria,
+    TResult Function(bool isNext)? changePairwiseChoice,
     TResult Function(String? id, String? alternativeId,
             bool isLeftMoreImportant, int referenceValue)?
         updatePairwiseMatrixAlternative,
-    TResult Function()? getAhpResult,
+    TResult Function(String? userId, String? userName)? getAhpResult,
     TResult Function()? resetAhpResult,
     required TResult orElse(),
   }) {
@@ -983,6 +1257,8 @@ class _$ResetAhpResultEventImpl implements ResetAhpResultEvent {
         generatePairwiseMatrixInput,
     required TResult Function(UpdatePairwiseMatrixCriteriaEvent value)
         updatePairwiseMatrixCriteria,
+    required TResult Function(ChangePairwiseChoiceEvent value)
+        changePairwiseChoice,
     required TResult Function(UpdatePairwiseMatrixAlternativeEvent value)
         updatePairwiseMatrixAlternative,
     required TResult Function(GetAhpResultEvent value) getAhpResult,
@@ -998,6 +1274,7 @@ class _$ResetAhpResultEventImpl implements ResetAhpResultEvent {
         generatePairwiseMatrixInput,
     TResult? Function(UpdatePairwiseMatrixCriteriaEvent value)?
         updatePairwiseMatrixCriteria,
+    TResult? Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
     TResult? Function(UpdatePairwiseMatrixAlternativeEvent value)?
         updatePairwiseMatrixAlternative,
     TResult? Function(GetAhpResultEvent value)? getAhpResult,
@@ -1013,6 +1290,7 @@ class _$ResetAhpResultEventImpl implements ResetAhpResultEvent {
         generatePairwiseMatrixInput,
     TResult Function(UpdatePairwiseMatrixCriteriaEvent value)?
         updatePairwiseMatrixCriteria,
+    TResult Function(ChangePairwiseChoiceEvent value)? changePairwiseChoice,
     TResult Function(UpdatePairwiseMatrixAlternativeEvent value)?
         updatePairwiseMatrixAlternative,
     TResult Function(GetAhpResultEvent value)? getAhpResult,
