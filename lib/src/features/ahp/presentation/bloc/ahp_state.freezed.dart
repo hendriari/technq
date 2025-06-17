@@ -19,87 +19,97 @@ mixin _$AhpState {
   AhpPairwiseMatrixInputEntities? get pairwiseInputs =>
       throw _privateConstructorUsedError;
   AhpResult? get ahpResult => throw _privateConstructorUsedError;
+  int? get alternativeIndex => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         init,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         updatedPairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
+        changedAltIndex,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successResetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)
+            AhpResult? ahpResult, int? alternativeIndex, String message)
         failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
     required TResult orElse(),
   }) =>
@@ -112,6 +122,7 @@ mixin _$AhpState {
     required TResult Function(_SuccessGeneratePairwiseInput value)
         successGeneratePairwiseInput,
     required TResult Function(_UpdatePairwiseInput value) updatedPairwiseInput,
+    required TResult Function(_ChangedAltIndex value) changedAltIndex,
     required TResult Function(_LoadingGetResult value) loadingGetResult,
     required TResult Function(_SuccessGetResult value) successGetResult,
     required TResult Function(_SuccessResetResult value) successResetResult,
@@ -126,6 +137,7 @@ mixin _$AhpState {
     TResult? Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult? Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult? Function(_ChangedAltIndex value)? changedAltIndex,
     TResult? Function(_LoadingGetResult value)? loadingGetResult,
     TResult? Function(_SuccessGetResult value)? successGetResult,
     TResult? Function(_SuccessResetResult value)? successResetResult,
@@ -140,6 +152,7 @@ mixin _$AhpState {
     TResult Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult Function(_ChangedAltIndex value)? changedAltIndex,
     TResult Function(_LoadingGetResult value)? loadingGetResult,
     TResult Function(_SuccessGetResult value)? successGetResult,
     TResult Function(_SuccessResetResult value)? successResetResult,
@@ -161,7 +174,9 @@ abstract class $AhpStateCopyWith<$Res> {
       _$AhpStateCopyWithImpl<$Res, AhpState>;
   @useResult
   $Res call(
-      {AhpPairwiseMatrixInputEntities? pairwiseInputs, AhpResult? ahpResult});
+      {AhpPairwiseMatrixInputEntities? pairwiseInputs,
+      AhpResult? ahpResult,
+      int? alternativeIndex});
 
   $AhpPairwiseMatrixInputEntitiesCopyWith<$Res>? get pairwiseInputs;
 }
@@ -183,6 +198,7 @@ class _$AhpStateCopyWithImpl<$Res, $Val extends AhpState>
   $Res call({
     Object? pairwiseInputs = freezed,
     Object? ahpResult = freezed,
+    Object? alternativeIndex = freezed,
   }) {
     return _then(_value.copyWith(
       pairwiseInputs: freezed == pairwiseInputs
@@ -193,6 +209,10 @@ class _$AhpStateCopyWithImpl<$Res, $Val extends AhpState>
           ? _value.ahpResult
           : ahpResult // ignore: cast_nullable_to_non_nullable
               as AhpResult?,
+      alternativeIndex: freezed == alternativeIndex
+          ? _value.alternativeIndex
+          : alternativeIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -220,7 +240,9 @@ abstract class _$$InitImplCopyWith<$Res> implements $AhpStateCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {AhpPairwiseMatrixInputEntities? pairwiseInputs, AhpResult? ahpResult});
+      {AhpPairwiseMatrixInputEntities? pairwiseInputs,
+      AhpResult? ahpResult,
+      int? alternativeIndex});
 
   @override
   $AhpPairwiseMatrixInputEntitiesCopyWith<$Res>? get pairwiseInputs;
@@ -240,6 +262,7 @@ class __$$InitImplCopyWithImpl<$Res>
   $Res call({
     Object? pairwiseInputs = freezed,
     Object? ahpResult = freezed,
+    Object? alternativeIndex = freezed,
   }) {
     return _then(_$InitImpl(
       pairwiseInputs: freezed == pairwiseInputs
@@ -250,6 +273,10 @@ class __$$InitImplCopyWithImpl<$Res>
           ? _value.ahpResult
           : ahpResult // ignore: cast_nullable_to_non_nullable
               as AhpResult?,
+      alternativeIndex: freezed == alternativeIndex
+          ? _value.alternativeIndex
+          : alternativeIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -257,7 +284,10 @@ class __$$InitImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$InitImpl implements _Init {
-  const _$InitImpl({this.pairwiseInputs = null, this.ahpResult = null});
+  const _$InitImpl(
+      {this.pairwiseInputs = null,
+      this.ahpResult = null,
+      this.alternativeIndex = null});
 
   @override
   @JsonKey()
@@ -265,10 +295,13 @@ class _$InitImpl implements _Init {
   @override
   @JsonKey()
   final AhpResult? ahpResult;
+  @override
+  @JsonKey()
+  final int? alternativeIndex;
 
   @override
   String toString() {
-    return 'AhpState.init(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult)';
+    return 'AhpState.init(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult, alternativeIndex: $alternativeIndex)';
   }
 
   @override
@@ -279,11 +312,14 @@ class _$InitImpl implements _Init {
             (identical(other.pairwiseInputs, pairwiseInputs) ||
                 other.pairwiseInputs == pairwiseInputs) &&
             (identical(other.ahpResult, ahpResult) ||
-                other.ahpResult == ahpResult));
+                other.ahpResult == ahpResult) &&
+            (identical(other.alternativeIndex, alternativeIndex) ||
+                other.alternativeIndex == alternativeIndex));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pairwiseInputs, ahpResult);
+  int get hashCode =>
+      Object.hash(runtimeType, pairwiseInputs, ahpResult, alternativeIndex);
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -297,95 +333,104 @@ class _$InitImpl implements _Init {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         init,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         updatedPairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
+        changedAltIndex,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successResetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)
+            AhpResult? ahpResult, int? alternativeIndex, String message)
         failed,
   }) {
-    return init(pairwiseInputs, ahpResult);
+    return init(pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
   }) {
-    return init?.call(pairwiseInputs, ahpResult);
+    return init?.call(pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
     required TResult orElse(),
   }) {
     if (init != null) {
-      return init(pairwiseInputs, ahpResult);
+      return init(pairwiseInputs, ahpResult, alternativeIndex);
     }
     return orElse();
   }
@@ -399,6 +444,7 @@ class _$InitImpl implements _Init {
     required TResult Function(_SuccessGeneratePairwiseInput value)
         successGeneratePairwiseInput,
     required TResult Function(_UpdatePairwiseInput value) updatedPairwiseInput,
+    required TResult Function(_ChangedAltIndex value) changedAltIndex,
     required TResult Function(_LoadingGetResult value) loadingGetResult,
     required TResult Function(_SuccessGetResult value) successGetResult,
     required TResult Function(_SuccessResetResult value) successResetResult,
@@ -416,6 +462,7 @@ class _$InitImpl implements _Init {
     TResult? Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult? Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult? Function(_ChangedAltIndex value)? changedAltIndex,
     TResult? Function(_LoadingGetResult value)? loadingGetResult,
     TResult? Function(_SuccessGetResult value)? successGetResult,
     TResult? Function(_SuccessResetResult value)? successResetResult,
@@ -433,6 +480,7 @@ class _$InitImpl implements _Init {
     TResult Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult Function(_ChangedAltIndex value)? changedAltIndex,
     TResult Function(_LoadingGetResult value)? loadingGetResult,
     TResult Function(_SuccessGetResult value)? successGetResult,
     TResult Function(_SuccessResetResult value)? successResetResult,
@@ -449,12 +497,15 @@ class _$InitImpl implements _Init {
 abstract class _Init implements AhpState {
   const factory _Init(
       {final AhpPairwiseMatrixInputEntities? pairwiseInputs,
-      final AhpResult? ahpResult}) = _$InitImpl;
+      final AhpResult? ahpResult,
+      final int? alternativeIndex}) = _$InitImpl;
 
   @override
   AhpPairwiseMatrixInputEntities? get pairwiseInputs;
   @override
   AhpResult? get ahpResult;
+  @override
+  int? get alternativeIndex;
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -474,7 +525,9 @@ abstract class _$$LoadingGeneratePairwiseInputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AhpPairwiseMatrixInputEntities? pairwiseInputs, AhpResult? ahpResult});
+      {AhpPairwiseMatrixInputEntities? pairwiseInputs,
+      AhpResult? ahpResult,
+      int? alternativeIndex});
 
   @override
   $AhpPairwiseMatrixInputEntitiesCopyWith<$Res>? get pairwiseInputs;
@@ -496,6 +549,7 @@ class __$$LoadingGeneratePairwiseInputImplCopyWithImpl<$Res>
   $Res call({
     Object? pairwiseInputs = freezed,
     Object? ahpResult = freezed,
+    Object? alternativeIndex = freezed,
   }) {
     return _then(_$LoadingGeneratePairwiseInputImpl(
       pairwiseInputs: freezed == pairwiseInputs
@@ -506,6 +560,10 @@ class __$$LoadingGeneratePairwiseInputImplCopyWithImpl<$Res>
           ? _value.ahpResult
           : ahpResult // ignore: cast_nullable_to_non_nullable
               as AhpResult?,
+      alternativeIndex: freezed == alternativeIndex
+          ? _value.alternativeIndex
+          : alternativeIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -515,7 +573,9 @@ class __$$LoadingGeneratePairwiseInputImplCopyWithImpl<$Res>
 class _$LoadingGeneratePairwiseInputImpl
     implements _LoadingGeneratePairwiseInput {
   const _$LoadingGeneratePairwiseInputImpl(
-      {this.pairwiseInputs = null, this.ahpResult = null});
+      {this.pairwiseInputs = null,
+      this.ahpResult = null,
+      this.alternativeIndex = null});
 
   @override
   @JsonKey()
@@ -523,10 +583,13 @@ class _$LoadingGeneratePairwiseInputImpl
   @override
   @JsonKey()
   final AhpResult? ahpResult;
+  @override
+  @JsonKey()
+  final int? alternativeIndex;
 
   @override
   String toString() {
-    return 'AhpState.loadingGeneratePairwiseInput(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult)';
+    return 'AhpState.loadingGeneratePairwiseInput(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult, alternativeIndex: $alternativeIndex)';
   }
 
   @override
@@ -537,11 +600,14 @@ class _$LoadingGeneratePairwiseInputImpl
             (identical(other.pairwiseInputs, pairwiseInputs) ||
                 other.pairwiseInputs == pairwiseInputs) &&
             (identical(other.ahpResult, ahpResult) ||
-                other.ahpResult == ahpResult));
+                other.ahpResult == ahpResult) &&
+            (identical(other.alternativeIndex, alternativeIndex) ||
+                other.alternativeIndex == alternativeIndex));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pairwiseInputs, ahpResult);
+  int get hashCode =>
+      Object.hash(runtimeType, pairwiseInputs, ahpResult, alternativeIndex);
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -557,95 +623,107 @@ class _$LoadingGeneratePairwiseInputImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         init,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         updatedPairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
+        changedAltIndex,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successResetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)
+            AhpResult? ahpResult, int? alternativeIndex, String message)
         failed,
   }) {
-    return loadingGeneratePairwiseInput(pairwiseInputs, ahpResult);
+    return loadingGeneratePairwiseInput(
+        pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
   }) {
-    return loadingGeneratePairwiseInput?.call(pairwiseInputs, ahpResult);
+    return loadingGeneratePairwiseInput?.call(
+        pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
     required TResult orElse(),
   }) {
     if (loadingGeneratePairwiseInput != null) {
-      return loadingGeneratePairwiseInput(pairwiseInputs, ahpResult);
+      return loadingGeneratePairwiseInput(
+          pairwiseInputs, ahpResult, alternativeIndex);
     }
     return orElse();
   }
@@ -659,6 +737,7 @@ class _$LoadingGeneratePairwiseInputImpl
     required TResult Function(_SuccessGeneratePairwiseInput value)
         successGeneratePairwiseInput,
     required TResult Function(_UpdatePairwiseInput value) updatedPairwiseInput,
+    required TResult Function(_ChangedAltIndex value) changedAltIndex,
     required TResult Function(_LoadingGetResult value) loadingGetResult,
     required TResult Function(_SuccessGetResult value) successGetResult,
     required TResult Function(_SuccessResetResult value) successResetResult,
@@ -676,6 +755,7 @@ class _$LoadingGeneratePairwiseInputImpl
     TResult? Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult? Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult? Function(_ChangedAltIndex value)? changedAltIndex,
     TResult? Function(_LoadingGetResult value)? loadingGetResult,
     TResult? Function(_SuccessGetResult value)? successGetResult,
     TResult? Function(_SuccessResetResult value)? successResetResult,
@@ -693,6 +773,7 @@ class _$LoadingGeneratePairwiseInputImpl
     TResult Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult Function(_ChangedAltIndex value)? changedAltIndex,
     TResult Function(_LoadingGetResult value)? loadingGetResult,
     TResult Function(_SuccessGetResult value)? successGetResult,
     TResult Function(_SuccessResetResult value)? successResetResult,
@@ -709,12 +790,15 @@ class _$LoadingGeneratePairwiseInputImpl
 abstract class _LoadingGeneratePairwiseInput implements AhpState {
   const factory _LoadingGeneratePairwiseInput(
       {final AhpPairwiseMatrixInputEntities? pairwiseInputs,
-      final AhpResult? ahpResult}) = _$LoadingGeneratePairwiseInputImpl;
+      final AhpResult? ahpResult,
+      final int? alternativeIndex}) = _$LoadingGeneratePairwiseInputImpl;
 
   @override
   AhpPairwiseMatrixInputEntities? get pairwiseInputs;
   @override
   AhpResult? get ahpResult;
+  @override
+  int? get alternativeIndex;
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -735,7 +819,9 @@ abstract class _$$SuccessGeneratePairwiseInputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AhpPairwiseMatrixInputEntities? pairwiseInputs, AhpResult? ahpResult});
+      {AhpPairwiseMatrixInputEntities? pairwiseInputs,
+      AhpResult? ahpResult,
+      int? alternativeIndex});
 
   @override
   $AhpPairwiseMatrixInputEntitiesCopyWith<$Res>? get pairwiseInputs;
@@ -757,6 +843,7 @@ class __$$SuccessGeneratePairwiseInputImplCopyWithImpl<$Res>
   $Res call({
     Object? pairwiseInputs = freezed,
     Object? ahpResult = freezed,
+    Object? alternativeIndex = freezed,
   }) {
     return _then(_$SuccessGeneratePairwiseInputImpl(
       pairwiseInputs: freezed == pairwiseInputs
@@ -767,6 +854,10 @@ class __$$SuccessGeneratePairwiseInputImplCopyWithImpl<$Res>
           ? _value.ahpResult
           : ahpResult // ignore: cast_nullable_to_non_nullable
               as AhpResult?,
+      alternativeIndex: freezed == alternativeIndex
+          ? _value.alternativeIndex
+          : alternativeIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -776,7 +867,9 @@ class __$$SuccessGeneratePairwiseInputImplCopyWithImpl<$Res>
 class _$SuccessGeneratePairwiseInputImpl
     implements _SuccessGeneratePairwiseInput {
   const _$SuccessGeneratePairwiseInputImpl(
-      {this.pairwiseInputs = null, this.ahpResult = null});
+      {this.pairwiseInputs = null,
+      this.ahpResult = null,
+      this.alternativeIndex = null});
 
   @override
   @JsonKey()
@@ -784,10 +877,13 @@ class _$SuccessGeneratePairwiseInputImpl
   @override
   @JsonKey()
   final AhpResult? ahpResult;
+  @override
+  @JsonKey()
+  final int? alternativeIndex;
 
   @override
   String toString() {
-    return 'AhpState.successGeneratePairwiseInput(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult)';
+    return 'AhpState.successGeneratePairwiseInput(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult, alternativeIndex: $alternativeIndex)';
   }
 
   @override
@@ -798,11 +894,14 @@ class _$SuccessGeneratePairwiseInputImpl
             (identical(other.pairwiseInputs, pairwiseInputs) ||
                 other.pairwiseInputs == pairwiseInputs) &&
             (identical(other.ahpResult, ahpResult) ||
-                other.ahpResult == ahpResult));
+                other.ahpResult == ahpResult) &&
+            (identical(other.alternativeIndex, alternativeIndex) ||
+                other.alternativeIndex == alternativeIndex));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pairwiseInputs, ahpResult);
+  int get hashCode =>
+      Object.hash(runtimeType, pairwiseInputs, ahpResult, alternativeIndex);
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -818,95 +917,107 @@ class _$SuccessGeneratePairwiseInputImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         init,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         updatedPairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
+        changedAltIndex,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successResetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)
+            AhpResult? ahpResult, int? alternativeIndex, String message)
         failed,
   }) {
-    return successGeneratePairwiseInput(pairwiseInputs, ahpResult);
+    return successGeneratePairwiseInput(
+        pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
   }) {
-    return successGeneratePairwiseInput?.call(pairwiseInputs, ahpResult);
+    return successGeneratePairwiseInput?.call(
+        pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
     required TResult orElse(),
   }) {
     if (successGeneratePairwiseInput != null) {
-      return successGeneratePairwiseInput(pairwiseInputs, ahpResult);
+      return successGeneratePairwiseInput(
+          pairwiseInputs, ahpResult, alternativeIndex);
     }
     return orElse();
   }
@@ -920,6 +1031,7 @@ class _$SuccessGeneratePairwiseInputImpl
     required TResult Function(_SuccessGeneratePairwiseInput value)
         successGeneratePairwiseInput,
     required TResult Function(_UpdatePairwiseInput value) updatedPairwiseInput,
+    required TResult Function(_ChangedAltIndex value) changedAltIndex,
     required TResult Function(_LoadingGetResult value) loadingGetResult,
     required TResult Function(_SuccessGetResult value) successGetResult,
     required TResult Function(_SuccessResetResult value) successResetResult,
@@ -937,6 +1049,7 @@ class _$SuccessGeneratePairwiseInputImpl
     TResult? Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult? Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult? Function(_ChangedAltIndex value)? changedAltIndex,
     TResult? Function(_LoadingGetResult value)? loadingGetResult,
     TResult? Function(_SuccessGetResult value)? successGetResult,
     TResult? Function(_SuccessResetResult value)? successResetResult,
@@ -954,6 +1067,7 @@ class _$SuccessGeneratePairwiseInputImpl
     TResult Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult Function(_ChangedAltIndex value)? changedAltIndex,
     TResult Function(_LoadingGetResult value)? loadingGetResult,
     TResult Function(_SuccessGetResult value)? successGetResult,
     TResult Function(_SuccessResetResult value)? successResetResult,
@@ -970,12 +1084,15 @@ class _$SuccessGeneratePairwiseInputImpl
 abstract class _SuccessGeneratePairwiseInput implements AhpState {
   const factory _SuccessGeneratePairwiseInput(
       {final AhpPairwiseMatrixInputEntities? pairwiseInputs,
-      final AhpResult? ahpResult}) = _$SuccessGeneratePairwiseInputImpl;
+      final AhpResult? ahpResult,
+      final int? alternativeIndex}) = _$SuccessGeneratePairwiseInputImpl;
 
   @override
   AhpPairwiseMatrixInputEntities? get pairwiseInputs;
   @override
   AhpResult? get ahpResult;
+  @override
+  int? get alternativeIndex;
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -995,7 +1112,9 @@ abstract class _$$UpdatePairwiseInputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AhpPairwiseMatrixInputEntities? pairwiseInputs, AhpResult? ahpResult});
+      {AhpPairwiseMatrixInputEntities? pairwiseInputs,
+      AhpResult? ahpResult,
+      int? alternativeIndex});
 
   @override
   $AhpPairwiseMatrixInputEntitiesCopyWith<$Res>? get pairwiseInputs;
@@ -1016,6 +1135,7 @@ class __$$UpdatePairwiseInputImplCopyWithImpl<$Res>
   $Res call({
     Object? pairwiseInputs = freezed,
     Object? ahpResult = freezed,
+    Object? alternativeIndex = freezed,
   }) {
     return _then(_$UpdatePairwiseInputImpl(
       pairwiseInputs: freezed == pairwiseInputs
@@ -1026,6 +1146,10 @@ class __$$UpdatePairwiseInputImplCopyWithImpl<$Res>
           ? _value.ahpResult
           : ahpResult // ignore: cast_nullable_to_non_nullable
               as AhpResult?,
+      alternativeIndex: freezed == alternativeIndex
+          ? _value.alternativeIndex
+          : alternativeIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -1034,7 +1158,9 @@ class __$$UpdatePairwiseInputImplCopyWithImpl<$Res>
 
 class _$UpdatePairwiseInputImpl implements _UpdatePairwiseInput {
   const _$UpdatePairwiseInputImpl(
-      {this.pairwiseInputs = null, this.ahpResult = null});
+      {this.pairwiseInputs = null,
+      this.ahpResult = null,
+      this.alternativeIndex = null});
 
   @override
   @JsonKey()
@@ -1042,10 +1168,13 @@ class _$UpdatePairwiseInputImpl implements _UpdatePairwiseInput {
   @override
   @JsonKey()
   final AhpResult? ahpResult;
+  @override
+  @JsonKey()
+  final int? alternativeIndex;
 
   @override
   String toString() {
-    return 'AhpState.updatedPairwiseInput(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult)';
+    return 'AhpState.updatedPairwiseInput(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult, alternativeIndex: $alternativeIndex)';
   }
 
   @override
@@ -1056,11 +1185,14 @@ class _$UpdatePairwiseInputImpl implements _UpdatePairwiseInput {
             (identical(other.pairwiseInputs, pairwiseInputs) ||
                 other.pairwiseInputs == pairwiseInputs) &&
             (identical(other.ahpResult, ahpResult) ||
-                other.ahpResult == ahpResult));
+                other.ahpResult == ahpResult) &&
+            (identical(other.alternativeIndex, alternativeIndex) ||
+                other.alternativeIndex == alternativeIndex));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pairwiseInputs, ahpResult);
+  int get hashCode =>
+      Object.hash(runtimeType, pairwiseInputs, ahpResult, alternativeIndex);
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -1075,95 +1207,105 @@ class _$UpdatePairwiseInputImpl implements _UpdatePairwiseInput {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         init,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         updatedPairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
+        changedAltIndex,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successResetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)
+            AhpResult? ahpResult, int? alternativeIndex, String message)
         failed,
   }) {
-    return updatedPairwiseInput(pairwiseInputs, ahpResult);
+    return updatedPairwiseInput(pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
   }) {
-    return updatedPairwiseInput?.call(pairwiseInputs, ahpResult);
+    return updatedPairwiseInput?.call(
+        pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
     required TResult orElse(),
   }) {
     if (updatedPairwiseInput != null) {
-      return updatedPairwiseInput(pairwiseInputs, ahpResult);
+      return updatedPairwiseInput(pairwiseInputs, ahpResult, alternativeIndex);
     }
     return orElse();
   }
@@ -1177,6 +1319,7 @@ class _$UpdatePairwiseInputImpl implements _UpdatePairwiseInput {
     required TResult Function(_SuccessGeneratePairwiseInput value)
         successGeneratePairwiseInput,
     required TResult Function(_UpdatePairwiseInput value) updatedPairwiseInput,
+    required TResult Function(_ChangedAltIndex value) changedAltIndex,
     required TResult Function(_LoadingGetResult value) loadingGetResult,
     required TResult Function(_SuccessGetResult value) successGetResult,
     required TResult Function(_SuccessResetResult value) successResetResult,
@@ -1194,6 +1337,7 @@ class _$UpdatePairwiseInputImpl implements _UpdatePairwiseInput {
     TResult? Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult? Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult? Function(_ChangedAltIndex value)? changedAltIndex,
     TResult? Function(_LoadingGetResult value)? loadingGetResult,
     TResult? Function(_SuccessGetResult value)? successGetResult,
     TResult? Function(_SuccessResetResult value)? successResetResult,
@@ -1211,6 +1355,7 @@ class _$UpdatePairwiseInputImpl implements _UpdatePairwiseInput {
     TResult Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult Function(_ChangedAltIndex value)? changedAltIndex,
     TResult Function(_LoadingGetResult value)? loadingGetResult,
     TResult Function(_SuccessGetResult value)? successGetResult,
     TResult Function(_SuccessResetResult value)? successResetResult,
@@ -1227,18 +1372,307 @@ class _$UpdatePairwiseInputImpl implements _UpdatePairwiseInput {
 abstract class _UpdatePairwiseInput implements AhpState {
   const factory _UpdatePairwiseInput(
       {final AhpPairwiseMatrixInputEntities? pairwiseInputs,
-      final AhpResult? ahpResult}) = _$UpdatePairwiseInputImpl;
+      final AhpResult? ahpResult,
+      final int? alternativeIndex}) = _$UpdatePairwiseInputImpl;
 
   @override
   AhpPairwiseMatrixInputEntities? get pairwiseInputs;
   @override
   AhpResult? get ahpResult;
+  @override
+  int? get alternativeIndex;
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UpdatePairwiseInputImplCopyWith<_$UpdatePairwiseInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangedAltIndexImplCopyWith<$Res>
+    implements $AhpStateCopyWith<$Res> {
+  factory _$$ChangedAltIndexImplCopyWith(_$ChangedAltIndexImpl value,
+          $Res Function(_$ChangedAltIndexImpl) then) =
+      __$$ChangedAltIndexImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {AhpPairwiseMatrixInputEntities? pairwiseInputs,
+      AhpResult? ahpResult,
+      int? alternativeIndex});
+
+  @override
+  $AhpPairwiseMatrixInputEntitiesCopyWith<$Res>? get pairwiseInputs;
+}
+
+/// @nodoc
+class __$$ChangedAltIndexImplCopyWithImpl<$Res>
+    extends _$AhpStateCopyWithImpl<$Res, _$ChangedAltIndexImpl>
+    implements _$$ChangedAltIndexImplCopyWith<$Res> {
+  __$$ChangedAltIndexImplCopyWithImpl(
+      _$ChangedAltIndexImpl _value, $Res Function(_$ChangedAltIndexImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AhpState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pairwiseInputs = freezed,
+    Object? ahpResult = freezed,
+    Object? alternativeIndex = freezed,
+  }) {
+    return _then(_$ChangedAltIndexImpl(
+      pairwiseInputs: freezed == pairwiseInputs
+          ? _value.pairwiseInputs
+          : pairwiseInputs // ignore: cast_nullable_to_non_nullable
+              as AhpPairwiseMatrixInputEntities?,
+      ahpResult: freezed == ahpResult
+          ? _value.ahpResult
+          : ahpResult // ignore: cast_nullable_to_non_nullable
+              as AhpResult?,
+      alternativeIndex: freezed == alternativeIndex
+          ? _value.alternativeIndex
+          : alternativeIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangedAltIndexImpl implements _ChangedAltIndex {
+  const _$ChangedAltIndexImpl(
+      {this.pairwiseInputs = null,
+      this.ahpResult = null,
+      this.alternativeIndex = null});
+
+  @override
+  @JsonKey()
+  final AhpPairwiseMatrixInputEntities? pairwiseInputs;
+  @override
+  @JsonKey()
+  final AhpResult? ahpResult;
+  @override
+  @JsonKey()
+  final int? alternativeIndex;
+
+  @override
+  String toString() {
+    return 'AhpState.changedAltIndex(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult, alternativeIndex: $alternativeIndex)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangedAltIndexImpl &&
+            (identical(other.pairwiseInputs, pairwiseInputs) ||
+                other.pairwiseInputs == pairwiseInputs) &&
+            (identical(other.ahpResult, ahpResult) ||
+                other.ahpResult == ahpResult) &&
+            (identical(other.alternativeIndex, alternativeIndex) ||
+                other.alternativeIndex == alternativeIndex));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, pairwiseInputs, ahpResult, alternativeIndex);
+
+  /// Create a copy of AhpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangedAltIndexImplCopyWith<_$ChangedAltIndexImpl> get copyWith =>
+      __$$ChangedAltIndexImplCopyWithImpl<_$ChangedAltIndexImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
+        init,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
+        loadingGeneratePairwiseInput,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
+        successGeneratePairwiseInput,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
+        updatedPairwiseInput,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
+        changedAltIndex,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
+        loadingGetResult,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
+        successGetResult,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
+        successResetResult,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex, String message)
+        failed,
+  }) {
+    return changedAltIndex(pairwiseInputs, ahpResult, alternativeIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        init,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        loadingGeneratePairwiseInput,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        successGeneratePairwiseInput,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        updatedPairwiseInput,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        loadingGetResult,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        successGetResult,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        successResetResult,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
+        failed,
+  }) {
+    return changedAltIndex?.call(pairwiseInputs, ahpResult, alternativeIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        init,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        loadingGeneratePairwiseInput,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        successGeneratePairwiseInput,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        updatedPairwiseInput,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        loadingGetResult,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        successGetResult,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
+        successResetResult,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
+        failed,
+    required TResult orElse(),
+  }) {
+    if (changedAltIndex != null) {
+      return changedAltIndex(pairwiseInputs, ahpResult, alternativeIndex);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Init value) init,
+    required TResult Function(_LoadingGeneratePairwiseInput value)
+        loadingGeneratePairwiseInput,
+    required TResult Function(_SuccessGeneratePairwiseInput value)
+        successGeneratePairwiseInput,
+    required TResult Function(_UpdatePairwiseInput value) updatedPairwiseInput,
+    required TResult Function(_ChangedAltIndex value) changedAltIndex,
+    required TResult Function(_LoadingGetResult value) loadingGetResult,
+    required TResult Function(_SuccessGetResult value) successGetResult,
+    required TResult Function(_SuccessResetResult value) successResetResult,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return changedAltIndex(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Init value)? init,
+    TResult? Function(_LoadingGeneratePairwiseInput value)?
+        loadingGeneratePairwiseInput,
+    TResult? Function(_SuccessGeneratePairwiseInput value)?
+        successGeneratePairwiseInput,
+    TResult? Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult? Function(_ChangedAltIndex value)? changedAltIndex,
+    TResult? Function(_LoadingGetResult value)? loadingGetResult,
+    TResult? Function(_SuccessGetResult value)? successGetResult,
+    TResult? Function(_SuccessResetResult value)? successResetResult,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return changedAltIndex?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Init value)? init,
+    TResult Function(_LoadingGeneratePairwiseInput value)?
+        loadingGeneratePairwiseInput,
+    TResult Function(_SuccessGeneratePairwiseInput value)?
+        successGeneratePairwiseInput,
+    TResult Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult Function(_ChangedAltIndex value)? changedAltIndex,
+    TResult Function(_LoadingGetResult value)? loadingGetResult,
+    TResult Function(_SuccessGetResult value)? successGetResult,
+    TResult Function(_SuccessResetResult value)? successResetResult,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (changedAltIndex != null) {
+      return changedAltIndex(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangedAltIndex implements AhpState {
+  const factory _ChangedAltIndex(
+      {final AhpPairwiseMatrixInputEntities? pairwiseInputs,
+      final AhpResult? ahpResult,
+      final int? alternativeIndex}) = _$ChangedAltIndexImpl;
+
+  @override
+  AhpPairwiseMatrixInputEntities? get pairwiseInputs;
+  @override
+  AhpResult? get ahpResult;
+  @override
+  int? get alternativeIndex;
+
+  /// Create a copy of AhpState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChangedAltIndexImplCopyWith<_$ChangedAltIndexImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1251,7 +1685,9 @@ abstract class _$$LoadingGetResultImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AhpPairwiseMatrixInputEntities? pairwiseInputs, AhpResult? ahpResult});
+      {AhpPairwiseMatrixInputEntities? pairwiseInputs,
+      AhpResult? ahpResult,
+      int? alternativeIndex});
 
   @override
   $AhpPairwiseMatrixInputEntitiesCopyWith<$Res>? get pairwiseInputs;
@@ -1272,6 +1708,7 @@ class __$$LoadingGetResultImplCopyWithImpl<$Res>
   $Res call({
     Object? pairwiseInputs = freezed,
     Object? ahpResult = freezed,
+    Object? alternativeIndex = freezed,
   }) {
     return _then(_$LoadingGetResultImpl(
       pairwiseInputs: freezed == pairwiseInputs
@@ -1282,6 +1719,10 @@ class __$$LoadingGetResultImplCopyWithImpl<$Res>
           ? _value.ahpResult
           : ahpResult // ignore: cast_nullable_to_non_nullable
               as AhpResult?,
+      alternativeIndex: freezed == alternativeIndex
+          ? _value.alternativeIndex
+          : alternativeIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -1290,7 +1731,9 @@ class __$$LoadingGetResultImplCopyWithImpl<$Res>
 
 class _$LoadingGetResultImpl implements _LoadingGetResult {
   const _$LoadingGetResultImpl(
-      {this.pairwiseInputs = null, this.ahpResult = null});
+      {this.pairwiseInputs = null,
+      this.ahpResult = null,
+      this.alternativeIndex = null});
 
   @override
   @JsonKey()
@@ -1298,10 +1741,13 @@ class _$LoadingGetResultImpl implements _LoadingGetResult {
   @override
   @JsonKey()
   final AhpResult? ahpResult;
+  @override
+  @JsonKey()
+  final int? alternativeIndex;
 
   @override
   String toString() {
-    return 'AhpState.loadingGetResult(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult)';
+    return 'AhpState.loadingGetResult(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult, alternativeIndex: $alternativeIndex)';
   }
 
   @override
@@ -1312,11 +1758,14 @@ class _$LoadingGetResultImpl implements _LoadingGetResult {
             (identical(other.pairwiseInputs, pairwiseInputs) ||
                 other.pairwiseInputs == pairwiseInputs) &&
             (identical(other.ahpResult, ahpResult) ||
-                other.ahpResult == ahpResult));
+                other.ahpResult == ahpResult) &&
+            (identical(other.alternativeIndex, alternativeIndex) ||
+                other.alternativeIndex == alternativeIndex));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pairwiseInputs, ahpResult);
+  int get hashCode =>
+      Object.hash(runtimeType, pairwiseInputs, ahpResult, alternativeIndex);
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -1331,95 +1780,104 @@ class _$LoadingGetResultImpl implements _LoadingGetResult {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         init,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         updatedPairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
+        changedAltIndex,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successResetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)
+            AhpResult? ahpResult, int? alternativeIndex, String message)
         failed,
   }) {
-    return loadingGetResult(pairwiseInputs, ahpResult);
+    return loadingGetResult(pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
   }) {
-    return loadingGetResult?.call(pairwiseInputs, ahpResult);
+    return loadingGetResult?.call(pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
     required TResult orElse(),
   }) {
     if (loadingGetResult != null) {
-      return loadingGetResult(pairwiseInputs, ahpResult);
+      return loadingGetResult(pairwiseInputs, ahpResult, alternativeIndex);
     }
     return orElse();
   }
@@ -1433,6 +1891,7 @@ class _$LoadingGetResultImpl implements _LoadingGetResult {
     required TResult Function(_SuccessGeneratePairwiseInput value)
         successGeneratePairwiseInput,
     required TResult Function(_UpdatePairwiseInput value) updatedPairwiseInput,
+    required TResult Function(_ChangedAltIndex value) changedAltIndex,
     required TResult Function(_LoadingGetResult value) loadingGetResult,
     required TResult Function(_SuccessGetResult value) successGetResult,
     required TResult Function(_SuccessResetResult value) successResetResult,
@@ -1450,6 +1909,7 @@ class _$LoadingGetResultImpl implements _LoadingGetResult {
     TResult? Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult? Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult? Function(_ChangedAltIndex value)? changedAltIndex,
     TResult? Function(_LoadingGetResult value)? loadingGetResult,
     TResult? Function(_SuccessGetResult value)? successGetResult,
     TResult? Function(_SuccessResetResult value)? successResetResult,
@@ -1467,6 +1927,7 @@ class _$LoadingGetResultImpl implements _LoadingGetResult {
     TResult Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult Function(_ChangedAltIndex value)? changedAltIndex,
     TResult Function(_LoadingGetResult value)? loadingGetResult,
     TResult Function(_SuccessGetResult value)? successGetResult,
     TResult Function(_SuccessResetResult value)? successResetResult,
@@ -1483,12 +1944,15 @@ class _$LoadingGetResultImpl implements _LoadingGetResult {
 abstract class _LoadingGetResult implements AhpState {
   const factory _LoadingGetResult(
       {final AhpPairwiseMatrixInputEntities? pairwiseInputs,
-      final AhpResult? ahpResult}) = _$LoadingGetResultImpl;
+      final AhpResult? ahpResult,
+      final int? alternativeIndex}) = _$LoadingGetResultImpl;
 
   @override
   AhpPairwiseMatrixInputEntities? get pairwiseInputs;
   @override
   AhpResult? get ahpResult;
+  @override
+  int? get alternativeIndex;
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -1507,7 +1971,9 @@ abstract class _$$SuccessGetResultImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AhpPairwiseMatrixInputEntities? pairwiseInputs, AhpResult? ahpResult});
+      {AhpPairwiseMatrixInputEntities? pairwiseInputs,
+      AhpResult? ahpResult,
+      int? alternativeIndex});
 
   @override
   $AhpPairwiseMatrixInputEntitiesCopyWith<$Res>? get pairwiseInputs;
@@ -1528,6 +1994,7 @@ class __$$SuccessGetResultImplCopyWithImpl<$Res>
   $Res call({
     Object? pairwiseInputs = freezed,
     Object? ahpResult = freezed,
+    Object? alternativeIndex = freezed,
   }) {
     return _then(_$SuccessGetResultImpl(
       pairwiseInputs: freezed == pairwiseInputs
@@ -1538,6 +2005,10 @@ class __$$SuccessGetResultImplCopyWithImpl<$Res>
           ? _value.ahpResult
           : ahpResult // ignore: cast_nullable_to_non_nullable
               as AhpResult?,
+      alternativeIndex: freezed == alternativeIndex
+          ? _value.alternativeIndex
+          : alternativeIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -1546,7 +2017,9 @@ class __$$SuccessGetResultImplCopyWithImpl<$Res>
 
 class _$SuccessGetResultImpl implements _SuccessGetResult {
   const _$SuccessGetResultImpl(
-      {this.pairwiseInputs = null, this.ahpResult = null});
+      {this.pairwiseInputs = null,
+      this.ahpResult = null,
+      this.alternativeIndex = null});
 
   @override
   @JsonKey()
@@ -1554,10 +2027,13 @@ class _$SuccessGetResultImpl implements _SuccessGetResult {
   @override
   @JsonKey()
   final AhpResult? ahpResult;
+  @override
+  @JsonKey()
+  final int? alternativeIndex;
 
   @override
   String toString() {
-    return 'AhpState.successGetResult(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult)';
+    return 'AhpState.successGetResult(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult, alternativeIndex: $alternativeIndex)';
   }
 
   @override
@@ -1568,11 +2044,14 @@ class _$SuccessGetResultImpl implements _SuccessGetResult {
             (identical(other.pairwiseInputs, pairwiseInputs) ||
                 other.pairwiseInputs == pairwiseInputs) &&
             (identical(other.ahpResult, ahpResult) ||
-                other.ahpResult == ahpResult));
+                other.ahpResult == ahpResult) &&
+            (identical(other.alternativeIndex, alternativeIndex) ||
+                other.alternativeIndex == alternativeIndex));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pairwiseInputs, ahpResult);
+  int get hashCode =>
+      Object.hash(runtimeType, pairwiseInputs, ahpResult, alternativeIndex);
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -1587,95 +2066,104 @@ class _$SuccessGetResultImpl implements _SuccessGetResult {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         init,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         updatedPairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
+        changedAltIndex,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successResetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)
+            AhpResult? ahpResult, int? alternativeIndex, String message)
         failed,
   }) {
-    return successGetResult(pairwiseInputs, ahpResult);
+    return successGetResult(pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
   }) {
-    return successGetResult?.call(pairwiseInputs, ahpResult);
+    return successGetResult?.call(pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
     required TResult orElse(),
   }) {
     if (successGetResult != null) {
-      return successGetResult(pairwiseInputs, ahpResult);
+      return successGetResult(pairwiseInputs, ahpResult, alternativeIndex);
     }
     return orElse();
   }
@@ -1689,6 +2177,7 @@ class _$SuccessGetResultImpl implements _SuccessGetResult {
     required TResult Function(_SuccessGeneratePairwiseInput value)
         successGeneratePairwiseInput,
     required TResult Function(_UpdatePairwiseInput value) updatedPairwiseInput,
+    required TResult Function(_ChangedAltIndex value) changedAltIndex,
     required TResult Function(_LoadingGetResult value) loadingGetResult,
     required TResult Function(_SuccessGetResult value) successGetResult,
     required TResult Function(_SuccessResetResult value) successResetResult,
@@ -1706,6 +2195,7 @@ class _$SuccessGetResultImpl implements _SuccessGetResult {
     TResult? Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult? Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult? Function(_ChangedAltIndex value)? changedAltIndex,
     TResult? Function(_LoadingGetResult value)? loadingGetResult,
     TResult? Function(_SuccessGetResult value)? successGetResult,
     TResult? Function(_SuccessResetResult value)? successResetResult,
@@ -1723,6 +2213,7 @@ class _$SuccessGetResultImpl implements _SuccessGetResult {
     TResult Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult Function(_ChangedAltIndex value)? changedAltIndex,
     TResult Function(_LoadingGetResult value)? loadingGetResult,
     TResult Function(_SuccessGetResult value)? successGetResult,
     TResult Function(_SuccessResetResult value)? successResetResult,
@@ -1739,12 +2230,15 @@ class _$SuccessGetResultImpl implements _SuccessGetResult {
 abstract class _SuccessGetResult implements AhpState {
   const factory _SuccessGetResult(
       {final AhpPairwiseMatrixInputEntities? pairwiseInputs,
-      final AhpResult? ahpResult}) = _$SuccessGetResultImpl;
+      final AhpResult? ahpResult,
+      final int? alternativeIndex}) = _$SuccessGetResultImpl;
 
   @override
   AhpPairwiseMatrixInputEntities? get pairwiseInputs;
   @override
   AhpResult? get ahpResult;
+  @override
+  int? get alternativeIndex;
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -1763,7 +2257,9 @@ abstract class _$$SuccessResetResultImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AhpPairwiseMatrixInputEntities? pairwiseInputs, AhpResult? ahpResult});
+      {AhpPairwiseMatrixInputEntities? pairwiseInputs,
+      AhpResult? ahpResult,
+      int? alternativeIndex});
 
   @override
   $AhpPairwiseMatrixInputEntitiesCopyWith<$Res>? get pairwiseInputs;
@@ -1784,6 +2280,7 @@ class __$$SuccessResetResultImplCopyWithImpl<$Res>
   $Res call({
     Object? pairwiseInputs = freezed,
     Object? ahpResult = freezed,
+    Object? alternativeIndex = freezed,
   }) {
     return _then(_$SuccessResetResultImpl(
       pairwiseInputs: freezed == pairwiseInputs
@@ -1794,6 +2291,10 @@ class __$$SuccessResetResultImplCopyWithImpl<$Res>
           ? _value.ahpResult
           : ahpResult // ignore: cast_nullable_to_non_nullable
               as AhpResult?,
+      alternativeIndex: freezed == alternativeIndex
+          ? _value.alternativeIndex
+          : alternativeIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -1802,7 +2303,9 @@ class __$$SuccessResetResultImplCopyWithImpl<$Res>
 
 class _$SuccessResetResultImpl implements _SuccessResetResult {
   const _$SuccessResetResultImpl(
-      {this.pairwiseInputs = null, this.ahpResult = null});
+      {this.pairwiseInputs = null,
+      this.ahpResult = null,
+      this.alternativeIndex = null});
 
   @override
   @JsonKey()
@@ -1810,10 +2313,13 @@ class _$SuccessResetResultImpl implements _SuccessResetResult {
   @override
   @JsonKey()
   final AhpResult? ahpResult;
+  @override
+  @JsonKey()
+  final int? alternativeIndex;
 
   @override
   String toString() {
-    return 'AhpState.successResetResult(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult)';
+    return 'AhpState.successResetResult(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult, alternativeIndex: $alternativeIndex)';
   }
 
   @override
@@ -1824,11 +2330,14 @@ class _$SuccessResetResultImpl implements _SuccessResetResult {
             (identical(other.pairwiseInputs, pairwiseInputs) ||
                 other.pairwiseInputs == pairwiseInputs) &&
             (identical(other.ahpResult, ahpResult) ||
-                other.ahpResult == ahpResult));
+                other.ahpResult == ahpResult) &&
+            (identical(other.alternativeIndex, alternativeIndex) ||
+                other.alternativeIndex == alternativeIndex));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pairwiseInputs, ahpResult);
+  int get hashCode =>
+      Object.hash(runtimeType, pairwiseInputs, ahpResult, alternativeIndex);
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -1843,95 +2352,105 @@ class _$SuccessResetResultImpl implements _SuccessResetResult {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         init,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         updatedPairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
+        changedAltIndex,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successResetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)
+            AhpResult? ahpResult, int? alternativeIndex, String message)
         failed,
   }) {
-    return successResetResult(pairwiseInputs, ahpResult);
+    return successResetResult(pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
   }) {
-    return successResetResult?.call(pairwiseInputs, ahpResult);
+    return successResetResult?.call(
+        pairwiseInputs, ahpResult, alternativeIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
     required TResult orElse(),
   }) {
     if (successResetResult != null) {
-      return successResetResult(pairwiseInputs, ahpResult);
+      return successResetResult(pairwiseInputs, ahpResult, alternativeIndex);
     }
     return orElse();
   }
@@ -1945,6 +2464,7 @@ class _$SuccessResetResultImpl implements _SuccessResetResult {
     required TResult Function(_SuccessGeneratePairwiseInput value)
         successGeneratePairwiseInput,
     required TResult Function(_UpdatePairwiseInput value) updatedPairwiseInput,
+    required TResult Function(_ChangedAltIndex value) changedAltIndex,
     required TResult Function(_LoadingGetResult value) loadingGetResult,
     required TResult Function(_SuccessGetResult value) successGetResult,
     required TResult Function(_SuccessResetResult value) successResetResult,
@@ -1962,6 +2482,7 @@ class _$SuccessResetResultImpl implements _SuccessResetResult {
     TResult? Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult? Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult? Function(_ChangedAltIndex value)? changedAltIndex,
     TResult? Function(_LoadingGetResult value)? loadingGetResult,
     TResult? Function(_SuccessGetResult value)? successGetResult,
     TResult? Function(_SuccessResetResult value)? successResetResult,
@@ -1979,6 +2500,7 @@ class _$SuccessResetResultImpl implements _SuccessResetResult {
     TResult Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult Function(_ChangedAltIndex value)? changedAltIndex,
     TResult Function(_LoadingGetResult value)? loadingGetResult,
     TResult Function(_SuccessGetResult value)? successGetResult,
     TResult Function(_SuccessResetResult value)? successResetResult,
@@ -1995,12 +2517,15 @@ class _$SuccessResetResultImpl implements _SuccessResetResult {
 abstract class _SuccessResetResult implements AhpState {
   const factory _SuccessResetResult(
       {final AhpPairwiseMatrixInputEntities? pairwiseInputs,
-      final AhpResult? ahpResult}) = _$SuccessResetResultImpl;
+      final AhpResult? ahpResult,
+      final int? alternativeIndex}) = _$SuccessResetResultImpl;
 
   @override
   AhpPairwiseMatrixInputEntities? get pairwiseInputs;
   @override
   AhpResult? get ahpResult;
+  @override
+  int? get alternativeIndex;
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -2020,7 +2545,8 @@ abstract class _$$FailedImplCopyWith<$Res> implements $AhpStateCopyWith<$Res> {
   $Res call(
       {AhpPairwiseMatrixInputEntities? pairwiseInputs,
       AhpResult? ahpResult,
-      String? message});
+      int? alternativeIndex,
+      String message});
 
   @override
   $AhpPairwiseMatrixInputEntitiesCopyWith<$Res>? get pairwiseInputs;
@@ -2041,7 +2567,8 @@ class __$$FailedImplCopyWithImpl<$Res>
   $Res call({
     Object? pairwiseInputs = freezed,
     Object? ahpResult = freezed,
-    Object? message = freezed,
+    Object? alternativeIndex = freezed,
+    Object? message = null,
   }) {
     return _then(_$FailedImpl(
       pairwiseInputs: freezed == pairwiseInputs
@@ -2052,10 +2579,14 @@ class __$$FailedImplCopyWithImpl<$Res>
           ? _value.ahpResult
           : ahpResult // ignore: cast_nullable_to_non_nullable
               as AhpResult?,
-      message: freezed == message
+      alternativeIndex: freezed == alternativeIndex
+          ? _value.alternativeIndex
+          : alternativeIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -2066,6 +2597,7 @@ class _$FailedImpl implements _Failed {
   const _$FailedImpl(
       {this.pairwiseInputs = null,
       this.ahpResult = null,
+      this.alternativeIndex = null,
       required this.message});
 
   @override
@@ -2075,11 +2607,14 @@ class _$FailedImpl implements _Failed {
   @JsonKey()
   final AhpResult? ahpResult;
   @override
-  final String? message;
+  @JsonKey()
+  final int? alternativeIndex;
+  @override
+  final String message;
 
   @override
   String toString() {
-    return 'AhpState.failed(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult, message: $message)';
+    return 'AhpState.failed(pairwiseInputs: $pairwiseInputs, ahpResult: $ahpResult, alternativeIndex: $alternativeIndex, message: $message)';
   }
 
   @override
@@ -2091,12 +2626,14 @@ class _$FailedImpl implements _Failed {
                 other.pairwiseInputs == pairwiseInputs) &&
             (identical(other.ahpResult, ahpResult) ||
                 other.ahpResult == ahpResult) &&
+            (identical(other.alternativeIndex, alternativeIndex) ||
+                other.alternativeIndex == alternativeIndex) &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, pairwiseInputs, ahpResult, message);
+  int get hashCode => Object.hash(
+      runtimeType, pairwiseInputs, ahpResult, alternativeIndex, message);
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.
@@ -2110,95 +2647,104 @@ class _$FailedImpl implements _Failed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         init,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGeneratePairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         updatedPairwiseInput,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
+        changedAltIndex,
+    required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)
         loadingGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successGetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)
+            AhpResult? ahpResult, int? alternativeIndex)
         successResetResult,
     required TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)
+            AhpResult? ahpResult, int? alternativeIndex, String message)
         failed,
   }) {
-    return failed(pairwiseInputs, ahpResult, message);
+    return failed(pairwiseInputs, ahpResult, alternativeIndex, message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult? Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
   }) {
-    return failed?.call(pairwiseInputs, ahpResult, message);
+    return failed?.call(pairwiseInputs, ahpResult, alternativeIndex, message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         init,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGeneratePairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         updatedPairwiseInput,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
+        changedAltIndex,
+    TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
+            AhpResult? ahpResult, int? alternativeIndex)?
         loadingGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successGetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult)?
+            AhpResult? ahpResult, int? alternativeIndex)?
         successResetResult,
     TResult Function(AhpPairwiseMatrixInputEntities? pairwiseInputs,
-            AhpResult? ahpResult, String? message)?
+            AhpResult? ahpResult, int? alternativeIndex, String message)?
         failed,
     required TResult orElse(),
   }) {
     if (failed != null) {
-      return failed(pairwiseInputs, ahpResult, message);
+      return failed(pairwiseInputs, ahpResult, alternativeIndex, message);
     }
     return orElse();
   }
@@ -2212,6 +2758,7 @@ class _$FailedImpl implements _Failed {
     required TResult Function(_SuccessGeneratePairwiseInput value)
         successGeneratePairwiseInput,
     required TResult Function(_UpdatePairwiseInput value) updatedPairwiseInput,
+    required TResult Function(_ChangedAltIndex value) changedAltIndex,
     required TResult Function(_LoadingGetResult value) loadingGetResult,
     required TResult Function(_SuccessGetResult value) successGetResult,
     required TResult Function(_SuccessResetResult value) successResetResult,
@@ -2229,6 +2776,7 @@ class _$FailedImpl implements _Failed {
     TResult? Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult? Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult? Function(_ChangedAltIndex value)? changedAltIndex,
     TResult? Function(_LoadingGetResult value)? loadingGetResult,
     TResult? Function(_SuccessGetResult value)? successGetResult,
     TResult? Function(_SuccessResetResult value)? successResetResult,
@@ -2246,6 +2794,7 @@ class _$FailedImpl implements _Failed {
     TResult Function(_SuccessGeneratePairwiseInput value)?
         successGeneratePairwiseInput,
     TResult Function(_UpdatePairwiseInput value)? updatedPairwiseInput,
+    TResult Function(_ChangedAltIndex value)? changedAltIndex,
     TResult Function(_LoadingGetResult value)? loadingGetResult,
     TResult Function(_SuccessGetResult value)? successGetResult,
     TResult Function(_SuccessResetResult value)? successResetResult,
@@ -2263,13 +2812,16 @@ abstract class _Failed implements AhpState {
   const factory _Failed(
       {final AhpPairwiseMatrixInputEntities? pairwiseInputs,
       final AhpResult? ahpResult,
-      required final String? message}) = _$FailedImpl;
+      final int? alternativeIndex,
+      required final String message}) = _$FailedImpl;
 
   @override
   AhpPairwiseMatrixInputEntities? get pairwiseInputs;
   @override
   AhpResult? get ahpResult;
-  String? get message;
+  @override
+  int? get alternativeIndex;
+  String get message;
 
   /// Create a copy of AhpState
   /// with the given fields replaced by the non-null parameter values.

@@ -35,6 +35,7 @@ class AhpBloc extends Bloc<AhpEvent, AhpState> {
     on<UpdatePairwiseMatrixAlternativeEvent>(_updatePairwiseAlternative);
     on<GetAhpResultEvent>(_getAhpResult);
     on<ResetAhpResultEvent>(_resetAhp);
+    on<ChangePairwiseChoiceEvent>(_changePairwiseChoice);
   }
 
   Future<void> _getPairwiseInput(
@@ -51,34 +52,62 @@ class AhpBloc extends Bloc<AhpEvent, AhpState> {
             pairwiseInputs: state.pairwiseInputs,
             ahpResult: state.ahpResult)), (data) {
       emit(AhpState.successGeneratePairwiseInput(
-          ahpResult: null, pairwiseInputs: data));
+        ahpResult: null,
+        pairwiseInputs: data,
+        alternativeIndex: -1,
+      ));
     });
   }
 
   Future<void> _updatePairwiseCriteria(
       UpdatePairwiseMatrixCriteriaEvent event, Emitter<AhpState> emit) async {
-    if (event.id != null) {
+    try {
+      if (event.id == null) {
+        emit(AhpState.failed(
+          message: "ID tidak boleh null",
+          ahpResult: state.ahpResult,
+          pairwiseInputs: state.pairwiseInputs,
+          alternativeIndex: state.alternativeIndex,
+        ));
+        return;
+      }
+
       Either<Failure, List<PairwiseComparisonInput<Criteria>>?> result =
-          await updatePairwiseCriteriaInputUsecase
-              .call(UpdatePairwiseCriteriaInputParams(
-        id: event.id,
-        isLeftMoreImportant: event.isLeftMoreImportant,
-        referenceValue: event.referenceValue,
-      ));
+          await updatePairwiseCriteriaInputUsecase.call(
+        UpdatePairwiseCriteriaInputParams(
+          id: event.id,
+          isLeftMoreImportant: event.isLeftMoreImportant,
+          referenceValue: event.referenceValue,
+        ),
+      );
 
       result.fold(
-          (failure) => emit(AhpState.failed(
-              message: failure.message,
-              ahpResult: state.ahpResult,
-              pairwiseInputs: state.pairwiseInputs)), (data) {
-        if (data != null && data.isNotEmpty) {
+        (failure) => emit(AhpState.failed(
+          message: failure.message,
+          ahpResult: state.ahpResult,
+          pairwiseInputs: state.pairwiseInputs,
+          alternativeIndex: state.alternativeIndex,
+        )),
+        (data) {
+          var criteria =
+              List<PairwiseComparisonInput<Criteria>>.from(data ?? []);
           var updatePairwise =
-              state.pairwiseInputs?.copyWith(inputCriteria: data);
+              state.pairwiseInputs?.copyWith(inputCriteria: criteria);
 
           emit(AhpState.updatedPairwiseInput(
-              ahpResult: state.ahpResult, pairwiseInputs: updatePairwise));
-        }
-      });
+            ahpResult: state.ahpResult,
+            pairwiseInputs: updatePairwise,
+            alternativeIndex: state.alternativeIndex,
+          ));
+        },
+      );
+    } catch (e) {
+      emit(AhpState.failed(
+        message: e.toString(),
+        ahpResult: state.ahpResult,
+        pairwiseInputs: state.pairwiseInputs,
+        alternativeIndex: state.alternativeIndex,
+      ));
     }
   }
 
@@ -97,36 +126,64 @@ class AhpBloc extends Bloc<AhpEvent, AhpState> {
 
       result.fold(
           (failure) => emit(AhpState.failed(
-              message: failure.message,
-              ahpResult: state.ahpResult,
-              pairwiseInputs: state.pairwiseInputs)), (data) {
-        if (data != null && data.isNotEmpty) {
-          var updatePairwise =
-              state.pairwiseInputs?.copyWith(inputAlternative: data);
+                message: failure.message,
+                ahpResult: state.ahpResult,
+                pairwiseInputs: state.pairwiseInputs,
+                alternativeIndex: state.alternativeIndex,
+              )), (data) {
+        var alternative = List<PairwiseAlternativeInput>.from(data ?? []);
+        var updatePairwise =
+            state.pairwiseInputs?.copyWith(inputAlternative: alternative);
 
-          emit(AhpState.updatedPairwiseInput(
-              ahpResult: state.ahpResult, pairwiseInputs: updatePairwise));
-        }
+        emit(AhpState.updatedPairwiseInput(
+          ahpResult: state.ahpResult,
+          pairwiseInputs: updatePairwise,
+          alternativeIndex: state.alternativeIndex,
+        ));
       });
     }
+  }
+
+  Future<void> _changePairwiseChoice(
+      ChangePairwiseChoiceEvent event, Emitter<AhpState> emit) async {
+    final maxCount = (state.pairwiseInputs?.inputAlternative.length ?? 0) - 1;
+    int currentAltIndex = state.alternativeIndex ?? -1;
+
+    if (event.isNext && currentAltIndex < maxCount) {
+      currentAltIndex++;
+    } else if (!event.isNext && currentAltIndex > -1) {
+      currentAltIndex--;
+    }
+
+    emit(AhpState.changedAltIndex(
+      ahpResult: state.ahpResult,
+      pairwiseInputs: state.pairwiseInputs,
+      alternativeIndex: currentAltIndex,
+    ));
   }
 
   Future<void> _getAhpResult(
       GetAhpResultEvent event, Emitter<AhpState> emit) async {
     emit(AhpState.loadingGetResult(
-        ahpResult: state.ahpResult, pairwiseInputs: state.pairwiseInputs));
+      ahpResult: state.ahpResult,
+      pairwiseInputs: state.pairwiseInputs,
+      alternativeIndex: state.alternativeIndex,
+    ));
 
-    Either<Failure, AhpResult?> result =
-        await getAhpResultUsecase.call(EmptyParam());
+    Either<Failure, AhpResult?> result = await getAhpResultUsecase.call(
+        GetAhpResultParams(userId: event.userId, userName: event.userName));
 
     result.fold(
         (failure) => emit(AhpState.failed(
-            message: failure.message,
-            ahpResult: state.ahpResult,
-            pairwiseInputs: state.pairwiseInputs)), (data) {
+              message: failure.message,
+              ahpResult: state.ahpResult,
+              pairwiseInputs: state.pairwiseInputs,
+              alternativeIndex: state.alternativeIndex,
+            )), (data) {
       emit(AhpState.successGetResult(
         ahpResult: data,
         pairwiseInputs: state.pairwiseInputs,
+        alternativeIndex: state.alternativeIndex,
       ));
     });
   }
@@ -138,9 +195,11 @@ class AhpBloc extends Bloc<AhpEvent, AhpState> {
 
     result.fold(
         (failure) => emit(AhpState.failed(
-            message: failure.message,
-            ahpResult: state.ahpResult,
-            pairwiseInputs: state.pairwiseInputs)), (data) {
+              message: failure.message,
+              ahpResult: state.ahpResult,
+              pairwiseInputs: state.pairwiseInputs,
+              alternativeIndex: state.alternativeIndex,
+            )), (data) {
       emit(AhpState.successResetResult());
     });
   }

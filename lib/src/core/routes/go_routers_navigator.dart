@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:technq/src/core/shared/menu/widget/menu_widget.dart';
+import 'package:technq/src/core/shared/features/menu/widget/menu_widget.dart';
+import 'package:technq/src/features/ahp/presentation/pages/detail_ahp_page.dart';
 import 'package:technq/src/features/auth_ui/page/landing_page.dart';
 import 'package:technq/src/features/auth_ui/page/splash_page.dart';
 import 'package:technq/src/features/dashboard/data/mapper/fakultas_mapper.dart';
@@ -41,6 +42,11 @@ class GoRoutersNavigator {
                 final fakultas = FakultasEntitiesFromMap.fromMap(params);
                 return DetailFakultasPage(fakultas: fakultas);
               },
+            ),
+            GoRoute(
+              name: 'detail-ahp',
+              path: 'detail-ahp',
+              builder: (_, __) => DetailAhpPage(),
             ),
           ],
         ),

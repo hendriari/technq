@@ -18,7 +18,8 @@ abstract class AhpRepository {
       updatePairwiseAlternativeInput(String? id, String? alternativeId,
           bool isLeftMoreImportant, int referenceValue);
 
-  Future<Either<Failure, AhpResult?>> getAhpResult();
+  Future<Either<Failure, AhpResult?>> getAhpResult(
+      String? userId, String? userName);
 
   Future<Either<Failure, String?>> resetAhpData();
 }
