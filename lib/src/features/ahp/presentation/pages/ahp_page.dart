@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 import 'package:lottie/lottie.dart';
-import 'package:technq/src/core/shared/auth/presentation/bloc/auth_bloc.dart';
+import 'package:technq/src/core/shared/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:technq/src/core/theme/custom_colors.dart';
 import 'package:technq/src/core/utils/constants.dart';
 import 'package:technq/src/core/utils/helper.dart';
@@ -87,16 +87,16 @@ class _AhpPageState extends State<AhpPage> {
               BlocConsumer<AhpBloc, AhpState>(
                 listener: (context, state) {
                   state.whenOrNull(
-                    loadingGeneratePairwiseInput: (_, __) =>
+                    loadingGeneratePairwiseInput: (_, __, ___) =>
                         context.loaderOverlay.show(),
-                    successGeneratePairwiseInput: (_, __) {
+                    successGeneratePairwiseInput: (_, __, ___) {
                       context.loaderOverlay.hide();
                       context.goNamed('detail-ahp');
                     },
-                    failed: (_, __, message) {
+                    failed: (_, __, ___, message) {
                       context.loaderOverlay.hide();
                       _helper.showToast(
-                        message: message ?? 'Failed',
+                        message: message,
                         backGroundColor: CustomColors.redLight,
                       );
                     },

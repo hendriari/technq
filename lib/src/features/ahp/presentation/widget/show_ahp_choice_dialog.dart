@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:technq/src/core/theme/custom_colors.dart';
 import 'package:technq/src/core/utils/enums.dart';
+import 'package:technq/src/core/utils/helper.dart';
 
 class ShowAhpChoiceWidget extends StatefulWidget {
   final String? leftItem;
@@ -26,12 +27,21 @@ class _ShowAhpChoiceWidgetState extends State<ShowAhpChoiceWidget> {
   late Brightness _brightness;
   final ValueNotifier<int?> _scale = ValueNotifier(null);
   final ValueNotifier<ChoiceMoreImportant?> _important = ValueNotifier(null);
+  late Helper _helper;
+
+
+  @override
+  void initState() {
+    super.initState();
+    _helper = Helper();
+  }
 
   @override
   void dispose() {
     super.dispose();
     _scale.dispose();
     _important.dispose();
+
   }
 
   @override
@@ -270,7 +280,32 @@ class _ShowAhpChoiceWidgetState extends State<ShowAhpChoiceWidget> {
                                   onTap: () {
                                     if (i == 0) {
                                       context.pop();
-                                    } else {}
+                                    } else {
+                                      if (_important.value == null) {
+                                        _helper.showToast(
+                                            message: 'Mohon tentukan prioritas',
+                                            backGroundColor:
+                                                CustomColors.redLight);
+                                      } else if (_scale.value == null) {
+                                        _helper.showToast(
+                                            message:
+                                                'Mohon pilih rating prioritas',
+                                            backGroundColor:
+                                                CustomColors.redLight);
+                                      } else {
+                                        bool important = _important.value ==
+                                                ChoiceMoreImportant.left
+                                            ? true
+                                            : _important.value ==
+                                                    ChoiceMoreImportant.same
+                                                ? true
+                                                : false;
+
+                                        widget.onSelected
+                                            .call(important, _scale.value);
+                                        context.pop();
+                                      }
+                                    }
                                   },
                                   child: Container(
                                     padding: EdgeInsets.symmetric(

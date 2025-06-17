@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:technq/src/core/shared/auth/presentation/bloc/auth_bloc.dart';
-import 'package:technq/src/core/shared/auth/presentation/bloc/auth_state.dart';
-import 'package:technq/src/core/shared/auth/presentation/widget/update_school_widget.dart';
-import 'package:technq/src/core/shared/brightness_theme/presentation/bloc/brightness_theme_bloc.dart';
-import 'package:technq/src/core/shared/brightness_theme/presentation/bloc/brightness_theme_event.dart';
-import 'package:technq/src/core/shared/brightness_theme/presentation/bloc/brightness_theme_state.dart';
+import 'package:technq/src/core/shared/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:technq/src/core/shared/features/auth/presentation/bloc/auth_state.dart';
+import 'package:technq/src/core/shared/features/auth/presentation/widget/update_school_widget.dart';
+import 'package:technq/src/core/shared/features/brightness_theme/presentation/bloc/brightness_theme_bloc.dart';
+import 'package:technq/src/core/shared/features/brightness_theme/presentation/bloc/brightness_theme_event.dart';
+import 'package:technq/src/core/shared/features/brightness_theme/presentation/bloc/brightness_theme_state.dart';
 import 'package:technq/src/core/theme/custom_colors.dart';
 import 'package:technq/src/core/widgets/common_appbar_widget.dart';
 

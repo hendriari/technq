@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:technq/src/core/theme/custom_colors.dart';
 import 'package:technq/src/features/ahp/presentation/bloc/ahp_bloc.dart';
+import 'package:technq/src/features/ahp/presentation/bloc/ahp_event.dart';
 import 'package:technq/src/features/ahp/presentation/bloc/ahp_state.dart';
 import 'package:technq/src/features/ahp/presentation/widget/show_ahp_choice_dialog.dart';
 
@@ -19,7 +20,6 @@ class ListKriteriaWidget extends StatelessWidget {
       builder: (context, state) => ListView.builder(
         itemCount: state.pairwiseInputs?.inputCriteria.length ?? 0,
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           var criteria = state.pairwiseInputs?.inputCriteria[index];
           final totalCount = state.pairwiseInputs?.inputCriteria.length ?? 0;
@@ -48,8 +48,16 @@ class ListKriteriaWidget extends StatelessWidget {
                           context,
                           leftItem: criteria?.left.name,
                           rightItem: criteria?.right.name,
-                          onSelected: (scale, important) {
-                            if (scale != null && important != null) {}
+                          onSelected: (important, scale) {
+                            if (scale != null && important != null) {
+                              context
+                                  .read<AhpBloc>()
+                                  .add(AhpEvent.updatePairwiseMatrixCriteria(
+                                    id: criteria?.id,
+                                    isLeftMoreImportant: important,
+                                    referenceValue: scale,
+                                  ));
+                            }
                           },
                         );
                       },
@@ -75,7 +83,7 @@ class ListKriteriaWidget extends StatelessWidget {
                         ),
                         child: Text(
                           criteria?.preferenceValue != null
-                              ? '${criteria?.preferenceValue} - ${criteria?.isLeftMoreImportant == true ? 'left item is more important' : 'right item is more important'}'
+                              ? '${criteria?.preferenceValue} - ${criteria?.isLeftMoreImportant == true ? 'kiri lebih prioritas' : 'kanan lebih prioritas'}'
                               : 'Mana yang lebih penting ?',
                           style: textTheme.bodyMedium?.copyWith(
                             fontSize: 16.sp,

@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:device_preview/device_preview.dart';
+// import 'package:device_preview/device_preview.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,9 +8,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:technq/src/core/config/firenbase_config.dart';
 import 'package:technq/src/core/injection/injector.dart';
-import 'package:technq/src/core/shared/auth/presentation/bloc/auth_bloc.dart';
-import 'package:technq/src/core/shared/brightness_theme/presentation/bloc/brightness_theme_bloc.dart';
-import 'package:technq/src/core/shared/menu/bloc/menu_bloc.dart';
+import 'package:technq/src/core/shared/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:technq/src/core/shared/features/brightness_theme/presentation/bloc/brightness_theme_bloc.dart';
+import 'package:technq/src/core/shared/features/menu/bloc/menu_bloc.dart';
 import 'package:technq/src/features/ahp/presentation/bloc/ahp_bloc.dart';
 import 'package:technq/src/features/dashboard/presentation/bloc/dashboard_bloc.dart';
 import 'package:technq/src/technq_app.dart';
@@ -66,9 +66,9 @@ Future<void> main() async {
   }
 
   runApp(
-    DevicePreview(
-      builder: (context) => initBloc(),
-    ),
-    // initBloc(),
+    // DevicePreview(
+    //   builder: (context) => initBloc(),
+    // ),
+    initBloc(),
   );
 }

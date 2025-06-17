@@ -123,13 +123,14 @@ class __$$AhpPairwiseMatrixInputEntitiesImplCopyWithImpl<$Res>
 class _$AhpPairwiseMatrixInputEntitiesImpl
     implements _AhpPairwiseMatrixInputEntities {
   _$AhpPairwiseMatrixInputEntitiesImpl(
-      {required final List<PairwiseComparisonInput<Criteria>> inputCriteria,
-      required final List<PairwiseAlternativeInput> inputAlternative})
+      {final List<PairwiseComparisonInput<Criteria>> inputCriteria = const [],
+      final List<PairwiseAlternativeInput> inputAlternative = const []})
       : _inputCriteria = inputCriteria,
         _inputAlternative = inputAlternative;
 
   final List<PairwiseComparisonInput<Criteria>> _inputCriteria;
   @override
+  @JsonKey()
   List<PairwiseComparisonInput<Criteria>> get inputCriteria {
     if (_inputCriteria is EqualUnmodifiableListView) return _inputCriteria;
     // ignore: implicit_dynamic_type
@@ -138,6 +139,7 @@ class _$AhpPairwiseMatrixInputEntitiesImpl
 
   final List<PairwiseAlternativeInput> _inputAlternative;
   @override
+  @JsonKey()
   List<PairwiseAlternativeInput> get inputAlternative {
     if (_inputAlternative is EqualUnmodifiableListView)
       return _inputAlternative;
@@ -181,8 +183,8 @@ class _$AhpPairwiseMatrixInputEntitiesImpl
 abstract class _AhpPairwiseMatrixInputEntities
     implements AhpPairwiseMatrixInputEntities {
   factory _AhpPairwiseMatrixInputEntities(
-          {required final List<PairwiseComparisonInput<Criteria>> inputCriteria,
-          required final List<PairwiseAlternativeInput> inputAlternative}) =
+          {final List<PairwiseComparisonInput<Criteria>> inputCriteria,
+          final List<PairwiseAlternativeInput> inputAlternative}) =
       _$AhpPairwiseMatrixInputEntitiesImpl;
 
   @override
