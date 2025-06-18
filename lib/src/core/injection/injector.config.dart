@@ -59,6 +59,12 @@ import 'package:technq/src/features/dashboard/domain/usecase/get_list_fakultas_u
     as _i528;
 import 'package:technq/src/features/dashboard/domain/usecase/get_list_review_usecase.dart'
     as _i705;
+import 'package:technq/src/features/history/data/datasource/history_remote_datasource.dart'
+    as _i504;
+import 'package:technq/src/features/history/domain/repository/history_repository.dart'
+    as _i317;
+import 'package:technq/src/features/history/domain/usecase/get_history_usecase.dart'
+    as _i848;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -91,6 +97,10 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i994.AhpRemoteDatasource>(
         () => injectorModule.ahpLocalDatasource);
     gh.lazySingleton<_i959.AhpRepository>(() => injectorModule.ahpRepository);
+    gh.lazySingleton<_i504.HistoryRemoteDatasource>(
+        () => injectorModule.historyRemoteDatasource);
+    gh.lazySingleton<_i317.HistoryRepository>(
+        () => injectorModule.historyRepository);
     gh.lazySingleton<_i829.GetCurrentThemeUsecase>(
         () => injectorModule.getCurrentThemeUsecase);
     gh.lazySingleton<_i804.CheckTokenUsecase>(
@@ -117,6 +127,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => injectorModule.getAhpResultUsecase);
     gh.lazySingleton<_i460.ResetAhpDataUsecase>(
         () => injectorModule.resetAhpDataUsecase);
+    gh.lazySingleton<_i848.GetHistoryUsecase>(
+        () => injectorModule.getHistoryUsecase);
     return this;
   }
 }
@@ -181,4 +193,8 @@ class _$InjectorModule extends _i549.InjectorModule {
   @override
   _i460.ResetAhpDataUsecase get resetAhpDataUsecase =>
       _i460.ResetAhpDataUsecase(_getIt<_i959.AhpRepository>());
+
+  @override
+  _i848.GetHistoryUsecase get getHistoryUsecase =>
+      _i848.GetHistoryUsecase(_getIt<_i317.HistoryRepository>());
 }

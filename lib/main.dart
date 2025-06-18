@@ -13,6 +13,7 @@ import 'package:technq/src/core/shared/features/brightness_theme/presentation/bl
 import 'package:technq/src/core/shared/features/menu/bloc/menu_bloc.dart';
 import 'package:technq/src/features/ahp/presentation/bloc/ahp_bloc.dart';
 import 'package:technq/src/features/dashboard/presentation/bloc/dashboard_bloc.dart';
+import 'package:technq/src/features/history/presentation/bloc/history_bloc.dart';
 import 'package:technq/src/technq_app.dart';
 import 'package:technq/src/technq_bloc_observer.dart';
 
@@ -52,6 +53,9 @@ Future<void> main() async {
         BlocProvider(
           create: (_) => DashboardBloc(
               getListFakultasUsecase: getIt(), getListReviewUsecase: getIt()),
+        ),
+        BlocProvider(
+          create: (_) => HistoryBloc(getHistoryUsecase: getIt()),
         ),
         BlocProvider(
           create: (_) => AhpBloc(
