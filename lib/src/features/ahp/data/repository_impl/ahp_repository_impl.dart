@@ -42,7 +42,6 @@ class AhpRepositoryImpl extends AhpRepository {
 
       return Right(result);
     } catch (e) {
-      print(e.toString());
       return Left(FailureMapper.error(e));
     }
   }
@@ -57,7 +56,6 @@ class AhpRepositoryImpl extends AhpRepository {
 
       return Right(result);
     } catch (e) {
-      print(e.toString());
       return Left(FailureMapper.error(e));
     }
   }
@@ -75,7 +73,6 @@ class AhpRepositoryImpl extends AhpRepository {
 
       return Right(null);
     } catch (e) {
-      print(e.toString());
       return Left(FailureMapper.error(e));
     }
   }
@@ -87,7 +84,6 @@ class AhpRepositoryImpl extends AhpRepository {
 
       return Right(result);
     } catch (e) {
-      print(e.toString());
       return Left(FailureMapper.error(e));
     }
   }
