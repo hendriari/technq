@@ -6,6 +6,7 @@ part 'ahp_result_entities.freezed.dart';
 @freezed
 class AhpResultEntities with _$AhpResultEntities {
   const factory AhpResultEntities({
+    required String? id,
     required String? userId,
     required String? userName,
     required String? dateUpdate,

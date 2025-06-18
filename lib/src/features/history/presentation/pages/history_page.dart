@@ -1,8 +1,15 @@
+import 'dart:convert';
+
+import 'package:collection/collection.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:technq/src/core/shared/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:technq/src/core/shared/mapper/ahp_result_mapper.dart';
 import 'package:technq/src/core/theme/custom_colors.dart';
 import 'package:technq/src/core/utils/helper.dart';
 import 'package:technq/src/core/widgets/common_appbar_widget.dart';
@@ -97,135 +104,130 @@ class _HistoryPageState extends State<HistoryPage> {
                               ),
                               itemBuilder: (context, index) {
                                 final data = state.data?[index];
-                                return Container(
-                                  margin: EdgeInsets.symmetric(
-                                    horizontal: 15.w,
-                                    vertical: 5.h,
-                                  ),
-                                  alignment: Alignment.center,
-                                  padding: EdgeInsets.symmetric(
-                                      vertical: 5.h, horizontal: 12.w),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20.r),
-                                    color: isDark
-                                        ? CustomColors.dark
-                                        : CustomColors.light,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: isDark
-                                            ? CustomColors.light
-                                                .withValues(alpha: 2)
-                                            : CustomColors.grey100,
-                                        blurRadius: 2,
-                                        blurStyle: BlurStyle.solid,
-                                      ),
-                                    ],
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Hasil tingkat kecocokan Anda',
-                                        style: _textTheme.bodyLarge?.copyWith(
-                                          fontSize: 16.sp,
-                                          fontWeight: FontWeight.bold,
+                                return Bounceable(
+                                  onTap: () {
+                                    if (data != null) {
+                                      context.goNamed(
+                                        'result-ahp',
+                                        queryParameters: {
+                                          'data': jsonEncode(data.toMap()),
+                                        },
+                                      );
+                                    }
+                                  },
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(
+                                      horizontal: 15.w,
+                                      vertical: 5.h,
+                                    ),
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: 5.h, horizontal: 12.w),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20.r),
+                                      color: isDark
+                                          ? CustomColors.dark
+                                          : CustomColors.light,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: isDark
+                                              ? CustomColors.light
+                                                  .withValues(alpha: 2)
+                                              : CustomColors.grey100,
+                                          blurRadius: 2,
+                                          blurStyle: BlurStyle.solid,
                                         ),
-                                      ),
+                                      ],
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        /// DETAIL
+                                        Expanded(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Hasil tingkat kecocokan tertinggi',
+                                                style: _textTheme.bodyLarge
+                                                    ?.copyWith(
+                                                  fontSize: 16.sp,
+                                                ),
+                                              ),
 
-                                      SizedBox(
-                                        height: 8.h,
-                                      ),
-
-                                      /// LIST RESULT
-                                      ...(data != null &&
-                                              data.results.isNotEmpty
-                                          ? List.generate(
-                                              data.results.length,
-                                              (si) {
-                                                final resultData =
-                                                    data.results[si];
-                                                return Padding(
-                                                  padding: EdgeInsets.only(
-                                                      bottom: 2.h),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
+                                              /// HIGHEST VALUE
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    vertical: 4.h),
+                                                child: RichText(
+                                                  text: TextSpan(
+                                                    text: 'Program Studi ',
+                                                    style: _textTheme.bodyMedium
+                                                        ?.copyWith(
+                                                      fontSize: 13.sp,
+                                                    ),
                                                     children: [
-                                                      /// NUMBER INDEX
-                                                      Text(
-                                                        '${si + 1}.',
+                                                      /// NAME
+                                                      TextSpan(
+                                                        text: data
+                                                                ?.results
+                                                                .firstOrNull
+                                                                ?.name ??
+                                                            '-',
                                                         style: _textTheme
                                                             .bodyMedium
                                                             ?.copyWith(
-                                                          fontSize: 15.sp,
-                                                        ),
-                                                      ),
-
-                                                      SizedBox(
-                                                        width: 4.w,
-                                                      ),
-
-                                                      /// ALTERNATIVE NAME
-                                                      Expanded(
-                                                        child: Text(
-                                                          resultData.name ??
-                                                              '-',
-                                                          style: _textTheme
-                                                              .bodyMedium
-                                                              ?.copyWith(
-                                                            fontSize: 15.sp,
-                                                          ),
+                                                          fontSize: 13.sp,
+                                                          fontWeight:
+                                                              FontWeight.bold,
                                                         ),
                                                       ),
 
                                                       /// VALUE
-                                                      Text(
-                                                        '${(resultData.value ?? 0) * 100}'
-                                                            .substring(0, 5),
+                                                      TextSpan(
+                                                        text:
+                                                            ' ${(data?.results.firstOrNull?.value ?? 0) * 100}'
+                                                                .substring(
+                                                                    0, 5),
                                                         style: _textTheme
                                                             .bodyMedium
                                                             ?.copyWith(
-                                                          fontSize: 15.sp,
+                                                          fontSize: 13.sp,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color: CustomColors
+                                                              .primary100,
                                                         ),
                                                       ),
-
-                                                      Text(
-                                                        '%',
-                                                        style: _textTheme
-                                                            .bodyMedium
-                                                            ?.copyWith(
-                                                          fontSize: 15.sp,
-                                                        ),
-                                                      ),
+                                                      TextSpan(text: '%'),
                                                     ],
                                                   ),
-                                                );
-                                              },
-                                            )
-                                          : []),
+                                                ),
+                                              ),
 
-                                      SizedBox(
-                                        height: 10.h,
-                                      ),
-
-                                      /// DATE UPDATE
-                                      Text(
-                                        data?.dateUpdate != null
-                                            ? 'Diperbarui pada: ${_dateFormat.format(DateTime.parse(data!.dateUpdate!))}'
-                                            : '-',
-                                        style: _textTheme.bodyMedium?.copyWith(
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.grey.shade600,
-                                          fontStyle: FontStyle.italic,
+                                              /// DATE UPDATE & CONSISTENCY
+                                              Text(
+                                                '${data?.isConsistentCriteria != true || data?.isConsistentAlternative != true ? 'Kurang Konsisten' : 'Konsisten'} | ${data?.dateUpdate != null ? 'Diperbarui pada: ${_dateFormat.format(DateTime.parse(data!.dateUpdate!))}' : '-'}',
+                                                style: _textTheme.bodyMedium
+                                                    ?.copyWith(
+                                                  fontSize: 14.sp,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.grey.shade600,
+                                                  fontStyle: FontStyle.italic,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+
+                                        /// ICON
+                                        Icon(
+                                          CupertinoIcons.arrow_right_square,
+                                          size: 30.h,
+                                          color: CustomColors.primary100,
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 );
                               },

@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AhpResultEntities {
+  String? get id => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
   String? get userName => throw _privateConstructorUsedError;
   String? get dateUpdate => throw _privateConstructorUsedError;
@@ -41,7 +42,8 @@ abstract class $AhpResultEntitiesCopyWith<$Res> {
       _$AhpResultEntitiesCopyWithImpl<$Res, AhpResultEntities>;
   @useResult
   $Res call(
-      {String? userId,
+      {String? id,
+      String? userId,
       String? userName,
       String? dateUpdate,
       List<AhpResultDetailEntities> results,
@@ -67,6 +69,7 @@ class _$AhpResultEntitiesCopyWithImpl<$Res, $Val extends AhpResultEntities>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? userId = freezed,
     Object? userName = freezed,
     Object? dateUpdate = freezed,
@@ -78,6 +81,10 @@ class _$AhpResultEntitiesCopyWithImpl<$Res, $Val extends AhpResultEntities>
     Object? note = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -127,7 +134,8 @@ abstract class _$$AhpResultEntitiesImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? userId,
+      {String? id,
+      String? userId,
       String? userName,
       String? dateUpdate,
       List<AhpResultDetailEntities> results,
@@ -151,6 +159,7 @@ class __$$AhpResultEntitiesImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? userId = freezed,
     Object? userName = freezed,
     Object? dateUpdate = freezed,
@@ -162,6 +171,10 @@ class __$$AhpResultEntitiesImplCopyWithImpl<$Res>
     Object? note = freezed,
   }) {
     return _then(_$AhpResultEntitiesImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -206,7 +219,8 @@ class __$$AhpResultEntitiesImplCopyWithImpl<$Res>
 
 class _$AhpResultEntitiesImpl implements _AhpResultEntities {
   const _$AhpResultEntitiesImpl(
-      {required this.userId,
+      {required this.id,
+      required this.userId,
       required this.userName,
       required this.dateUpdate,
       required final List<AhpResultDetailEntities> results,
@@ -217,6 +231,8 @@ class _$AhpResultEntitiesImpl implements _AhpResultEntities {
       required this.note})
       : _results = results;
 
+  @override
+  final String? id;
   @override
   final String? userId;
   @override
@@ -244,7 +260,7 @@ class _$AhpResultEntitiesImpl implements _AhpResultEntities {
 
   @override
   String toString() {
-    return 'AhpResultEntities(userId: $userId, userName: $userName, dateUpdate: $dateUpdate, results: $results, isConsistentCriteria: $isConsistentCriteria, consistencyCriteriaRatio: $consistencyCriteriaRatio, isConsistentAlternative: $isConsistentAlternative, consistencyAlternativeRatio: $consistencyAlternativeRatio, note: $note)';
+    return 'AhpResultEntities(id: $id, userId: $userId, userName: $userName, dateUpdate: $dateUpdate, results: $results, isConsistentCriteria: $isConsistentCriteria, consistencyCriteriaRatio: $consistencyCriteriaRatio, isConsistentAlternative: $isConsistentAlternative, consistencyAlternativeRatio: $consistencyAlternativeRatio, note: $note)';
   }
 
   @override
@@ -252,6 +268,7 @@ class _$AhpResultEntitiesImpl implements _AhpResultEntities {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AhpResultEntitiesImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.userName, userName) ||
                 other.userName == userName) &&
@@ -276,6 +293,7 @@ class _$AhpResultEntitiesImpl implements _AhpResultEntities {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
       userId,
       userName,
       dateUpdate,
@@ -298,7 +316,8 @@ class _$AhpResultEntitiesImpl implements _AhpResultEntities {
 
 abstract class _AhpResultEntities implements AhpResultEntities {
   const factory _AhpResultEntities(
-      {required final String? userId,
+      {required final String? id,
+      required final String? userId,
       required final String? userName,
       required final String? dateUpdate,
       required final List<AhpResultDetailEntities> results,
@@ -308,6 +327,8 @@ abstract class _AhpResultEntities implements AhpResultEntities {
       required final double consistencyAlternativeRatio,
       required final String? note}) = _$AhpResultEntitiesImpl;
 
+  @override
+  String? get id;
   @override
   String? get userId;
   @override

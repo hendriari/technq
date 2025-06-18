@@ -28,7 +28,6 @@ class HistoryRemoteDatasourceImpl extends HistoryRemoteDatasource {
 
       return null;
     } catch (e) {
-      print(e.toString());
       throw FailureMapper.error(e);
     }
   }

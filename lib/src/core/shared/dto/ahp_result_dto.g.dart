@@ -8,6 +8,7 @@ part of 'ahp_result_dto.dart';
 
 _$AhpResultDtoImpl _$$AhpResultDtoImplFromJson(Map<String, dynamic> json) =>
     _$AhpResultDtoImpl(
+      id: json['id'] as String?,
       userId: json['user_id'] as String?,
       userName: json['user_name'] as String?,
       dateUpdate: json['date_update'] as String?,
@@ -25,6 +26,7 @@ _$AhpResultDtoImpl _$$AhpResultDtoImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$AhpResultDtoImplToJson(_$AhpResultDtoImpl instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'user_id': instance.userId,
       'user_name': instance.userName,
       'date_update': instance.dateUpdate,

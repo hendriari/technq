@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:go_router/go_router.dart';
 import 'package:technq/src/core/shared/features/menu/widget/menu_widget.dart';
+import 'package:technq/src/core/shared/mapper/ahp_result_mapper.dart';
+import 'package:technq/src/core/shared/presentation/result_ahp_page.dart';
 import 'package:technq/src/features/ahp/presentation/pages/detail_ahp_page.dart';
 import 'package:technq/src/features/auth_ui/page/landing_page.dart';
 import 'package:technq/src/features/auth_ui/page/splash_page.dart';
@@ -47,6 +51,17 @@ class GoRoutersNavigator {
               name: 'detail-ahp',
               path: 'detail-ahp',
               builder: (_, __) => DetailAhpPage(),
+            ),
+            GoRoute(
+              name: 'result-ahp',
+              path: 'result-ahp',
+              builder: (_, state) {
+                final jsonString = state.uri.queryParameters['data'];
+                final result = AhpResultEntitiesFromMap.fromMap(jsonDecode(jsonString!));
+                return ResultAhpPage(
+                  data: result,
+                );
+              },
             ),
           ],
         ),
