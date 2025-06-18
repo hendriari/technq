@@ -1,7 +1,7 @@
-import 'package:flutter_decision_making/ahp/domain/entities/ahp_result.dart';
 import 'package:flutter_decision_making/flutter_decision_making.dart';
 import 'package:technq/src/core/failure/failure_mapper.dart';
 import 'package:technq/src/core/services/firebase_services.dart';
+import 'package:technq/src/core/shared/dto/ahp_result_dto.dart';
 import 'package:technq/src/core/shared/mapper/ahp_result_mapper.dart';
 import 'package:technq/src/features/ahp/data/dto/ahp_pairwise_matrix_input_dto.dart';
 import 'package:uuid/uuid.dart';
@@ -22,7 +22,7 @@ sealed class AhpRemoteDatasource {
     int referenceValue,
   );
 
-  Future<AhpResult?> getAhpResult(String? userId, String? userName);
+  Future<AhpResultDto?> getAhpResult(String? userId, String? userName);
 
   Future<String?> resetAhpData();
 }
@@ -141,7 +141,7 @@ class AhpRemoteDatasourceImpl extends AhpRemoteDatasource {
   }
 
   @override
-  Future<AhpResult?> getAhpResult(
+  Future<AhpResultDto?> getAhpResult(
     String? userId,
     String? userName,
   ) async {
@@ -149,18 +149,18 @@ class AhpRemoteDatasourceImpl extends AhpRemoteDatasource {
       await _decisionMaking.generateResult();
 
       if (_decisionMaking.ahpResult != null) {
-        final timestamp = DateTime.now().toString();
-        final data =
-            _decisionMaking.ahpResult?.toDto(userId, userName, timestamp);
+        final dateTime = DateTime.now().toString();
+        final data = _decisionMaking.ahpResult
+            ?.fromPackageToDto(userId, userName, dateTime);
 
         if (data != null) {
           await _firebaseServices.firebaseFirestore
               .collection('ahp_result')
               .doc(Uuid().v4())
               .set(data.toJson());
-        }
 
-        return _decisionMaking.ahpResult;
+          return data;
+        }
       }
 
       return null;

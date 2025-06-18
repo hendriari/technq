@@ -24,9 +24,11 @@ import 'package:technq/src/features/ahp/domain/usecase/reset_ahp_data_usecase.da
 import 'package:technq/src/features/ahp/domain/usecase/update_pairwise_alternative_input_usecase.dart';
 import 'package:technq/src/features/ahp/domain/usecase/update_pairwise_criteria_input_usecase.dart';
 import 'package:technq/src/features/dashboard/data/datasource/dashboard_local_datasource.dart';
+import 'package:technq/src/features/dashboard/data/datasource/dashboard_remote_datasource.dart';
 import 'package:technq/src/features/dashboard/data/repository_impl/dashboard_repository_impl.dart';
 import 'package:technq/src/features/dashboard/domain/repository/dashboard_repository.dart';
 import 'package:technq/src/features/dashboard/domain/usecase/get_list_fakultas_usecase.dart';
+import 'package:technq/src/features/dashboard/domain/usecase/get_list_review_usecase.dart';
 
 @module
 abstract class InjectorModule {
@@ -79,11 +81,18 @@ abstract class InjectorModule {
       DashboardLocalDatasourceImpl();
 
   @lazySingleton
-  DashboardRepository get dashboardRepository =>
-      DashboardRepositoryImpl(getIt<DashboardLocalDatasource>());
+  DashboardRemoteDatasource get dashboardRemoteDatasource =>
+      DashboardRemoteDatasourceImpl(getIt<FirebaseServices>());
+
+  @lazySingleton
+  DashboardRepository get dashboardRepository => DashboardRepositoryImpl(
+      getIt<DashboardLocalDatasource>(), getIt<DashboardRemoteDatasource>());
 
   @lazySingleton
   GetListFakultasUsecase get getListFakultasUsecase;
+
+  @lazySingleton
+  GetListReviewUsecase get getListReveiwUsecase;
 
   /// AHP
   @lazySingleton

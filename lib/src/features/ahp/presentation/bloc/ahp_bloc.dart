@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_decision_making/ahp/domain/entities/ahp_result.dart';
 import 'package:flutter_decision_making/ahp/domain/entities/criteria.dart';
 import 'package:flutter_decision_making/ahp/domain/entities/pairwise_alternative_input.dart';
 import 'package:flutter_decision_making/ahp/domain/entities/pairwise_comparison_input.dart';
 import 'package:technq/src/core/failure/failure.dart';
+import 'package:technq/src/core/shared/entities/ahp_result_entities.dart';
 import 'package:technq/src/core/usecase/empty_param.dart';
 import 'package:technq/src/features/ahp/domain/entities/ahp_pairwise_matrix_input_entities.dart';
 import 'package:technq/src/features/ahp/domain/usecase/get_ahp_result_usecase.dart';
@@ -170,7 +170,7 @@ class AhpBloc extends Bloc<AhpEvent, AhpState> {
       alternativeIndex: state.alternativeIndex,
     ));
 
-    Either<Failure, AhpResult?> result = await getAhpResultUsecase.call(
+    Either<Failure, AhpResultEntities?> result = await getAhpResultUsecase.call(
         GetAhpResultParams(userId: event.userId, userName: event.userName));
 
     result.fold(

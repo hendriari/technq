@@ -51,10 +51,14 @@ import 'package:technq/src/features/ahp/domain/usecase/update_pairwise_criteria_
     as _i279;
 import 'package:technq/src/features/dashboard/data/datasource/dashboard_local_datasource.dart'
     as _i910;
+import 'package:technq/src/features/dashboard/data/datasource/dashboard_remote_datasource.dart'
+    as _i364;
 import 'package:technq/src/features/dashboard/domain/repository/dashboard_repository.dart'
     as _i601;
 import 'package:technq/src/features/dashboard/domain/usecase/get_list_fakultas_usecase.dart'
     as _i528;
+import 'package:technq/src/features/dashboard/domain/usecase/get_list_review_usecase.dart'
+    as _i705;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -80,6 +84,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i143.AuthRepository>(() => injectorModule.authRepository);
     gh.lazySingleton<_i910.DashboardLocalDatasource>(
         () => injectorModule.dashboardLocalDatasource);
+    gh.lazySingleton<_i364.DashboardRemoteDatasource>(
+        () => injectorModule.dashboardRemoteDatasource);
     gh.lazySingleton<_i601.DashboardRepository>(
         () => injectorModule.dashboardRepository);
     gh.lazySingleton<_i994.AhpRemoteDatasource>(
@@ -97,6 +103,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => injectorModule.updateUserSchoolUsecase);
     gh.lazySingleton<_i528.GetListFakultasUsecase>(
         () => injectorModule.getListFakultasUsecase);
+    gh.lazySingleton<_i705.GetListReviewUsecase>(
+        () => injectorModule.getListReveiwUsecase);
     gh.lazySingleton<_i346.SaveThemeUsecase>(
         () => injectorModule.saveThemeUsecase);
     gh.lazySingleton<_i946.GetPairwiseInputUsecase>(
@@ -141,6 +149,10 @@ class _$InjectorModule extends _i549.InjectorModule {
   @override
   _i528.GetListFakultasUsecase get getListFakultasUsecase =>
       _i528.GetListFakultasUsecase(_getIt<_i601.DashboardRepository>());
+
+  @override
+  _i705.GetListReviewUsecase get getListReveiwUsecase =>
+      _i705.GetListReviewUsecase(_getIt<_i601.DashboardRepository>());
 
   @override
   _i346.SaveThemeUsecase get saveThemeUsecase =>

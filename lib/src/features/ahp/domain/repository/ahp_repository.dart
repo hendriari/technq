@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_decision_making/ahp/domain/entities/ahp_result.dart';
 import 'package:flutter_decision_making/ahp/domain/entities/criteria.dart';
 import 'package:flutter_decision_making/ahp/domain/entities/pairwise_alternative_input.dart';
 import 'package:flutter_decision_making/ahp/domain/entities/pairwise_comparison_input.dart';
 import 'package:technq/src/core/failure/failure.dart';
+import 'package:technq/src/core/shared/entities/ahp_result_entities.dart';
 import 'package:technq/src/features/ahp/domain/entities/ahp_pairwise_matrix_input_entities.dart';
 
 abstract class AhpRepository {
@@ -18,7 +18,7 @@ abstract class AhpRepository {
       updatePairwiseAlternativeInput(String? id, String? alternativeId,
           bool isLeftMoreImportant, int referenceValue);
 
-  Future<Either<Failure, AhpResult?>> getAhpResult(
+  Future<Either<Failure, AhpResultEntities?>> getAhpResult(
       String? userId, String? userName);
 
   Future<Either<Failure, String?>> resetAhpData();
