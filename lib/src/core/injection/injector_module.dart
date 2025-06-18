@@ -29,6 +29,10 @@ import 'package:technq/src/features/dashboard/data/repository_impl/dashboard_rep
 import 'package:technq/src/features/dashboard/domain/repository/dashboard_repository.dart';
 import 'package:technq/src/features/dashboard/domain/usecase/get_list_fakultas_usecase.dart';
 import 'package:technq/src/features/dashboard/domain/usecase/get_list_review_usecase.dart';
+import 'package:technq/src/features/history/data/datasource/history_remote_datasource.dart';
+import 'package:technq/src/features/history/data/repository_impl/history_repository_impl.dart';
+import 'package:technq/src/features/history/domain/repository/history_repository.dart';
+import 'package:technq/src/features/history/domain/usecase/get_history_usecase.dart';
 
 @module
 abstract class InjectorModule {
@@ -118,4 +122,16 @@ abstract class InjectorModule {
 
   @lazySingleton
   ResetAhpDataUsecase get resetAhpDataUsecase;
+
+  /// HISTORY
+  @lazySingleton
+  HistoryRemoteDatasource get historyRemoteDatasource =>
+      HistoryRemoteDatasourceImpl(getIt<FirebaseServices>());
+
+  @lazySingleton
+  HistoryRepository get historyRepository =>
+      HistoryRepositoryImpl(getIt<HistoryRemoteDatasource>());
+
+  @lazySingleton
+  GetHistoryUsecase get getHistoryUsecase;
 }
