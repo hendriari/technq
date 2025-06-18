@@ -20,6 +20,7 @@ AhpResultDto _$AhpResultDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AhpResultDto {
+  String? get id => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
   String? get userName => throw _privateConstructorUsedError;
   String? get dateUpdate => throw _privateConstructorUsedError;
@@ -47,7 +48,8 @@ abstract class $AhpResultDtoCopyWith<$Res> {
       _$AhpResultDtoCopyWithImpl<$Res, AhpResultDto>;
   @useResult
   $Res call(
-      {String? userId,
+      {String? id,
+      String? userId,
       String? userName,
       String? dateUpdate,
       List<AhpResultDetailDto> results,
@@ -73,6 +75,7 @@ class _$AhpResultDtoCopyWithImpl<$Res, $Val extends AhpResultDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? userId = freezed,
     Object? userName = freezed,
     Object? dateUpdate = freezed,
@@ -84,6 +87,10 @@ class _$AhpResultDtoCopyWithImpl<$Res, $Val extends AhpResultDto>
     Object? note = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -133,7 +140,8 @@ abstract class _$$AhpResultDtoImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? userId,
+      {String? id,
+      String? userId,
       String? userName,
       String? dateUpdate,
       List<AhpResultDetailDto> results,
@@ -157,6 +165,7 @@ class __$$AhpResultDtoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? userId = freezed,
     Object? userName = freezed,
     Object? dateUpdate = freezed,
@@ -168,6 +177,10 @@ class __$$AhpResultDtoImplCopyWithImpl<$Res>
     Object? note = freezed,
   }) {
     return _then(_$AhpResultDtoImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       userId: freezed == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -212,7 +225,8 @@ class __$$AhpResultDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AhpResultDtoImpl implements _AhpResultDto {
   const _$AhpResultDtoImpl(
-      {required this.userId,
+      {required this.id,
+      required this.userId,
       required this.userName,
       required this.dateUpdate,
       required final List<AhpResultDetailDto> results,
@@ -226,6 +240,8 @@ class _$AhpResultDtoImpl implements _AhpResultDto {
   factory _$AhpResultDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$AhpResultDtoImplFromJson(json);
 
+  @override
+  final String? id;
   @override
   final String? userId;
   @override
@@ -253,7 +269,7 @@ class _$AhpResultDtoImpl implements _AhpResultDto {
 
   @override
   String toString() {
-    return 'AhpResultDto(userId: $userId, userName: $userName, dateUpdate: $dateUpdate, results: $results, isConsistentCriteria: $isConsistentCriteria, consistencyCriteriaRatio: $consistencyCriteriaRatio, isConsistentAlternative: $isConsistentAlternative, consistencyAlternativeRatio: $consistencyAlternativeRatio, note: $note)';
+    return 'AhpResultDto(id: $id, userId: $userId, userName: $userName, dateUpdate: $dateUpdate, results: $results, isConsistentCriteria: $isConsistentCriteria, consistencyCriteriaRatio: $consistencyCriteriaRatio, isConsistentAlternative: $isConsistentAlternative, consistencyAlternativeRatio: $consistencyAlternativeRatio, note: $note)';
   }
 
   @override
@@ -261,6 +277,7 @@ class _$AhpResultDtoImpl implements _AhpResultDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AhpResultDtoImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.userName, userName) ||
                 other.userName == userName) &&
@@ -286,6 +303,7 @@ class _$AhpResultDtoImpl implements _AhpResultDto {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      id,
       userId,
       userName,
       dateUpdate,
@@ -314,7 +332,8 @@ class _$AhpResultDtoImpl implements _AhpResultDto {
 
 abstract class _AhpResultDto implements AhpResultDto {
   const factory _AhpResultDto(
-      {required final String? userId,
+      {required final String? id,
+      required final String? userId,
       required final String? userName,
       required final String? dateUpdate,
       required final List<AhpResultDetailDto> results,
@@ -327,6 +346,8 @@ abstract class _AhpResultDto implements AhpResultDto {
   factory _AhpResultDto.fromJson(Map<String, dynamic> json) =
       _$AhpResultDtoImpl.fromJson;
 
+  @override
+  String? get id;
   @override
   String? get userId;
   @override

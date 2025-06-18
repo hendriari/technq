@@ -77,7 +77,7 @@ class _ShowAhpChoiceWidgetState extends State<ShowAhpChoiceWidget> {
                         children: [
                           /// QUESTION
                           Text(
-                            'Menurut Anda\n${widget.leftItem} (kiri) atau ${widget.rightItem} (kanan)\nMana yang lebih penting ?',
+                            'Menurut Anda\n${widget.leftItem} atau ${widget.rightItem}\nMana yang lebih penting ?',
                             style: _textTheme.bodyLarge?.copyWith(
                               fontSize: 18.sp,
                               fontWeight: FontWeight.bold,
