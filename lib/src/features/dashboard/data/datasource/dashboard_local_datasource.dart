@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:technq/src/core/failure/failure.dart';
+import 'package:technq/src/core/failure/failure_mapper.dart';
 import 'package:technq/src/features/dashboard/data/dto/fakultas_dto.dart';
 
 sealed class DashboardLocalDatasource {
@@ -23,7 +23,7 @@ class DashboardLocalDatasourceImpl extends DashboardLocalDatasource {
 
       return result;
     } catch (e) {
-      throw GeneralFailure(message: e.toString());
+      throw FailureMapper.error(e);
     }
   }
 }

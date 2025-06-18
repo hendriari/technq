@@ -50,7 +50,8 @@ Future<void> main() async {
         ),
         BlocProvider(create: (_) => MenuBloc()),
         BlocProvider(
-          create: (_) => DashboardBloc(getListFakultasUsecase: getIt()),
+          create: (_) => DashboardBloc(
+              getListFakultasUsecase: getIt(), getListReviewUsecase: getIt()),
         ),
         BlocProvider(
           create: (_) => AhpBloc(
