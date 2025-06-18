@@ -8,6 +8,7 @@ part 'ahp_result_dto.g.dart';
 @freezed
 class AhpResultDto with _$AhpResultDto {
   const factory AhpResultDto({
+    required String? id,
     required String? userId,
     required String? userName,
     required String? dateUpdate,

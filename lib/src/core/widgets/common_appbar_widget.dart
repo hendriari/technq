@@ -24,7 +24,7 @@ class CommonAppbarWidget extends StatelessWidget
       title: Text(
         title,
         style: textTheme.bodyMedium?.copyWith(
-          fontSize: 20.sp,
+          fontSize: 22.sp,
           fontWeight: FontWeight.bold,
         ),
       ),

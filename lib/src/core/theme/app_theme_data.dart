@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:technq/src/core/theme/app_text_theme.dart';
 import 'package:technq/src/core/theme/app_theme_color.dart';
 import 'package:technq/src/core/theme/custom_colors.dart';
@@ -22,13 +21,6 @@ class AppThemeData {
         scaffoldBackgroundColor: darkTheme
             ? CustomColors.dark.withValues(alpha: 1.5)
             : CustomColors.greyBgColor,
-        appBarTheme: AppBarTheme(
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: CustomColors.dark,
-            systemNavigationBarColor: CustomColors.dark,
-            systemNavigationBarDividerColor: Colors.white,
-          ),
-        ),
         scrollbarTheme: ScrollbarThemeData(
           thumbColor: WidgetStateProperty.all(CustomColors.blackGray300),
         ),

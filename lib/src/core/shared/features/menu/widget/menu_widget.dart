@@ -38,7 +38,9 @@ class _MenuWidgetState extends State<MenuWidget> {
     _helper = Helper();
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: CustomColors.dark,
+      statusBarIconBrightness: Brightness.light,
       systemNavigationBarColor: CustomColors.dark,
+      systemNavigationBarIconBrightness: Brightness.light,
       systemNavigationBarDividerColor: Colors.white,
     ));
     WidgetsBinding.instance.addPostFrameCallback((_) {
