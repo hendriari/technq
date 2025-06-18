@@ -5,4 +5,6 @@ part 'dashboard_event.freezed.dart';
 @freezed
 sealed class DashboardEvent with _$DashboardEvent {
   const factory DashboardEvent.getFakultas() = GetFakultasEvent;
+
+  const factory DashboardEvent.getReview() = GetReviewEvent;
 }
