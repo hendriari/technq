@@ -4,6 +4,10 @@ import 'failure.dart';
 
 class FailureMapper {
   static Failure error(Object e) {
+    if (e is Failure) {
+      return e;
+    }
+
     if (e is FirebaseAuthException) {
       return Failure.serverFailure(message: 'Auth error: ${e.code}');
     } else if (e is FirebaseException) {
@@ -15,6 +19,9 @@ class FailureMapper {
         return Failure.serverFailure(
             message: 'Firebase error: ${e.message ?? 'Unknown'}');
       }
+    } else if (e is ArgumentError) {
+      return Failure.generalFailure(
+          message: e.message ?? 'Argument tidak valid.');
     } else if (e is Exception) {
       final message = e.toString().toLowerCase();
       if (message.contains('network') || message.contains('socket')) {
@@ -22,9 +29,6 @@ class FailureMapper {
             message: 'Koneksi jaringan bermasalah.');
       }
       return Failure.generalFailure(message: e.toString());
-    } else if (e is ArgumentError) {
-      return Failure.generalFailure(
-          message: e.message ?? 'Argument tidak valid.');
     } else {
       return Failure.generalFailure(message: 'Terjadi kesalahan tak terduga.');
     }

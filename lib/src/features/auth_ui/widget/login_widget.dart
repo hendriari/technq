@@ -319,6 +319,8 @@ class _LoginWidgetState extends State<LoginWidget> {
           borderColor: CustomColors.redLight,
         ),
 
+        SizedBox(width: 10.w,),
+
         /// CONFIRM BUTTON
         BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
