@@ -1,21 +1,21 @@
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  remove_alpha_channel_ios: true
+  remove_alpha_ios: true
   min_sdk_android: 21
   adaptive_icon_background: "#fdfcfc"
-  adaptive_icon_foreground: "assets/technq_logo_image.png"
+  adaptive_icon_foreground: "assets/image/technq_logo_image.png"
   adaptive_icon_foreground_insets: 16
-  image_path: "assets/technq_logo_image.png"
+  image_path: "assets/image/technq_logo_image.png"
   web:
     generate: true
-    image_path: "assets/technq_logo_image.png"
+    image_path: "assets/image/technq_logo_image.png"
     background_color: "#fdfcfc"
     theme_color: "#fdfcfc"
   windows:
     generate: true
-    image_path: "assets/technq_logo_image.png"
+    image_path: "assets/image/technq_logo_image.png"
     icon_size: 48
   macos:
     generate: true
-    image_path: "assets/technq_logo_image.png"
+    image_path: "assets/image/technq_logo_image.png"

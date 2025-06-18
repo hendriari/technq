@@ -7,12 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:710172613282:android:c74a99e07f8aa3cf8fd5fb",
+        "mobilesdk_app_id": "1:710172613282:android:f97d4da44f4f95378fd5fb",
         "android_client_info": {
-          "package_name": "com.spk.ahp.technq.dev"
+          "package_name": "com.spk.ahp.technq"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "710172613282-9kpg1k9o0ab9qi3nqao80lfn375jrmvp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDiEFSkcJ2Arm8sM0Z1oC2yzP7SemBz37k"
@@ -20,7 +25,71 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710172613282-9kpg1k9o0ab9qi3nqao80lfn375jrmvp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "710172613282-qjbhejjfbno0l0j1n6s83men5dh8k38k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.spk.ahp.technq"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:710172613282:android:c74a99e07f8aa3cf8fd5fb",
+        "android_client_info": {
+          "package_name": "com.spk.ahp.technq.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "710172613282-0gcc8jrp2jkpab6v6hlpijd10tck4gn4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spk.ahp.technq.dev",
+            "certificate_hash": "f66358d97c1d40f81c327e46378576f030985876"
+          }
+        },
+        {
+          "client_id": "710172613282-mu83jgp5l8cugcm1vsdkk8qld6sg6sac.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spk.ahp.technq.dev",
+            "certificate_hash": "24f8c40ab847a116951180c924719816ed70d19c"
+          }
+        },
+        {
+          "client_id": "710172613282-9kpg1k9o0ab9qi3nqao80lfn375jrmvp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiEFSkcJ2Arm8sM0Z1oC2yzP7SemBz37k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "710172613282-9kpg1k9o0ab9qi3nqao80lfn375jrmvp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "710172613282-qjbhejjfbno0l0j1n6s83men5dh8k38k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.spk.ahp.technq"
+              }
+            }
+          ]
         }
       }
     }
