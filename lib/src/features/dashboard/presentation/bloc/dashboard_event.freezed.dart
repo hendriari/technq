@@ -19,32 +19,38 @@ mixin _$DashboardEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getFakultas,
+    required TResult Function() getReview,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getFakultas,
+    TResult? Function()? getReview,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getFakultas,
+    TResult Function()? getReview,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetFakultasEvent value) getFakultas,
+    required TResult Function(GetReviewEvent value) getReview,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetFakultasEvent value)? getFakultas,
+    TResult? Function(GetReviewEvent value)? getReview,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetFakultasEvent value)? getFakultas,
+    TResult Function(GetReviewEvent value)? getReview,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +119,7 @@ class _$GetFakultasEventImpl implements GetFakultasEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getFakultas,
+    required TResult Function() getReview,
   }) {
     return getFakultas();
   }
@@ -121,6 +128,7 @@ class _$GetFakultasEventImpl implements GetFakultasEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getFakultas,
+    TResult? Function()? getReview,
   }) {
     return getFakultas?.call();
   }
@@ -129,6 +137,7 @@ class _$GetFakultasEventImpl implements GetFakultasEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getFakultas,
+    TResult Function()? getReview,
     required TResult orElse(),
   }) {
     if (getFakultas != null) {
@@ -141,6 +150,7 @@ class _$GetFakultasEventImpl implements GetFakultasEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(GetFakultasEvent value) getFakultas,
+    required TResult Function(GetReviewEvent value) getReview,
   }) {
     return getFakultas(this);
   }
@@ -149,6 +159,7 @@ class _$GetFakultasEventImpl implements GetFakultasEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(GetFakultasEvent value)? getFakultas,
+    TResult? Function(GetReviewEvent value)? getReview,
   }) {
     return getFakultas?.call(this);
   }
@@ -157,6 +168,7 @@ class _$GetFakultasEventImpl implements GetFakultasEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(GetFakultasEvent value)? getFakultas,
+    TResult Function(GetReviewEvent value)? getReview,
     required TResult orElse(),
   }) {
     if (getFakultas != null) {
@@ -168,4 +180,109 @@ class _$GetFakultasEventImpl implements GetFakultasEvent {
 
 abstract class GetFakultasEvent implements DashboardEvent {
   const factory GetFakultasEvent() = _$GetFakultasEventImpl;
+}
+
+/// @nodoc
+abstract class _$$GetReviewEventImplCopyWith<$Res> {
+  factory _$$GetReviewEventImplCopyWith(_$GetReviewEventImpl value,
+          $Res Function(_$GetReviewEventImpl) then) =
+      __$$GetReviewEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetReviewEventImplCopyWithImpl<$Res>
+    extends _$DashboardEventCopyWithImpl<$Res, _$GetReviewEventImpl>
+    implements _$$GetReviewEventImplCopyWith<$Res> {
+  __$$GetReviewEventImplCopyWithImpl(
+      _$GetReviewEventImpl _value, $Res Function(_$GetReviewEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DashboardEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetReviewEventImpl implements GetReviewEvent {
+  const _$GetReviewEventImpl();
+
+  @override
+  String toString() {
+    return 'DashboardEvent.getReview()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetReviewEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getFakultas,
+    required TResult Function() getReview,
+  }) {
+    return getReview();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getFakultas,
+    TResult? Function()? getReview,
+  }) {
+    return getReview?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getFakultas,
+    TResult Function()? getReview,
+    required TResult orElse(),
+  }) {
+    if (getReview != null) {
+      return getReview();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetFakultasEvent value) getFakultas,
+    required TResult Function(GetReviewEvent value) getReview,
+  }) {
+    return getReview(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetFakultasEvent value)? getFakultas,
+    TResult? Function(GetReviewEvent value)? getReview,
+  }) {
+    return getReview?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetFakultasEvent value)? getFakultas,
+    TResult Function(GetReviewEvent value)? getReview,
+    required TResult orElse(),
+  }) {
+    if (getReview != null) {
+      return getReview(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetReviewEvent implements DashboardEvent {
+  const factory GetReviewEvent() = _$GetReviewEventImpl;
 }

@@ -16,29 +16,83 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$DashboardState {
+  List<FakultasEntities>? get listFakultas =>
+      throw _privateConstructorUsedError;
+  List<AhpResultEntities>? get listReview => throw _privateConstructorUsedError;
+  DateTime? get reviewUpdateAt => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function() loadingGetFakultas,
-    required TResult Function(List<FakultasEntities>? listFakultas)
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        init,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetFakultas,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
         successGetFakultas,
-    required TResult Function(String message) failed,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetReview,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        successGetReview,
+    required TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)
+        failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
-    TResult? Function()? loadingGetFakultas,
-    TResult? Function(List<FakultasEntities>? listFakultas)? successGetFakultas,
-    TResult? Function(String message)? failed,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult? Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? loadingGetFakultas,
-    TResult Function(List<FakultasEntities>? listFakultas)? successGetFakultas,
-    TResult Function(String message)? failed,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +101,8 @@ mixin _$DashboardState {
     required TResult Function(_Init value) init,
     required TResult Function(_LoadingGetFakultas value) loadingGetFakultas,
     required TResult Function(_SuccessGetFakultas value) successGetFakultas,
+    required TResult Function(_LoadingGetReview value) loadingGetReview,
+    required TResult Function(_SuccessGetReview value) successGetReview,
     required TResult Function(_Failed value) failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +111,8 @@ mixin _$DashboardState {
     TResult? Function(_Init value)? init,
     TResult? Function(_LoadingGetFakultas value)? loadingGetFakultas,
     TResult? Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult? Function(_LoadingGetReview value)? loadingGetReview,
+    TResult? Function(_SuccessGetReview value)? successGetReview,
     TResult? Function(_Failed value)? failed,
   }) =>
       throw _privateConstructorUsedError;
@@ -63,9 +121,17 @@ mixin _$DashboardState {
     TResult Function(_Init value)? init,
     TResult Function(_LoadingGetFakultas value)? loadingGetFakultas,
     TResult Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult Function(_LoadingGetReview value)? loadingGetReview,
+    TResult Function(_SuccessGetReview value)? successGetReview,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $DashboardStateCopyWith<DashboardState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -74,6 +140,11 @@ abstract class $DashboardStateCopyWith<$Res> {
   factory $DashboardStateCopyWith(
           DashboardState value, $Res Function(DashboardState) then) =
       _$DashboardStateCopyWithImpl<$Res, DashboardState>;
+  @useResult
+  $Res call(
+      {List<FakultasEntities>? listFakultas,
+      List<AhpResultEntities>? listReview,
+      DateTime? reviewUpdateAt});
 }
 
 /// @nodoc
@@ -88,13 +159,42 @@ class _$DashboardStateCopyWithImpl<$Res, $Val extends DashboardState>
 
   /// Create a copy of DashboardState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? listFakultas = freezed,
+    Object? listReview = freezed,
+    Object? reviewUpdateAt = freezed,
+  }) {
+    return _then(_value.copyWith(
+      listFakultas: freezed == listFakultas
+          ? _value.listFakultas
+          : listFakultas // ignore: cast_nullable_to_non_nullable
+              as List<FakultasEntities>?,
+      listReview: freezed == listReview
+          ? _value.listReview
+          : listReview // ignore: cast_nullable_to_non_nullable
+              as List<AhpResultEntities>?,
+      reviewUpdateAt: freezed == reviewUpdateAt
+          ? _value.reviewUpdateAt
+          : reviewUpdateAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$InitImplCopyWith<$Res> {
+abstract class _$$InitImplCopyWith<$Res>
+    implements $DashboardStateCopyWith<$Res> {
   factory _$$InitImplCopyWith(
           _$InitImpl value, $Res Function(_$InitImpl) then) =
       __$$InitImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<FakultasEntities>? listFakultas,
+      List<AhpResultEntities>? listReview,
+      DateTime? reviewUpdateAt});
 }
 
 /// @nodoc
@@ -106,61 +206,183 @@ class __$$InitImplCopyWithImpl<$Res>
 
   /// Create a copy of DashboardState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? listFakultas = freezed,
+    Object? listReview = freezed,
+    Object? reviewUpdateAt = freezed,
+  }) {
+    return _then(_$InitImpl(
+      listFakultas: freezed == listFakultas
+          ? _value._listFakultas
+          : listFakultas // ignore: cast_nullable_to_non_nullable
+              as List<FakultasEntities>?,
+      listReview: freezed == listReview
+          ? _value._listReview
+          : listReview // ignore: cast_nullable_to_non_nullable
+              as List<AhpResultEntities>?,
+      reviewUpdateAt: freezed == reviewUpdateAt
+          ? _value.reviewUpdateAt
+          : reviewUpdateAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$InitImpl implements _Init {
-  const _$InitImpl();
+  const _$InitImpl(
+      {final List<FakultasEntities>? listFakultas = const [],
+      final List<AhpResultEntities>? listReview = const [],
+      this.reviewUpdateAt = null})
+      : _listFakultas = listFakultas,
+        _listReview = listReview;
+
+  final List<FakultasEntities>? _listFakultas;
+  @override
+  @JsonKey()
+  List<FakultasEntities>? get listFakultas {
+    final value = _listFakultas;
+    if (value == null) return null;
+    if (_listFakultas is EqualUnmodifiableListView) return _listFakultas;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<AhpResultEntities>? _listReview;
+  @override
+  @JsonKey()
+  List<AhpResultEntities>? get listReview {
+    final value = _listReview;
+    if (value == null) return null;
+    if (_listReview is EqualUnmodifiableListView) return _listReview;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey()
+  final DateTime? reviewUpdateAt;
 
   @override
   String toString() {
-    return 'DashboardState.init()';
+    return 'DashboardState.init(listFakultas: $listFakultas, listReview: $listReview, reviewUpdateAt: $reviewUpdateAt)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$InitImpl &&
+            const DeepCollectionEquality()
+                .equals(other._listFakultas, _listFakultas) &&
+            const DeepCollectionEquality()
+                .equals(other._listReview, _listReview) &&
+            (identical(other.reviewUpdateAt, reviewUpdateAt) ||
+                other.reviewUpdateAt == reviewUpdateAt));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_listFakultas),
+      const DeepCollectionEquality().hash(_listReview),
+      reviewUpdateAt);
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InitImplCopyWith<_$InitImpl> get copyWith =>
+      __$$InitImplCopyWithImpl<_$InitImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function() loadingGetFakultas,
-    required TResult Function(List<FakultasEntities>? listFakultas)
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        init,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetFakultas,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
         successGetFakultas,
-    required TResult Function(String message) failed,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetReview,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        successGetReview,
+    required TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)
+        failed,
   }) {
-    return init();
+    return init(listFakultas, listReview, reviewUpdateAt);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
-    TResult? Function()? loadingGetFakultas,
-    TResult? Function(List<FakultasEntities>? listFakultas)? successGetFakultas,
-    TResult? Function(String message)? failed,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult? Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
   }) {
-    return init?.call();
+    return init?.call(listFakultas, listReview, reviewUpdateAt);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? loadingGetFakultas,
-    TResult Function(List<FakultasEntities>? listFakultas)? successGetFakultas,
-    TResult Function(String message)? failed,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
     required TResult orElse(),
   }) {
     if (init != null) {
-      return init();
+      return init(listFakultas, listReview, reviewUpdateAt);
     }
     return orElse();
   }
@@ -171,6 +393,8 @@ class _$InitImpl implements _Init {
     required TResult Function(_Init value) init,
     required TResult Function(_LoadingGetFakultas value) loadingGetFakultas,
     required TResult Function(_SuccessGetFakultas value) successGetFakultas,
+    required TResult Function(_LoadingGetReview value) loadingGetReview,
+    required TResult Function(_SuccessGetReview value) successGetReview,
     required TResult Function(_Failed value) failed,
   }) {
     return init(this);
@@ -182,6 +406,8 @@ class _$InitImpl implements _Init {
     TResult? Function(_Init value)? init,
     TResult? Function(_LoadingGetFakultas value)? loadingGetFakultas,
     TResult? Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult? Function(_LoadingGetReview value)? loadingGetReview,
+    TResult? Function(_SuccessGetReview value)? successGetReview,
     TResult? Function(_Failed value)? failed,
   }) {
     return init?.call(this);
@@ -193,6 +419,8 @@ class _$InitImpl implements _Init {
     TResult Function(_Init value)? init,
     TResult Function(_LoadingGetFakultas value)? loadingGetFakultas,
     TResult Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult Function(_LoadingGetReview value)? loadingGetReview,
+    TResult Function(_SuccessGetReview value)? successGetReview,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -204,14 +432,38 @@ class _$InitImpl implements _Init {
 }
 
 abstract class _Init implements DashboardState {
-  const factory _Init() = _$InitImpl;
+  const factory _Init(
+      {final List<FakultasEntities>? listFakultas,
+      final List<AhpResultEntities>? listReview,
+      final DateTime? reviewUpdateAt}) = _$InitImpl;
+
+  @override
+  List<FakultasEntities>? get listFakultas;
+  @override
+  List<AhpResultEntities>? get listReview;
+  @override
+  DateTime? get reviewUpdateAt;
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InitImplCopyWith<_$InitImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadingGetFakultasImplCopyWith<$Res> {
+abstract class _$$LoadingGetFakultasImplCopyWith<$Res>
+    implements $DashboardStateCopyWith<$Res> {
   factory _$$LoadingGetFakultasImplCopyWith(_$LoadingGetFakultasImpl value,
           $Res Function(_$LoadingGetFakultasImpl) then) =
       __$$LoadingGetFakultasImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<FakultasEntities>? listFakultas,
+      List<AhpResultEntities>? listReview,
+      DateTime? reviewUpdateAt});
 }
 
 /// @nodoc
@@ -224,61 +476,184 @@ class __$$LoadingGetFakultasImplCopyWithImpl<$Res>
 
   /// Create a copy of DashboardState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? listFakultas = freezed,
+    Object? listReview = freezed,
+    Object? reviewUpdateAt = freezed,
+  }) {
+    return _then(_$LoadingGetFakultasImpl(
+      listFakultas: freezed == listFakultas
+          ? _value._listFakultas
+          : listFakultas // ignore: cast_nullable_to_non_nullable
+              as List<FakultasEntities>?,
+      listReview: freezed == listReview
+          ? _value._listReview
+          : listReview // ignore: cast_nullable_to_non_nullable
+              as List<AhpResultEntities>?,
+      reviewUpdateAt: freezed == reviewUpdateAt
+          ? _value.reviewUpdateAt
+          : reviewUpdateAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$LoadingGetFakultasImpl implements _LoadingGetFakultas {
-  const _$LoadingGetFakultasImpl();
+  const _$LoadingGetFakultasImpl(
+      {final List<FakultasEntities>? listFakultas = const [],
+      final List<AhpResultEntities>? listReview = const [],
+      this.reviewUpdateAt = null})
+      : _listFakultas = listFakultas,
+        _listReview = listReview;
+
+  final List<FakultasEntities>? _listFakultas;
+  @override
+  @JsonKey()
+  List<FakultasEntities>? get listFakultas {
+    final value = _listFakultas;
+    if (value == null) return null;
+    if (_listFakultas is EqualUnmodifiableListView) return _listFakultas;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<AhpResultEntities>? _listReview;
+  @override
+  @JsonKey()
+  List<AhpResultEntities>? get listReview {
+    final value = _listReview;
+    if (value == null) return null;
+    if (_listReview is EqualUnmodifiableListView) return _listReview;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey()
+  final DateTime? reviewUpdateAt;
 
   @override
   String toString() {
-    return 'DashboardState.loadingGetFakultas()';
+    return 'DashboardState.loadingGetFakultas(listFakultas: $listFakultas, listReview: $listReview, reviewUpdateAt: $reviewUpdateAt)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingGetFakultasImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingGetFakultasImpl &&
+            const DeepCollectionEquality()
+                .equals(other._listFakultas, _listFakultas) &&
+            const DeepCollectionEquality()
+                .equals(other._listReview, _listReview) &&
+            (identical(other.reviewUpdateAt, reviewUpdateAt) ||
+                other.reviewUpdateAt == reviewUpdateAt));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_listFakultas),
+      const DeepCollectionEquality().hash(_listReview),
+      reviewUpdateAt);
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadingGetFakultasImplCopyWith<_$LoadingGetFakultasImpl> get copyWith =>
+      __$$LoadingGetFakultasImplCopyWithImpl<_$LoadingGetFakultasImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function() loadingGetFakultas,
-    required TResult Function(List<FakultasEntities>? listFakultas)
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        init,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetFakultas,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
         successGetFakultas,
-    required TResult Function(String message) failed,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetReview,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        successGetReview,
+    required TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)
+        failed,
   }) {
-    return loadingGetFakultas();
+    return loadingGetFakultas(listFakultas, listReview, reviewUpdateAt);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
-    TResult? Function()? loadingGetFakultas,
-    TResult? Function(List<FakultasEntities>? listFakultas)? successGetFakultas,
-    TResult? Function(String message)? failed,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult? Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
   }) {
-    return loadingGetFakultas?.call();
+    return loadingGetFakultas?.call(listFakultas, listReview, reviewUpdateAt);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? loadingGetFakultas,
-    TResult Function(List<FakultasEntities>? listFakultas)? successGetFakultas,
-    TResult Function(String message)? failed,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
     required TResult orElse(),
   }) {
     if (loadingGetFakultas != null) {
-      return loadingGetFakultas();
+      return loadingGetFakultas(listFakultas, listReview, reviewUpdateAt);
     }
     return orElse();
   }
@@ -289,6 +664,8 @@ class _$LoadingGetFakultasImpl implements _LoadingGetFakultas {
     required TResult Function(_Init value) init,
     required TResult Function(_LoadingGetFakultas value) loadingGetFakultas,
     required TResult Function(_SuccessGetFakultas value) successGetFakultas,
+    required TResult Function(_LoadingGetReview value) loadingGetReview,
+    required TResult Function(_SuccessGetReview value) successGetReview,
     required TResult Function(_Failed value) failed,
   }) {
     return loadingGetFakultas(this);
@@ -300,6 +677,8 @@ class _$LoadingGetFakultasImpl implements _LoadingGetFakultas {
     TResult? Function(_Init value)? init,
     TResult? Function(_LoadingGetFakultas value)? loadingGetFakultas,
     TResult? Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult? Function(_LoadingGetReview value)? loadingGetReview,
+    TResult? Function(_SuccessGetReview value)? successGetReview,
     TResult? Function(_Failed value)? failed,
   }) {
     return loadingGetFakultas?.call(this);
@@ -311,6 +690,8 @@ class _$LoadingGetFakultasImpl implements _LoadingGetFakultas {
     TResult Function(_Init value)? init,
     TResult Function(_LoadingGetFakultas value)? loadingGetFakultas,
     TResult Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult Function(_LoadingGetReview value)? loadingGetReview,
+    TResult Function(_SuccessGetReview value)? successGetReview,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -322,16 +703,38 @@ class _$LoadingGetFakultasImpl implements _LoadingGetFakultas {
 }
 
 abstract class _LoadingGetFakultas implements DashboardState {
-  const factory _LoadingGetFakultas() = _$LoadingGetFakultasImpl;
+  const factory _LoadingGetFakultas(
+      {final List<FakultasEntities>? listFakultas,
+      final List<AhpResultEntities>? listReview,
+      final DateTime? reviewUpdateAt}) = _$LoadingGetFakultasImpl;
+
+  @override
+  List<FakultasEntities>? get listFakultas;
+  @override
+  List<AhpResultEntities>? get listReview;
+  @override
+  DateTime? get reviewUpdateAt;
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadingGetFakultasImplCopyWith<_$LoadingGetFakultasImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SuccessGetFakultasImplCopyWith<$Res> {
+abstract class _$$SuccessGetFakultasImplCopyWith<$Res>
+    implements $DashboardStateCopyWith<$Res> {
   factory _$$SuccessGetFakultasImplCopyWith(_$SuccessGetFakultasImpl value,
           $Res Function(_$SuccessGetFakultasImpl) then) =
       __$$SuccessGetFakultasImplCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({List<FakultasEntities>? listFakultas});
+  $Res call(
+      {List<FakultasEntities>? listFakultas,
+      List<AhpResultEntities>? listReview,
+      DateTime? reviewUpdateAt});
 }
 
 /// @nodoc
@@ -348,12 +751,22 @@ class __$$SuccessGetFakultasImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? listFakultas = freezed,
+    Object? listReview = freezed,
+    Object? reviewUpdateAt = freezed,
   }) {
     return _then(_$SuccessGetFakultasImpl(
       listFakultas: freezed == listFakultas
           ? _value._listFakultas
           : listFakultas // ignore: cast_nullable_to_non_nullable
               as List<FakultasEntities>?,
+      listReview: freezed == listReview
+          ? _value._listReview
+          : listReview // ignore: cast_nullable_to_non_nullable
+              as List<AhpResultEntities>?,
+      reviewUpdateAt: freezed == reviewUpdateAt
+          ? _value.reviewUpdateAt
+          : reviewUpdateAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -362,11 +775,15 @@ class __$$SuccessGetFakultasImplCopyWithImpl<$Res>
 
 class _$SuccessGetFakultasImpl implements _SuccessGetFakultas {
   const _$SuccessGetFakultasImpl(
-      {required final List<FakultasEntities>? listFakultas})
-      : _listFakultas = listFakultas;
+      {final List<FakultasEntities>? listFakultas = const [],
+      final List<AhpResultEntities>? listReview = const [],
+      this.reviewUpdateAt = null})
+      : _listFakultas = listFakultas,
+        _listReview = listReview;
 
   final List<FakultasEntities>? _listFakultas;
   @override
+  @JsonKey()
   List<FakultasEntities>? get listFakultas {
     final value = _listFakultas;
     if (value == null) return null;
@@ -375,9 +792,24 @@ class _$SuccessGetFakultasImpl implements _SuccessGetFakultas {
     return EqualUnmodifiableListView(value);
   }
 
+  final List<AhpResultEntities>? _listReview;
+  @override
+  @JsonKey()
+  List<AhpResultEntities>? get listReview {
+    final value = _listReview;
+    if (value == null) return null;
+    if (_listReview is EqualUnmodifiableListView) return _listReview;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey()
+  final DateTime? reviewUpdateAt;
+
   @override
   String toString() {
-    return 'DashboardState.successGetFakultas(listFakultas: $listFakultas)';
+    return 'DashboardState.successGetFakultas(listFakultas: $listFakultas, listReview: $listReview, reviewUpdateAt: $reviewUpdateAt)';
   }
 
   @override
@@ -386,12 +818,19 @@ class _$SuccessGetFakultasImpl implements _SuccessGetFakultas {
         (other.runtimeType == runtimeType &&
             other is _$SuccessGetFakultasImpl &&
             const DeepCollectionEquality()
-                .equals(other._listFakultas, _listFakultas));
+                .equals(other._listFakultas, _listFakultas) &&
+            const DeepCollectionEquality()
+                .equals(other._listReview, _listReview) &&
+            (identical(other.reviewUpdateAt, reviewUpdateAt) ||
+                other.reviewUpdateAt == reviewUpdateAt));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_listFakultas));
+      runtimeType,
+      const DeepCollectionEquality().hash(_listFakultas),
+      const DeepCollectionEquality().hash(_listReview),
+      reviewUpdateAt);
 
   /// Create a copy of DashboardState
   /// with the given fields replaced by the non-null parameter values.
@@ -405,37 +844,87 @@ class _$SuccessGetFakultasImpl implements _SuccessGetFakultas {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function() loadingGetFakultas,
-    required TResult Function(List<FakultasEntities>? listFakultas)
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        init,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetFakultas,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
         successGetFakultas,
-    required TResult Function(String message) failed,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetReview,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        successGetReview,
+    required TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)
+        failed,
   }) {
-    return successGetFakultas(listFakultas);
+    return successGetFakultas(listFakultas, listReview, reviewUpdateAt);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
-    TResult? Function()? loadingGetFakultas,
-    TResult? Function(List<FakultasEntities>? listFakultas)? successGetFakultas,
-    TResult? Function(String message)? failed,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult? Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
   }) {
-    return successGetFakultas?.call(listFakultas);
+    return successGetFakultas?.call(listFakultas, listReview, reviewUpdateAt);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? loadingGetFakultas,
-    TResult Function(List<FakultasEntities>? listFakultas)? successGetFakultas,
-    TResult Function(String message)? failed,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
     required TResult orElse(),
   }) {
     if (successGetFakultas != null) {
-      return successGetFakultas(listFakultas);
+      return successGetFakultas(listFakultas, listReview, reviewUpdateAt);
     }
     return orElse();
   }
@@ -446,6 +935,8 @@ class _$SuccessGetFakultasImpl implements _SuccessGetFakultas {
     required TResult Function(_Init value) init,
     required TResult Function(_LoadingGetFakultas value) loadingGetFakultas,
     required TResult Function(_SuccessGetFakultas value) successGetFakultas,
+    required TResult Function(_LoadingGetReview value) loadingGetReview,
+    required TResult Function(_SuccessGetReview value) successGetReview,
     required TResult Function(_Failed value) failed,
   }) {
     return successGetFakultas(this);
@@ -457,6 +948,8 @@ class _$SuccessGetFakultasImpl implements _SuccessGetFakultas {
     TResult? Function(_Init value)? init,
     TResult? Function(_LoadingGetFakultas value)? loadingGetFakultas,
     TResult? Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult? Function(_LoadingGetReview value)? loadingGetReview,
+    TResult? Function(_SuccessGetReview value)? successGetReview,
     TResult? Function(_Failed value)? failed,
   }) {
     return successGetFakultas?.call(this);
@@ -468,6 +961,8 @@ class _$SuccessGetFakultasImpl implements _SuccessGetFakultas {
     TResult Function(_Init value)? init,
     TResult Function(_LoadingGetFakultas value)? loadingGetFakultas,
     TResult Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult Function(_LoadingGetReview value)? loadingGetReview,
+    TResult Function(_SuccessGetReview value)? successGetReview,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -480,25 +975,580 @@ class _$SuccessGetFakultasImpl implements _SuccessGetFakultas {
 
 abstract class _SuccessGetFakultas implements DashboardState {
   const factory _SuccessGetFakultas(
-          {required final List<FakultasEntities>? listFakultas}) =
-      _$SuccessGetFakultasImpl;
+      {final List<FakultasEntities>? listFakultas,
+      final List<AhpResultEntities>? listReview,
+      final DateTime? reviewUpdateAt}) = _$SuccessGetFakultasImpl;
 
+  @override
   List<FakultasEntities>? get listFakultas;
+  @override
+  List<AhpResultEntities>? get listReview;
+  @override
+  DateTime? get reviewUpdateAt;
 
   /// Create a copy of DashboardState
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessGetFakultasImplCopyWith<_$SuccessGetFakultasImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FailedImplCopyWith<$Res> {
+abstract class _$$LoadingGetReviewImplCopyWith<$Res>
+    implements $DashboardStateCopyWith<$Res> {
+  factory _$$LoadingGetReviewImplCopyWith(_$LoadingGetReviewImpl value,
+          $Res Function(_$LoadingGetReviewImpl) then) =
+      __$$LoadingGetReviewImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<FakultasEntities>? listFakultas,
+      List<AhpResultEntities>? listReview,
+      DateTime? reviewUpdateAt});
+}
+
+/// @nodoc
+class __$$LoadingGetReviewImplCopyWithImpl<$Res>
+    extends _$DashboardStateCopyWithImpl<$Res, _$LoadingGetReviewImpl>
+    implements _$$LoadingGetReviewImplCopyWith<$Res> {
+  __$$LoadingGetReviewImplCopyWithImpl(_$LoadingGetReviewImpl _value,
+      $Res Function(_$LoadingGetReviewImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? listFakultas = freezed,
+    Object? listReview = freezed,
+    Object? reviewUpdateAt = freezed,
+  }) {
+    return _then(_$LoadingGetReviewImpl(
+      listFakultas: freezed == listFakultas
+          ? _value._listFakultas
+          : listFakultas // ignore: cast_nullable_to_non_nullable
+              as List<FakultasEntities>?,
+      listReview: freezed == listReview
+          ? _value._listReview
+          : listReview // ignore: cast_nullable_to_non_nullable
+              as List<AhpResultEntities>?,
+      reviewUpdateAt: freezed == reviewUpdateAt
+          ? _value.reviewUpdateAt
+          : reviewUpdateAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadingGetReviewImpl implements _LoadingGetReview {
+  const _$LoadingGetReviewImpl(
+      {final List<FakultasEntities>? listFakultas = const [],
+      final List<AhpResultEntities>? listReview = const [],
+      this.reviewUpdateAt = null})
+      : _listFakultas = listFakultas,
+        _listReview = listReview;
+
+  final List<FakultasEntities>? _listFakultas;
+  @override
+  @JsonKey()
+  List<FakultasEntities>? get listFakultas {
+    final value = _listFakultas;
+    if (value == null) return null;
+    if (_listFakultas is EqualUnmodifiableListView) return _listFakultas;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<AhpResultEntities>? _listReview;
+  @override
+  @JsonKey()
+  List<AhpResultEntities>? get listReview {
+    final value = _listReview;
+    if (value == null) return null;
+    if (_listReview is EqualUnmodifiableListView) return _listReview;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey()
+  final DateTime? reviewUpdateAt;
+
+  @override
+  String toString() {
+    return 'DashboardState.loadingGetReview(listFakultas: $listFakultas, listReview: $listReview, reviewUpdateAt: $reviewUpdateAt)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingGetReviewImpl &&
+            const DeepCollectionEquality()
+                .equals(other._listFakultas, _listFakultas) &&
+            const DeepCollectionEquality()
+                .equals(other._listReview, _listReview) &&
+            (identical(other.reviewUpdateAt, reviewUpdateAt) ||
+                other.reviewUpdateAt == reviewUpdateAt));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_listFakultas),
+      const DeepCollectionEquality().hash(_listReview),
+      reviewUpdateAt);
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadingGetReviewImplCopyWith<_$LoadingGetReviewImpl> get copyWith =>
+      __$$LoadingGetReviewImplCopyWithImpl<_$LoadingGetReviewImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        init,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetFakultas,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        successGetFakultas,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetReview,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        successGetReview,
+    required TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)
+        failed,
+  }) {
+    return loadingGetReview(listFakultas, listReview, reviewUpdateAt);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult? Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
+  }) {
+    return loadingGetReview?.call(listFakultas, listReview, reviewUpdateAt);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
+    required TResult orElse(),
+  }) {
+    if (loadingGetReview != null) {
+      return loadingGetReview(listFakultas, listReview, reviewUpdateAt);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Init value) init,
+    required TResult Function(_LoadingGetFakultas value) loadingGetFakultas,
+    required TResult Function(_SuccessGetFakultas value) successGetFakultas,
+    required TResult Function(_LoadingGetReview value) loadingGetReview,
+    required TResult Function(_SuccessGetReview value) successGetReview,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return loadingGetReview(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Init value)? init,
+    TResult? Function(_LoadingGetFakultas value)? loadingGetFakultas,
+    TResult? Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult? Function(_LoadingGetReview value)? loadingGetReview,
+    TResult? Function(_SuccessGetReview value)? successGetReview,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return loadingGetReview?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Init value)? init,
+    TResult Function(_LoadingGetFakultas value)? loadingGetFakultas,
+    TResult Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult Function(_LoadingGetReview value)? loadingGetReview,
+    TResult Function(_SuccessGetReview value)? successGetReview,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (loadingGetReview != null) {
+      return loadingGetReview(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingGetReview implements DashboardState {
+  const factory _LoadingGetReview(
+      {final List<FakultasEntities>? listFakultas,
+      final List<AhpResultEntities>? listReview,
+      final DateTime? reviewUpdateAt}) = _$LoadingGetReviewImpl;
+
+  @override
+  List<FakultasEntities>? get listFakultas;
+  @override
+  List<AhpResultEntities>? get listReview;
+  @override
+  DateTime? get reviewUpdateAt;
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadingGetReviewImplCopyWith<_$LoadingGetReviewImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessGetReviewImplCopyWith<$Res>
+    implements $DashboardStateCopyWith<$Res> {
+  factory _$$SuccessGetReviewImplCopyWith(_$SuccessGetReviewImpl value,
+          $Res Function(_$SuccessGetReviewImpl) then) =
+      __$$SuccessGetReviewImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {List<FakultasEntities>? listFakultas,
+      List<AhpResultEntities>? listReview,
+      DateTime? reviewUpdateAt});
+}
+
+/// @nodoc
+class __$$SuccessGetReviewImplCopyWithImpl<$Res>
+    extends _$DashboardStateCopyWithImpl<$Res, _$SuccessGetReviewImpl>
+    implements _$$SuccessGetReviewImplCopyWith<$Res> {
+  __$$SuccessGetReviewImplCopyWithImpl(_$SuccessGetReviewImpl _value,
+      $Res Function(_$SuccessGetReviewImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? listFakultas = freezed,
+    Object? listReview = freezed,
+    Object? reviewUpdateAt = freezed,
+  }) {
+    return _then(_$SuccessGetReviewImpl(
+      listFakultas: freezed == listFakultas
+          ? _value._listFakultas
+          : listFakultas // ignore: cast_nullable_to_non_nullable
+              as List<FakultasEntities>?,
+      listReview: freezed == listReview
+          ? _value._listReview
+          : listReview // ignore: cast_nullable_to_non_nullable
+              as List<AhpResultEntities>?,
+      reviewUpdateAt: freezed == reviewUpdateAt
+          ? _value.reviewUpdateAt
+          : reviewUpdateAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessGetReviewImpl implements _SuccessGetReview {
+  const _$SuccessGetReviewImpl(
+      {final List<FakultasEntities>? listFakultas = const [],
+      final List<AhpResultEntities>? listReview = const [],
+      this.reviewUpdateAt = null})
+      : _listFakultas = listFakultas,
+        _listReview = listReview;
+
+  final List<FakultasEntities>? _listFakultas;
+  @override
+  @JsonKey()
+  List<FakultasEntities>? get listFakultas {
+    final value = _listFakultas;
+    if (value == null) return null;
+    if (_listFakultas is EqualUnmodifiableListView) return _listFakultas;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<AhpResultEntities>? _listReview;
+  @override
+  @JsonKey()
+  List<AhpResultEntities>? get listReview {
+    final value = _listReview;
+    if (value == null) return null;
+    if (_listReview is EqualUnmodifiableListView) return _listReview;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey()
+  final DateTime? reviewUpdateAt;
+
+  @override
+  String toString() {
+    return 'DashboardState.successGetReview(listFakultas: $listFakultas, listReview: $listReview, reviewUpdateAt: $reviewUpdateAt)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessGetReviewImpl &&
+            const DeepCollectionEquality()
+                .equals(other._listFakultas, _listFakultas) &&
+            const DeepCollectionEquality()
+                .equals(other._listReview, _listReview) &&
+            (identical(other.reviewUpdateAt, reviewUpdateAt) ||
+                other.reviewUpdateAt == reviewUpdateAt));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_listFakultas),
+      const DeepCollectionEquality().hash(_listReview),
+      reviewUpdateAt);
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessGetReviewImplCopyWith<_$SuccessGetReviewImpl> get copyWith =>
+      __$$SuccessGetReviewImplCopyWithImpl<_$SuccessGetReviewImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        init,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetFakultas,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        successGetFakultas,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetReview,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        successGetReview,
+    required TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)
+        failed,
+  }) {
+    return successGetReview(listFakultas, listReview, reviewUpdateAt);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult? Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
+  }) {
+    return successGetReview?.call(listFakultas, listReview, reviewUpdateAt);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
+    required TResult orElse(),
+  }) {
+    if (successGetReview != null) {
+      return successGetReview(listFakultas, listReview, reviewUpdateAt);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Init value) init,
+    required TResult Function(_LoadingGetFakultas value) loadingGetFakultas,
+    required TResult Function(_SuccessGetFakultas value) successGetFakultas,
+    required TResult Function(_LoadingGetReview value) loadingGetReview,
+    required TResult Function(_SuccessGetReview value) successGetReview,
+    required TResult Function(_Failed value) failed,
+  }) {
+    return successGetReview(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Init value)? init,
+    TResult? Function(_LoadingGetFakultas value)? loadingGetFakultas,
+    TResult? Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult? Function(_LoadingGetReview value)? loadingGetReview,
+    TResult? Function(_SuccessGetReview value)? successGetReview,
+    TResult? Function(_Failed value)? failed,
+  }) {
+    return successGetReview?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Init value)? init,
+    TResult Function(_LoadingGetFakultas value)? loadingGetFakultas,
+    TResult Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult Function(_LoadingGetReview value)? loadingGetReview,
+    TResult Function(_SuccessGetReview value)? successGetReview,
+    TResult Function(_Failed value)? failed,
+    required TResult orElse(),
+  }) {
+    if (successGetReview != null) {
+      return successGetReview(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessGetReview implements DashboardState {
+  const factory _SuccessGetReview(
+      {final List<FakultasEntities>? listFakultas,
+      final List<AhpResultEntities>? listReview,
+      final DateTime? reviewUpdateAt}) = _$SuccessGetReviewImpl;
+
+  @override
+  List<FakultasEntities>? get listFakultas;
+  @override
+  List<AhpResultEntities>? get listReview;
+  @override
+  DateTime? get reviewUpdateAt;
+
+  /// Create a copy of DashboardState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessGetReviewImplCopyWith<_$SuccessGetReviewImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FailedImplCopyWith<$Res>
+    implements $DashboardStateCopyWith<$Res> {
   factory _$$FailedImplCopyWith(
           _$FailedImpl value, $Res Function(_$FailedImpl) then) =
       __$$FailedImplCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({String message});
+  $Res call(
+      {List<FakultasEntities>? listFakultas,
+      List<AhpResultEntities>? listReview,
+      DateTime? reviewUpdateAt,
+      String message});
 }
 
 /// @nodoc
@@ -514,9 +1564,24 @@ class __$$FailedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? listFakultas = freezed,
+    Object? listReview = freezed,
+    Object? reviewUpdateAt = freezed,
     Object? message = null,
   }) {
     return _then(_$FailedImpl(
+      listFakultas: freezed == listFakultas
+          ? _value._listFakultas
+          : listFakultas // ignore: cast_nullable_to_non_nullable
+              as List<FakultasEntities>?,
+      listReview: freezed == listReview
+          ? _value._listReview
+          : listReview // ignore: cast_nullable_to_non_nullable
+              as List<AhpResultEntities>?,
+      reviewUpdateAt: freezed == reviewUpdateAt
+          ? _value.reviewUpdateAt
+          : reviewUpdateAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -528,14 +1593,45 @@ class __$$FailedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FailedImpl implements _Failed {
-  const _$FailedImpl({required this.message});
+  const _$FailedImpl(
+      {final List<FakultasEntities>? listFakultas = const [],
+      final List<AhpResultEntities>? listReview = const [],
+      this.reviewUpdateAt = null,
+      required this.message})
+      : _listFakultas = listFakultas,
+        _listReview = listReview;
 
+  final List<FakultasEntities>? _listFakultas;
+  @override
+  @JsonKey()
+  List<FakultasEntities>? get listFakultas {
+    final value = _listFakultas;
+    if (value == null) return null;
+    if (_listFakultas is EqualUnmodifiableListView) return _listFakultas;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<AhpResultEntities>? _listReview;
+  @override
+  @JsonKey()
+  List<AhpResultEntities>? get listReview {
+    final value = _listReview;
+    if (value == null) return null;
+    if (_listReview is EqualUnmodifiableListView) return _listReview;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey()
+  final DateTime? reviewUpdateAt;
   @override
   final String message;
 
   @override
   String toString() {
-    return 'DashboardState.failed(message: $message)';
+    return 'DashboardState.failed(listFakultas: $listFakultas, listReview: $listReview, reviewUpdateAt: $reviewUpdateAt, message: $message)';
   }
 
   @override
@@ -543,11 +1639,22 @@ class _$FailedImpl implements _Failed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FailedImpl &&
+            const DeepCollectionEquality()
+                .equals(other._listFakultas, _listFakultas) &&
+            const DeepCollectionEquality()
+                .equals(other._listReview, _listReview) &&
+            (identical(other.reviewUpdateAt, reviewUpdateAt) ||
+                other.reviewUpdateAt == reviewUpdateAt) &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_listFakultas),
+      const DeepCollectionEquality().hash(_listReview),
+      reviewUpdateAt,
+      message);
 
   /// Create a copy of DashboardState
   /// with the given fields replaced by the non-null parameter values.
@@ -560,37 +1667,87 @@ class _$FailedImpl implements _Failed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() init,
-    required TResult Function() loadingGetFakultas,
-    required TResult Function(List<FakultasEntities>? listFakultas)
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        init,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetFakultas,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
         successGetFakultas,
-    required TResult Function(String message) failed,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        loadingGetReview,
+    required TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)
+        successGetReview,
+    required TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)
+        failed,
   }) {
-    return failed(message);
+    return failed(listFakultas, listReview, reviewUpdateAt, message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? init,
-    TResult? Function()? loadingGetFakultas,
-    TResult? Function(List<FakultasEntities>? listFakultas)? successGetFakultas,
-    TResult? Function(String message)? failed,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult? Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult? Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
   }) {
-    return failed?.call(message);
+    return failed?.call(listFakultas, listReview, reviewUpdateAt, message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? init,
-    TResult Function()? loadingGetFakultas,
-    TResult Function(List<FakultasEntities>? listFakultas)? successGetFakultas,
-    TResult Function(String message)? failed,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        init,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetFakultas,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        loadingGetReview,
+    TResult Function(List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview, DateTime? reviewUpdateAt)?
+        successGetReview,
+    TResult Function(
+            List<FakultasEntities>? listFakultas,
+            List<AhpResultEntities>? listReview,
+            DateTime? reviewUpdateAt,
+            String message)?
+        failed,
     required TResult orElse(),
   }) {
     if (failed != null) {
-      return failed(message);
+      return failed(listFakultas, listReview, reviewUpdateAt, message);
     }
     return orElse();
   }
@@ -601,6 +1758,8 @@ class _$FailedImpl implements _Failed {
     required TResult Function(_Init value) init,
     required TResult Function(_LoadingGetFakultas value) loadingGetFakultas,
     required TResult Function(_SuccessGetFakultas value) successGetFakultas,
+    required TResult Function(_LoadingGetReview value) loadingGetReview,
+    required TResult Function(_SuccessGetReview value) successGetReview,
     required TResult Function(_Failed value) failed,
   }) {
     return failed(this);
@@ -612,6 +1771,8 @@ class _$FailedImpl implements _Failed {
     TResult? Function(_Init value)? init,
     TResult? Function(_LoadingGetFakultas value)? loadingGetFakultas,
     TResult? Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult? Function(_LoadingGetReview value)? loadingGetReview,
+    TResult? Function(_SuccessGetReview value)? successGetReview,
     TResult? Function(_Failed value)? failed,
   }) {
     return failed?.call(this);
@@ -623,6 +1784,8 @@ class _$FailedImpl implements _Failed {
     TResult Function(_Init value)? init,
     TResult Function(_LoadingGetFakultas value)? loadingGetFakultas,
     TResult Function(_SuccessGetFakultas value)? successGetFakultas,
+    TResult Function(_LoadingGetReview value)? loadingGetReview,
+    TResult Function(_SuccessGetReview value)? successGetReview,
     TResult Function(_Failed value)? failed,
     required TResult orElse(),
   }) {
@@ -634,12 +1797,23 @@ class _$FailedImpl implements _Failed {
 }
 
 abstract class _Failed implements DashboardState {
-  const factory _Failed({required final String message}) = _$FailedImpl;
+  const factory _Failed(
+      {final List<FakultasEntities>? listFakultas,
+      final List<AhpResultEntities>? listReview,
+      final DateTime? reviewUpdateAt,
+      required final String message}) = _$FailedImpl;
 
+  @override
+  List<FakultasEntities>? get listFakultas;
+  @override
+  List<AhpResultEntities>? get listReview;
+  @override
+  DateTime? get reviewUpdateAt;
   String get message;
 
   /// Create a copy of DashboardState
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FailedImplCopyWith<_$FailedImpl> get copyWith =>
       throw _privateConstructorUsedError;

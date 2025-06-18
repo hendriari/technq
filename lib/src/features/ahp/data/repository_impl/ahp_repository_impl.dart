@@ -1,10 +1,11 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_decision_making/ahp/domain/entities/ahp_result.dart';
 import 'package:flutter_decision_making/ahp/domain/entities/criteria.dart';
 import 'package:flutter_decision_making/ahp/domain/entities/pairwise_alternative_input.dart';
 import 'package:flutter_decision_making/ahp/domain/entities/pairwise_comparison_input.dart';
 import 'package:technq/src/core/failure/failure.dart';
 import 'package:technq/src/core/failure/failure_mapper.dart';
+import 'package:technq/src/core/shared/entities/ahp_result_entities.dart';
+import 'package:technq/src/core/shared/mapper/ahp_result_mapper.dart';
 import 'package:technq/src/features/ahp/data/data/ahp_remote_datasource.dart';
 import 'package:technq/src/features/ahp/data/mapper/ahp_pairwise_matrix_extension.dart';
 import 'package:technq/src/features/ahp/domain/entities/ahp_pairwise_matrix_input_entities.dart';
@@ -60,12 +61,17 @@ class AhpRepositoryImpl extends AhpRepository {
   }
 
   @override
-  Future<Either<Failure, AhpResult?>> getAhpResult(
+  Future<Either<Failure, AhpResultEntities?>> getAhpResult(
       String? userId, String? userName) async {
     try {
       final result = await _ahpLocalDatasource.getAhpResult(userId, userName);
 
-      return Right(result);
+      if (result != null) {
+        final data = result.toEntities();
+        return Right(data);
+      }
+
+      return Right(null);
     } catch (e) {
       return Left(FailureMapper.error(e));
     }

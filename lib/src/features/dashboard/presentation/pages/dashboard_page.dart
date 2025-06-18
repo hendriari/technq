@@ -1,8 +1,11 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
 import 'package:technq/src/core/shared/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:technq/src/core/shared/features/auth/presentation/bloc/auth_state.dart';
 import 'package:technq/src/core/shared/features/menu/bloc/menu_bloc.dart';
@@ -30,11 +33,13 @@ class _DashboardPageState extends State<DashboardPage> {
   final ScrollController _scrollController = ScrollController();
   final ValueNotifier<bool> _isScrolled = ValueNotifier(false);
   late Helper _helper;
+  late DateFormat _dateFormat;
 
   @override
   void initState() {
     super.initState();
     _helper = Helper();
+    _dateFormat = DateFormat('d MMM y');
     _scrollController.addListener(() {
       if (_scrollController.offset > 70.h) {
         if (_isScrolled.value == false) {
@@ -122,34 +127,36 @@ class _DashboardPageState extends State<DashboardPage> {
                 );
               }),
         ],
-        body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(
-            vertical: 15.h,
-            horizontal: 15.w,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              /// TITLE FAKULTAS
-              Text(
-                'Fakultas Teknik dan Informatika',
-                style: _textTheme.bodyLarge?.copyWith(
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.bold,
-                ),
+        body: BlocConsumer<DashboardBloc, DashboardState>(
+          listener: (context, state) {
+            state.whenOrNull(
+                failed: (_, __, ___, message) => _helper.showToast(
+                    message: message, backGroundColor: CustomColors.redLight),
+                successGetFakultas: (_, __, ___) {
+                  context.read<DashboardBloc>().add(DashboardEvent.getReview());
+                });
+          },
+          builder: (context, state) {
+            return SingleChildScrollView(
+              padding: EdgeInsets.symmetric(
+                vertical: 15.h,
+                horizontal: 15.w,
               ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  /// TITLE FAKULTAS
+                  Text(
+                    'Fakultas Teknik dan Informatika',
+                    style: _textTheme.bodyLarge?.copyWith(
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
 
-              /// LIST FAKULTAS
-              BlocConsumer<DashboardBloc, DashboardState>(
-                listener: (context, state) {
-                  state.whenOrNull(
-                      failed: (message) => _helper.showToast(
-                          message: message,
-                          backGroundColor: CustomColors.redLight));
-                },
-                builder: (context, state) {
-                  return state.maybeWhen(
-                    failed: (message) => ButtonWidget(
+                  /// LIST FAKULTAS
+                  state.maybeWhen(
+                    failed: (_, __, ___, message) => ButtonWidget(
                         buttonText: 'Refresh',
                         onTap: () {
                           context.read<DashboardBloc>().add(GetFakultasEvent());
@@ -165,12 +172,11 @@ class _DashboardPageState extends State<DashboardPage> {
                         childAspectRatio: 0.75,
                       ),
                       itemCount: state.maybeWhen(
-                        successGetFakultas: (data) => data?.length ?? 0,
-                        loadingGetFakultas: () => 6,
-                        orElse: () => 0,
+                        loadingGetFakultas: (_, __, ___) => 6,
+                        orElse: () => state.listFakultas?.length ?? 0,
                       ),
                       itemBuilder: (context, index) => state.maybeWhen(
-                        loadingGetFakultas: () => ShimmerWidget(
+                        loadingGetFakultas: (_, __, ___) => ShimmerWidget(
                           child: Container(
                             height: 250.h,
                             decoration: BoxDecoration(
@@ -182,11 +188,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           ),
                         ),
                         orElse: () {
-                          final result = state.maybeWhen(
-                            successGetFakultas: (d) => d,
-                            orElse: () => null,
-                          );
-                          final data = result?[index];
+                          final data = state.listFakultas?[index];
                           return Bounceable(
                             onTap: () {
                               if (data != null) {
@@ -261,36 +263,273 @@ class _DashboardPageState extends State<DashboardPage> {
                         },
                       ),
                     ),
-                  );
-                },
-              ),
-
-              /// HASIL AHP
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Hasil Analisa Minat Siswa',
-                    style: _textTheme.bodyLarge?.copyWith(
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
                   ),
-                  IconButton(
-                    onPressed: () => context
-                        .read<MenuBloc>()
-                        .add(ChangeIndexMenuEvent(index: 1)),
-                    icon: Icon(
-                      Icons.arrow_forward_ios,
-                      size: 20.sp,
-                    ),
+
+                  /// REVIEW AHP
+                  state.maybeWhen(
+                    loadingGetFakultas: (_, __, ___) =>
+                        _buildLoadingTitleReviewWidget(),
+                    loadingGetReview: (_, __, ___) =>
+                        _buildLoadingTitleReviewWidget(),
+                    orElse: () => state.listReview != null &&
+                            state.listReview!.isNotEmpty
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Hasil Analisa Minat Siswa',
+                                style: _textTheme.bodyLarge?.copyWith(
+                                  fontSize: 20.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () => context
+                                    .read<MenuBloc>()
+                                    .add(ChangeIndexMenuEvent(index: 1)),
+                                icon: Icon(
+                                  Icons.arrow_forward_ios,
+                                  size: 20.sp,
+                                ),
+                              ),
+                            ],
+                          )
+                        : SizedBox(),
+                  ),
+
+                  /// LIST REVIEW
+                  state.maybeWhen(
+                    loadingGetFakultas: (_, __, ___) =>
+                        _buildLoadingReviewWidget(),
+                    loadingGetReview: (_, __, ___) =>
+                        _buildLoadingReviewWidget(),
+                    orElse: () => state.listReview != null &&
+                            state.listReview!.isNotEmpty
+                        ? CarouselSlider.builder(
+                            itemCount: state.listReview?.length ?? 0,
+                            itemBuilder: (context, index, _) {
+                              final data = state.listReview?[index];
+                              return Container(
+                                margin: EdgeInsets.symmetric(
+                                  vertical: 5.h,
+                                  horizontal: 3.w,
+                                ),
+                                alignment: Alignment.center,
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 5.h, horizontal: 12.w),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20.r),
+                                  color: isDark
+                                      ? CustomColors.dark
+                                      : CustomColors.light,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: isDark
+                                          ? CustomColors.light
+                                              .withValues(alpha: 2)
+                                          : CustomColors.grey100,
+                                      blurRadius: 2,
+                                      blurStyle: BlurStyle.solid,
+                                    ),
+                                  ],
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    /// NAME & DATE UPDATE
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          CupertinoIcons.person,
+                                          size: 17.sp,
+                                        ),
+                                        SizedBox(
+                                          width: 4.w,
+                                        ),
+
+                                        /// NAME
+                                        Expanded(
+                                          child: Text(
+                                            data?.userName?.toUpperCase() ??
+                                                '-',
+                                            style:
+                                                _textTheme.bodyMedium?.copyWith(
+                                              fontSize: 16.sp,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ),
+
+                                        SizedBox(
+                                          width: 6.w,
+                                        ),
+
+                                        /// DATE UPDATE
+                                        Text(
+                                          data?.dateUpdate != null
+                                              ? _dateFormat.format(
+                                                  DateTime.parse(
+                                                      data!.dateUpdate!))
+                                              : '-',
+                                          style:
+                                              _textTheme.bodyMedium?.copyWith(
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.grey.shade600,
+                                            fontStyle: FontStyle.italic,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+
+                                    SizedBox(
+                                      height: 8.h,
+                                    ),
+
+                                    /// LIST RESULT
+                                    ...(data != null && data.results.isNotEmpty
+                                        ? List.generate(
+                                            data.results.length,
+                                            (si) {
+                                              final resultData =
+                                                  data.results[si];
+                                              return Padding(
+                                                padding: EdgeInsets.only(
+                                                    bottom: 2.h),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    /// NUMBER INDEX
+                                                    Text(
+                                                      '${si + 1}.',
+                                                      style: _textTheme
+                                                          .bodyMedium
+                                                          ?.copyWith(
+                                                        fontSize: 15.sp,
+                                                      ),
+                                                    ),
+
+                                                    SizedBox(
+                                                      width: 4.w,
+                                                    ),
+
+                                                    /// ALTERNATIVE NAME
+                                                    Expanded(
+                                                      child: Text(
+                                                        resultData.name ?? '-',
+                                                        style: _textTheme
+                                                            .bodyMedium
+                                                            ?.copyWith(
+                                                          fontSize: 15.sp,
+                                                        ),
+                                                      ),
+                                                    ),
+
+                                                    /// VALUE
+                                                    Text(
+                                                      '${(resultData.value ?? 0) * 100}'
+                                                          .substring(0, 5),
+                                                      style: _textTheme
+                                                          .bodyMedium
+                                                          ?.copyWith(
+                                                        fontSize: 15.sp,
+                                                      ),
+                                                    ),
+
+                                                    Text(
+                                                      '%',
+                                                      style: _textTheme
+                                                          .bodyMedium
+                                                          ?.copyWith(
+                                                        fontSize: 15.sp,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              );
+                                            },
+                                          )
+                                        : [])
+                                  ],
+                                ),
+                              );
+                            },
+                            options: CarouselOptions(
+                              height: 160.h,
+                              viewportFraction:
+                                  (state.listReview?.length ?? 0) > 1 ? .7 : 1,
+                              autoPlay: (state.listReview?.length ?? 0) > 1
+                                  ? true
+                                  : false,
+                              autoPlayInterval: const Duration(seconds: 3),
+                              padEnds: false,
+                              disableCenter: true,
+                            ),
+                          )
+                        : SizedBox(),
                   ),
                 ],
-              )
-            ],
-          ),
+              ),
+            );
+          },
         ),
       ),
     );
   }
+
+  /// LOADING TITLE REVIEW
+  Widget _buildLoadingTitleReviewWidget() => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          ShimmerWidget(
+            child: Text(
+              'Hasil Analisa Minat Siswa',
+              style: _textTheme.bodyLarge?.copyWith(
+                fontSize: 20.sp,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          ShimmerWidget(
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.arrow_forward_ios,
+                size: 20.sp,
+              ),
+            ),
+          ),
+        ],
+      );
+
+  /// LOADING REVIEW
+  Widget _buildLoadingReviewWidget() => SizedBox(
+        height: 160.h,
+        width: double.infinity,
+        child: ListView.builder(
+          itemCount: 4,
+          shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) => ShimmerWidget(
+            child: Container(
+              width: 280.w,
+              margin: EdgeInsets.symmetric(
+                vertical: 5.h,
+                horizontal: 3.w,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(20.r),
+              ),
+            ),
+          ),
+        ),
+      );
 }
