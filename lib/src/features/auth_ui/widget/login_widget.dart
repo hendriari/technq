@@ -310,67 +310,71 @@ class _LoginWidgetState extends State<LoginWidget> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         /// CANCEL BUTTON
-        ButtonWidget(
-          onTap: () => context.pop(),
-          buttonText: 'Batal',
-          maximumSize: Size(100.w, 46.h),
-          minimumSize: Size(100.w, 46.h),
-          buttonTextColor: CustomColors.redLight,
-          borderColor: CustomColors.redLight,
+        Flexible(
+          child: ButtonWidget(
+            onTap: () => context.pop(),
+            buttonText: 'Batal',
+            maximumSize: Size(double.infinity, 46.h),
+            minimumSize: Size(double.infinity, 46.h),
+            buttonTextColor: CustomColors.redLight,
+            borderColor: CustomColors.redLight,
+          ),
         ),
 
         SizedBox(width: 10.w,),
 
         /// CONFIRM BUTTON
-        BlocConsumer<AuthBloc, AuthState>(
-          listener: (context, state) {
-            state.whenOrNull(
-              failed: (_, message) {
-                _helper.showToast(
-                    message: message, backGroundColor: CustomColors.redLight);
-              },
-              successCreateAccount: (user) {
-                if (user != null) {
-                  _helper.showToast(message: 'Success created account');
-                  context.goNamed('main-menu');
-                } else {
+        Flexible(
+          child: BlocConsumer<AuthBloc, AuthState>(
+            listener: (context, state) {
+              state.whenOrNull(
+                failed: (_, message) {
                   _helper.showToast(
-                      message: 'Terjadi kesalahan, mohon ulangi lagi',
-                      backGroundColor: CustomColors.redLight);
+                      message: message, backGroundColor: CustomColors.redLight);
+                },
+                successCreateAccount: (user) {
+                  if (user != null) {
+                    _helper.showToast(message: 'Success created account');
+                    context.goNamed('main-menu');
+                  } else {
+                    _helper.showToast(
+                        message: 'Terjadi kesalahan, mohon ulangi lagi',
+                        backGroundColor: CustomColors.redLight);
+                  }
+                },
+              );
+            },
+            builder: (context, state) => ElevatedButton(
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  FocusScope.of(context).requestFocus(FocusNode());
+                  context.read<AuthBloc>().add(AuthEvent.createAccountEvent(
+                      name: _nameController.text.trim(),
+                      schoolType: _schoolType.value,
+                      schoolName: _schoolController.text.trim()));
                 }
               },
-            );
-          },
-          builder: (context, state) => ElevatedButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                FocusScope.of(context).requestFocus(FocusNode());
-                context.read<AuthBloc>().add(AuthEvent.createAccountEvent(
-                    name: _nameController.text.trim(),
-                    schoolType: _schoolType.value,
-                    schoolName: _schoolController.text.trim()));
-              }
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: CustomColors.primary100,
-              minimumSize: Size(100.w, 46.h),
-              maximumSize: Size(100.w, 46.h),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.r),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: CustomColors.primary100,
+                minimumSize: Size(double.infinity, 46.h),
+                maximumSize: Size(double.infinity, 46.h),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.r),
+                ),
               ),
-            ),
-            child: state.maybeWhen(
-              loadingCreateAccount: (_) => LoadingWidget(
-                isWave: false,
-                treeBounceColor: Colors.white,
-                size: 16.sp,
-              ),
-              orElse: () => Text(
-                'Login',
-                style: _textTheme.bodyLarge?.copyWith(
-                  fontSize: 16.sp,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+              child: state.maybeWhen(
+                loadingCreateAccount: (_) => LoadingWidget(
+                  isWave: false,
+                  treeBounceColor: Colors.white,
+                  size: 16.sp,
+                ),
+                orElse: () => Text(
+                  'Login',
+                  style: _textTheme.bodyLarge?.copyWith(
+                    fontSize: 16.sp,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
