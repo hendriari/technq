@@ -106,7 +106,7 @@ class _SettingPageState extends State<SettingPage> {
                 title: 'Update Sekolah',
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  size: 22.sp,
+                  size: 20.sp,
                 ),
               ),
             ),
@@ -151,7 +151,7 @@ class _SettingPageState extends State<SettingPage> {
           children: [
             Icon(
               icon,
-              size: 20.sp,
+              size: 18.sp,
             ),
             SizedBox(
               width: 8.w,

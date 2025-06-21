@@ -109,7 +109,7 @@ class FormFieldWidget extends StatelessWidget {
         onTap: onTap,
         style: inputTextStyle ??
             textTheme.bodyMedium?.copyWith(
-              fontSize: 18.sp,
+              fontSize: 14.sp,
             ),
         textInputAction: textInputAction,
         onEditingComplete: onEditingComplete,
@@ -136,13 +136,13 @@ class FormFieldWidget extends StatelessWidget {
           hintText: hint,
           hintStyle: hintLabelTextStyle ??
               textTheme.bodyLarge?.copyWith(
-                fontSize: 18.sp,
+                fontSize: 14.sp,
                 color: CustomColors.blackGray300,
               ),
           labelText: label,
           labelStyle: hintLabelTextStyle ??
               textTheme.bodyLarge?.copyWith(
-                fontSize: 18.sp,
+                fontSize: 14.sp,
                 color: CustomColors.blackGray300,
               ),
           border: DecoratedInputBorder(

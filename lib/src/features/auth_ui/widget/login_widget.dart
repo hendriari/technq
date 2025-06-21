@@ -102,7 +102,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       _buildContent(isDark),
 
                       SizedBox(
-                        height: 20.h,
+                        height: 30.h,
                       ),
 
                       /// BUTTON ACTION
@@ -165,7 +165,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 child: Text(
                   'SMA',
                   style: _textTheme.bodyLarge?.copyWith(
-                    fontSize: 18.sp,
+                    fontSize: 16.sp,
                     color: _schoolType.value == 'sma' ? Colors.white : null,
                     fontWeight: FontWeight.bold,
                   ),
@@ -207,7 +207,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 child: Text(
                   'SMK',
                   style: _textTheme.bodyLarge?.copyWith(
-                    fontSize: 18.sp,
+                    fontSize: 16.sp,
                     color: _schoolType.value == 'smk' ? Colors.white : null,
                     fontWeight: FontWeight.bold,
                   ),
@@ -236,7 +236,7 @@ class _LoginWidgetState extends State<LoginWidget> {
               child: Text(
                 'Nama',
                 style: _textTheme.bodyMedium?.copyWith(
-                  fontSize: 18.sp,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -265,7 +265,7 @@ class _LoginWidgetState extends State<LoginWidget> {
           children: List.generate(
             2,
             (i) => SizedBox(
-              height: 15.w,
+              height: 14.h,
             ),
           ),
         ),
@@ -277,7 +277,7 @@ class _LoginWidgetState extends State<LoginWidget> {
               child: Text(
                 'Nama ${_schoolType.value == 'sma' ? "SMA" : "SMK"}',
                 style: _textTheme.bodyMedium?.copyWith(
-                  fontSize: 18.sp,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -313,8 +313,8 @@ class _LoginWidgetState extends State<LoginWidget> {
         ButtonWidget(
           onTap: () => context.pop(),
           buttonText: 'Batal',
-          maximumSize: Size(160.h, 46.w),
-          minimumSize: Size(160.h, 46.w),
+          maximumSize: Size(100.w, 46.h),
+          minimumSize: Size(100.w, 46.h),
           buttonTextColor: CustomColors.redLight,
           borderColor: CustomColors.redLight,
         ),
@@ -353,8 +353,8 @@ class _LoginWidgetState extends State<LoginWidget> {
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: CustomColors.primary100,
-              minimumSize: Size(160.h, 46.w),
-              maximumSize: Size(160.h, 46.w),
+              minimumSize: Size(100.w, 46.h),
+              maximumSize: Size(100.w, 46.h),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16.r),
               ),
@@ -363,12 +363,12 @@ class _LoginWidgetState extends State<LoginWidget> {
               loadingCreateAccount: (_) => LoadingWidget(
                 isWave: false,
                 treeBounceColor: Colors.white,
-                size: 18.sp,
+                size: 16.sp,
               ),
               orElse: () => Text(
-                'Konfirmasi',
+                'Login',
                 style: _textTheme.bodyLarge?.copyWith(
-                  fontSize: 18.sp,
+                  fontSize: 16.sp,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),

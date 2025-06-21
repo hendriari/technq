@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,6 +13,7 @@ import 'package:technq/src/core/theme/custom_colors.dart';
 import 'package:technq/src/core/utils/constants.dart';
 import 'package:technq/src/core/utils/helper.dart';
 import 'package:technq/src/core/widgets/button_widget.dart';
+import 'package:technq/src/core/widgets/custom_carousel_slider_widget.dart';
 import 'package:technq/src/core/widgets/shimmer_widget.dart';
 import 'package:technq/src/features/dashboard/data/mapper/fakultas_mapper.dart';
 import 'package:technq/src/features/dashboard/presentation/bloc/dashboard_bloc.dart';
@@ -149,7 +149,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   Text(
                     'Fakultas Teknik dan Informatika',
                     style: _textTheme.bodyLarge?.copyWith(
-                      fontSize: 20.sp,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -234,7 +234,8 @@ class _DashboardPageState extends State<DashboardPage> {
                                 Align(
                                   alignment: Alignment.bottomCenter,
                                   child: Container(
-                                    height: 80.h,
+                                    constraints:
+                                        BoxConstraints(maxHeight: 60.h),
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 15.w),
                                     alignment: Alignment.center,
@@ -249,7 +250,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                     child: Text(
                                       data?.name ?? '-',
                                       style: _textTheme.bodyLarge?.copyWith(
-                                        fontSize: 20.sp,
+                                        fontSize: 18.sp,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,
                                       ),
@@ -279,7 +280,7 @@ class _DashboardPageState extends State<DashboardPage> {
                               Text(
                                 'Hasil Analisa Minat Siswa',
                                 style: _textTheme.bodyLarge?.copyWith(
-                                  fontSize: 20.sp,
+                                  fontSize: 18.sp,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -303,177 +304,184 @@ class _DashboardPageState extends State<DashboardPage> {
                         _buildLoadingReviewWidget(),
                     loadingGetReview: (_, __, ___) =>
                         _buildLoadingReviewWidget(),
-                    orElse: () => state.listReview != null &&
-                            state.listReview!.isNotEmpty
-                        ? CarouselSlider.builder(
-                            itemCount: state.listReview?.length ?? 0,
-                            itemBuilder: (context, index, _) {
-                              final data = state.listReview?[index];
-                              return Container(
-                                margin: EdgeInsets.symmetric(
-                                  vertical: 5.h,
-                                  horizontal: 3.w,
-                                ),
-                                alignment: Alignment.center,
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 5.h, horizontal: 12.w),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.r),
-                                  color: isDark
-                                      ? CustomColors.dark
-                                      : CustomColors.light,
-                                  boxShadow: [
-                                    BoxShadow(
+                    orElse: () {
+                      return state.listReview != null &&
+                              state.listReview!.isNotEmpty
+                          ? SizedBox(
+                              height: 160.h,
+                              child: CustomCarouselSlider(
+                                items: state.listReview!.map((data) {
+                                  return Container(
+                                    alignment: Alignment.center,
+                                    margin: EdgeInsets.symmetric(vertical: 5.h),
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: 5.h, horizontal: 12.w),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20.r),
                                       color: isDark
-                                          ? CustomColors.light
-                                              .withValues(alpha: 2)
-                                          : CustomColors.grey100,
-                                      blurRadius: 2,
-                                      blurStyle: BlurStyle.solid,
-                                    ),
-                                  ],
-                                ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    /// NAME & DATE UPDATE
-                                    Row(
-                                      children: [
-                                        Icon(
-                                          CupertinoIcons.person,
-                                          size: 17.sp,
-                                        ),
-                                        SizedBox(
-                                          width: 4.w,
-                                        ),
-
-                                        /// NAME
-                                        Expanded(
-                                          child: Text(
-                                            data?.userName?.toUpperCase() ??
-                                                '-',
-                                            style:
-                                                _textTheme.bodyMedium?.copyWith(
-                                              fontSize: 16.sp,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                            maxLines: 1,
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                        ),
-
-                                        SizedBox(
-                                          width: 6.w,
-                                        ),
-
-                                        /// DATE UPDATE
-                                        Text(
-                                          data?.dateUpdate != null
-                                              ? _dateFormat.format(
-                                                  DateTime.parse(
-                                                      data!.dateUpdate!))
-                                              : '-',
-                                          style:
-                                              _textTheme.bodyMedium?.copyWith(
-                                            fontSize: 14.sp,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.grey.shade600,
-                                            fontStyle: FontStyle.italic,
-                                          ),
+                                          ? CustomColors.dark
+                                          : CustomColors.light,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: isDark
+                                              ? CustomColors.light
+                                                  .withValues(alpha: 2)
+                                              : CustomColors.grey100,
+                                          blurRadius: 2,
+                                          blurStyle: BlurStyle.solid,
                                         ),
                                       ],
                                     ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        /// NAME & DATE UPDATE
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              CupertinoIcons.person,
+                                              size: 14.sp,
+                                            ),
+                                            SizedBox(
+                                              width: 4.w,
+                                            ),
 
-                                    SizedBox(
-                                      height: 8.h,
-                                    ),
-
-                                    /// LIST RESULT
-                                    ...(data != null && data.results.isNotEmpty
-                                        ? List.generate(
-                                            data.results.length,
-                                            (si) {
-                                              final resultData =
-                                                  data.results[si];
-                                              return Padding(
-                                                padding: EdgeInsets.only(
-                                                    bottom: 2.h),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    /// NUMBER INDEX
-                                                    Text(
-                                                      '${si + 1}.',
-                                                      style: _textTheme
-                                                          .bodyMedium
-                                                          ?.copyWith(
-                                                        fontSize: 15.sp,
-                                                      ),
-                                                    ),
-
-                                                    SizedBox(
-                                                      width: 4.w,
-                                                    ),
-
-                                                    /// ALTERNATIVE NAME
-                                                    Expanded(
-                                                      child: Text(
-                                                        resultData.name ?? '-',
-                                                        style: _textTheme
-                                                            .bodyMedium
-                                                            ?.copyWith(
-                                                          fontSize: 15.sp,
-                                                        ),
-                                                      ),
-                                                    ),
-
-                                                    /// VALUE
-                                                    Text(
-                                                      '${(resultData.value ?? 0) * 100}'
-                                                          .substring(0, 5),
-                                                      style: _textTheme
-                                                          .bodyMedium
-                                                          ?.copyWith(
-                                                        fontSize: 15.sp,
-                                                      ),
-                                                    ),
-
-                                                    Text(
-                                                      '%',
-                                                      style: _textTheme
-                                                          .bodyMedium
-                                                          ?.copyWith(
-                                                        fontSize: 15.sp,
-                                                      ),
-                                                    ),
-                                                  ],
+                                            /// NAME
+                                            Expanded(
+                                              child: Text(
+                                                data.userName?.toUpperCase() ??
+                                                    '-',
+                                                style: _textTheme.bodyMedium
+                                                    ?.copyWith(
+                                                  fontSize: 14.sp,
+                                                  fontWeight: FontWeight.bold,
                                                 ),
-                                              );
-                                            },
-                                          )
-                                        : [])
-                                  ],
-                                ),
-                              );
-                            },
-                            options: CarouselOptions(
-                              height: 160.h,
-                              viewportFraction:
-                                  (state.listReview?.length ?? 0) > 1 ? .7 : 1,
-                              autoPlay: (state.listReview?.length ?? 0) > 1
-                                  ? true
-                                  : false,
-                              autoPlayInterval: const Duration(seconds: 3),
-                              padEnds: false,
-                              disableCenter: true,
-                            ),
-                          )
-                        : SizedBox(),
+                                                maxLines: 1,
+                                                overflow: TextOverflow.ellipsis,
+                                              ),
+                                            ),
+
+                                            SizedBox(
+                                              width: 6.w,
+                                            ),
+
+                                            /// DATE UPDATE
+                                            Text(
+                                              data.dateUpdate != null
+                                                  ? _dateFormat.format(
+                                                      DateTime.parse(
+                                                          data.dateUpdate!))
+                                                  : '-',
+                                              style: _textTheme.bodyMedium
+                                                  ?.copyWith(
+                                                fontSize: 14.sp,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.grey.shade600,
+                                                fontStyle: FontStyle.italic,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+
+                                        SizedBox(
+                                          height: 10.h,
+                                        ),
+
+                                        /// LIST RESULT
+
+                                        data.results.isNotEmpty
+                                            ? Expanded(
+                                                child: Scrollbar(
+                                                  child: ListView.builder(
+                                                    itemCount:
+                                                        data.results.length,
+                                                    shrinkWrap: true,
+                                                    itemBuilder:
+                                                        (context, index) {
+                                                      final resultData =
+                                                          data.results[index];
+                                                      return Padding(
+                                                        padding:
+                                                            EdgeInsets.only(
+                                                                bottom: 2.h,
+                                                                right: 8.w),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            /// NUMBER INDEX
+                                                            Text(
+                                                              '${index + 1}.',
+                                                              style: _textTheme
+                                                                  .bodyMedium
+                                                                  ?.copyWith(
+                                                                fontSize: 14.sp,
+                                                              ),
+                                                            ),
+
+                                                            SizedBox(
+                                                              width: 4.w,
+                                                            ),
+
+                                                            /// ALTERNATIVE NAME
+                                                            Expanded(
+                                                              child: Text(
+                                                                resultData
+                                                                        .name ??
+                                                                    '-',
+                                                                style: _textTheme
+                                                                    .bodyMedium
+                                                                    ?.copyWith(
+                                                                  fontSize:
+                                                                      14.sp,
+                                                                ),
+                                                              ),
+                                                            ),
+
+                                                            /// VALUE
+                                                            Text(
+                                                              '${(resultData.value ?? 0) * 100}'
+                                                                  .substring(
+                                                                      0, 5),
+                                                              style: _textTheme
+                                                                  .bodyMedium
+                                                                  ?.copyWith(
+                                                                fontSize: 14.sp,
+                                                              ),
+                                                            ),
+
+                                                            Text(
+                                                              '%',
+                                                              style: _textTheme
+                                                                  .bodyMedium
+                                                                  ?.copyWith(
+                                                                fontSize: 14.sp,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      );
+                                                    },
+                                                  ),
+                                                ),
+                                              )
+                                            : SizedBox(),
+                                      ],
+                                    ),
+                                  );
+                                }).toList(),
+                                autoPlay: state.listReview!.length > 1,
+                                autoPlayInterval: const Duration(seconds: 2),
+                                viewportFraction: 1.0,
+                              ),
+                            )
+                          : SizedBox();
+                    },
                   ),
                 ],
               ),

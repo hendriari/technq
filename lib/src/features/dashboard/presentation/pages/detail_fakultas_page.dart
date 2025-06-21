@@ -58,7 +58,7 @@ class DetailFakultasPage extends StatelessWidget {
                 child: Text(
                   fakultas?.description ?? '-',
                   style: textTheme.bodyMedium?.copyWith(
-                    fontSize: 16.sp,
+                    fontSize: 14.sp,
                   ),
                   textAlign: TextAlign.justify,
                 ),

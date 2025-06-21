@@ -66,7 +66,7 @@ class _AhpPageState extends State<AhpPage> {
               Text(
                 'Mari kita mulai mengenal bagaimana cara memilih jurusan teknik yang tepat untuk masa depan Anda. Bayangkan Anda sedang dihadapkan pada beberapa pilihan jurusan, dan Anda harus menentukan mana yang paling sesuai dengan minat, kemampuan, dan tujuan karier Anda. Di sinilah metode AHP membantu kita: sebuah pendekatan logis dan terstruktur untuk membuat keputusan.',
                 style: _textTheme.bodyMedium?.copyWith(
-                  fontSize: 16.sp,
+                  fontSize: 14.sp,
                 ),
                 textAlign: TextAlign.justify,
               ),
@@ -74,7 +74,7 @@ class _AhpPageState extends State<AhpPage> {
               Text(
                 '\nMisalnya, seperti saat Anda ingin membeli laptop: Anda mempertimbangkan performa, harga, dan daya tahan baterai. Sama halnya dengan memilih jurusan teknik, kita akan mengidentifikasi kriteria penting seperti minat pribadi, prospek kerja, biaya kuliah, dan kesesuaian dengan kemampuan akademik. Lalu, kita akan membandingkan pilihan jurusan seperti Teknik Informatika, Teknik Elektro, dan Teknik Sipil berdasarkan kriteria tersebut. Yuk, kita mulai prosesnya bersama!',
                 style: _textTheme.bodyMedium?.copyWith(
-                  fontSize: 16.sp,
+                  fontSize: 14.sp,
                 ),
                 textAlign: TextAlign.justify,
               ),

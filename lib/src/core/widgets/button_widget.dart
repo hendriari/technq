@@ -32,8 +32,8 @@ class ButtonWidget extends StatelessWidget {
       onPressed: onTap,
       style: ElevatedButton.styleFrom(
         backgroundColor: buttonColor,
-        minimumSize: minimumSize ?? Size(double.infinity, 40.h),
-        maximumSize: maximumSize ?? Size(double.infinity, 40.h),
+        minimumSize: minimumSize ?? Size(double.infinity, 46.h),
+        maximumSize: maximumSize ?? Size(double.infinity, 46.h),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.r),
           side: borderColor != null
@@ -47,7 +47,7 @@ class ButtonWidget extends StatelessWidget {
           Text(
             buttonText,
             style: textTheme.bodyLarge?.copyWith(
-              fontSize: 18.sp,
+              fontSize: 16.sp,
               color: buttonTextColor ??
                   (brightness == Brightness.dark
                       ? CustomColors.light

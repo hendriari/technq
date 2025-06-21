@@ -2,37 +2,37 @@
   {
     "id": "1",
     "image": "assets/image/arsitektur_image.jpg",
-    "name": "Program Studi Arsitektur",
+    "name": "Arsitektur",
     "description": "Pendidikan arsitektur merupakan disiplin ilmu terapan yang berorientasi pada perencanaan dan perancangan bangunan (baik gedung maupun non gedung). Pendidikan ini akan meliputi ilmu teknik terapandan seniterapan yang terkait dengan kemampuan dalam rekayasa lingkungan binaan secara umum dan bangunan secara khusus. Pendidikan yang diberikan akan meliputi teori arsitektur dan desain,manusia dan lingkungan, perancangan kota, teknologi dan sains bangunan,sistem struktur, serta lansekap/taman, tapak, manajemen konstruksi hingga lingkup mikro seperti interior, perabot, dan produk. Sarjana arsitektur juga akan dibekali dengan dengan ilmu dalam teknik komunikasi, presentasi, CAD dan fotografi arsitektur sehingga setiap lulusan dapat menyampaikan ide rancangannya secara jelas dan meyakinkan."
   },
   {
     "id": "2",
     "image": "assets/image/teknik_sipil_image.jpg",
-    "name": "Program Studi Teknik Sipil",
+    "name": "Teknik Sipil",
     "description": "Pendidikan teknik sipil merupakan disiplin ilmu terapan yang fokus pada perencanaan, perancangan, pembangunan, dan pengelolaan infrastruktur seperti bangunan, jalan, jembatan, dan fasilitas umum lainnya. Pendidikan ini meliputi ilmu teknik terapan yang berkaitan dengan manajemen konstruksi, transportasi, serta rekayasa struktur dan lingkungan binaan. Mahasiswa dibekali dengan teori teknik sipil, teknologi konstruksi, manajemen proyek, serta kemampuan riset dan pengabdian masyarakat. Lulusan siap menjadi profesional yang kompeten dalam merancang, melaksanakan, dan mengawasi berbagai proyek teknik sipil dengan integritas dan berorientasi pada pembangunan berkelanjutan."
   },
   {
     "id": "3",
     "image": "assets/image/teknik_mesin_image.jpg",
-    "name": "Program Studi Teknik Mesin",
+    "name": "Teknik Mesin",
     "description": "Engineering the future with mechatronics, menggambarkan komitmen kami untuk menggunakan teknologi terbaru dalam meningkatkan keberhasilan dalam bidang teknik. Kami di UPGRIS memanfaatkan inovasi teknologi untuk memperkuat kemampuan, efisiensi, dan kualitas di setiap aspek pendidikan dan praktik teknik. Dengan fokus ini, kami bertekad untuk mempersiapkan mahasiswa menjadi pemimpin masa depan dalam industri teknik global."
   },
   {
     "id": "4",
     "image": "assets/image/teknik_elektro_image.jpg",
-    "name": "Program Studi Teknik Elektro",
+    "name": "Teknik Elektro",
     "description": "Pendidikan teknik elektro memfokuskan pada perancangan, pengembangan, dan pengelolaan sistem kelistrikan dan elektronika, terutama di bidang otomasi industri. Program ini meliputi pembelajaran teori dan praktik kelistrikan, elektronika, serta sistem kontrol. Lulusan dibekali kemampuan teknis dan karakter profesional untuk bekerja sebagai insinyur listrik, spesialis otomasi, dan pengembang teknologi elektro di berbagai sektor industri."
   },
   {
     "id": "5",
     "image": "assets/image/informatika_image.jpg",
-    "name": "Program Studi Teknik Informatika",
+    "name": "Teknik Informatika",
     "description": "Program Studi Teknik Informatika UPGRIS fokus pada pendidikan dan pengembangan teknologi informasi, khususnya perangkat lunak, sistem informasi, dan kecerdasan buatan. Lulusan dibekali kemampuan teknis dan karakter profesional untuk bekerja sebagai pengembang perangkat lunak, administrator sistem, spesialis keamanan siber, dan analis data di berbagai sektor industri."
   },
   {
     "id": "6",
     "image": "assets/image/teknologi_pangan.jpg",
-    "name": "Program Studi Teknologi Pangan",
+    "name": "Teknologi Pangan",
     "description": "Teknologi pangan merupakan bidang ilmu yang mempelajari proses produksi, pengolahan, pengawetan, dan distribusi bahan pangan dengan memanfaatkan prinsip-prinsip ilmiah dan teknologi. Melalui inovasi yang berkelanjutan, teknologi pangan berperan penting dalam meningkatkan kualitas, keamanan, dan efisiensi produksi pangan. Bidang ini tidak hanya menjawab tantangan ketahanan pangan, tetapi juga mendukung keberlanjutan lingkungan dan kesejahteraan masyarakat."
   }
 ]
