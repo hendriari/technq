@@ -102,8 +102,7 @@ class _DetailAhpPageState extends State<DetailAhpPage> {
                             ? 'Prioritas Kriteria'
                             : 'Prioritas Alternatif',
                         style: _textTheme.bodyLarge?.copyWith(
-                          fontSize:
-                              (state.alternativeIndex ?? 0) < 0 ? 30.sp : 25.sp,
+                          fontSize: 22.sp,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
@@ -135,7 +134,7 @@ class _DetailAhpPageState extends State<DetailAhpPage> {
                                   ? 'Mohon tentukan prioritasmu'
                                   : 'Mohon tentukan prioritas alternatif per kriteria untuk ${state.pairwiseInputs?.inputAlternative[state.alternativeIndex ?? 0].criteria.name}',
                               style: _textTheme.bodyLarge?.copyWith(
-                                fontSize: 18.sp,
+                                fontSize: 16.sp,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -233,7 +232,7 @@ class _DetailAhpPageState extends State<DetailAhpPage> {
         child: Container(
           padding: EdgeInsets.symmetric(
             vertical: 8.h,
-            horizontal: 15.w,
+            horizontal: 10.w,
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.r),
@@ -246,19 +245,19 @@ class _DetailAhpPageState extends State<DetailAhpPage> {
                     /// ICON
                     Icon(
                       Icons.arrow_back_ios,
-                      size: 18.sp,
+                      size: 16.sp,
                       color: Colors.white,
                     ),
 
                     SizedBox(
-                      width: 8.w,
+                      width: 4.w,
                     ),
 
                     /// PREV
                     Text(
                       buttonName,
                       style: _textTheme.bodyLarge?.copyWith(
-                        fontSize: 18.sp,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
@@ -269,20 +268,20 @@ class _DetailAhpPageState extends State<DetailAhpPage> {
                     Text(
                       buttonName,
                       style: _textTheme.bodyLarge?.copyWith(
-                        fontSize: 18.sp,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
 
                     SizedBox(
-                      width: 8.w,
+                      width: 4.w,
                     ),
 
                     /// ICON
                     Icon(
                       Icons.arrow_forward_ios,
-                      size: 18.sp,
+                      size: 16.sp,
                       color: Colors.white,
                     ),
                   ],

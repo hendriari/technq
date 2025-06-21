@@ -75,7 +75,7 @@ class _ResultAhpPageState extends State<ResultAhpPage> {
                             return PieChartSectionData(
                               value: resultData?.value,
                               titleStyle: _textTheme.bodyLarge?.copyWith(
-                                fontSize: 18.sp,
+                                fontSize: 16.sp,
                                 fontWeight: FontWeight.bold,
                                 color: isDark ? Colors.white : Colors.black,
                               ),
@@ -114,7 +114,7 @@ class _ResultAhpPageState extends State<ResultAhpPage> {
                                           '${si + 1}.',
                                           style:
                                               _textTheme.bodyMedium?.copyWith(
-                                            fontSize: 18.sp,
+                                            fontSize: 16.sp,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
@@ -129,7 +129,7 @@ class _ResultAhpPageState extends State<ResultAhpPage> {
                                             resultData?.name ?? '-',
                                             style:
                                                 _textTheme.bodyMedium?.copyWith(
-                                              fontSize: 18.sp,
+                                              fontSize: 16.sp,
                                               fontWeight: FontWeight.bold,
                                             ),
                                           ),
@@ -141,7 +141,7 @@ class _ResultAhpPageState extends State<ResultAhpPage> {
                                               .substring(0, 5),
                                           style:
                                               _textTheme.bodyMedium?.copyWith(
-                                            fontSize: 18.sp,
+                                            fontSize: 16.sp,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
@@ -150,7 +150,7 @@ class _ResultAhpPageState extends State<ResultAhpPage> {
                                           '%',
                                           style:
                                               _textTheme.bodyMedium?.copyWith(
-                                            fontSize: 18.sp,
+                                            fontSize: 16.sp,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
@@ -170,7 +170,7 @@ class _ResultAhpPageState extends State<ResultAhpPage> {
                   child: Text(
                     'Data not available',
                     style: _textTheme.bodyLarge?.copyWith(
-                      fontSize: 18.sp,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

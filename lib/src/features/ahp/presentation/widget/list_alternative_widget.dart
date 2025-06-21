@@ -37,7 +37,7 @@ class ListAlternatifWidget extends StatelessWidget {
                       child: Text(
                         alternative?.left.name ?? '-',
                         style: textTheme.bodyMedium?.copyWith(
-                          fontSize: 16.sp,
+                          fontSize: 14.sp,
                         ),
                       ),
                     ),
@@ -65,12 +65,11 @@ class ListAlternatifWidget extends StatelessWidget {
                           );
                         },
                         child: Container(
-                          height: 50.h,
                           width: double.infinity,
-                          alignment: Alignment.centerLeft,
+                          alignment: Alignment.center,
                           padding: EdgeInsets.symmetric(
                             horizontal: 5.w,
-                            vertical: 1.h,
+                            vertical: 5.h,
                           ),
                           margin: EdgeInsets.symmetric(
                             horizontal: 10,
@@ -86,10 +85,10 @@ class ListAlternatifWidget extends StatelessWidget {
                           ),
                           child: Text(
                             alternative?.preferenceValue != null
-                                ? '${alternative?.preferenceValue} - ${alternative?.isLeftMoreImportant == true ? 'kiri lebih prioritas' : 'kanan lebih prioritas'}'
-                                : 'Mana yang lebih penting ?',
+                                ? '${alternative?.preferenceValue} - ${alternative?.isLeftMoreImportant == true && (alternative?.preferenceValue ?? 0) > 1 ? 'kiri lebih prioritas' : alternative?.isLeftMoreImportant == true && (alternative?.preferenceValue ?? 0) == 1 ? 'Sama penting' : 'kanan lebih prioritas'}'
+                                : 'Mana prioritas Anda?',
                             style: textTheme.bodyMedium?.copyWith(
-                              fontSize: 16.sp,
+                              fontSize: 14.sp,
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -103,7 +102,7 @@ class ListAlternatifWidget extends StatelessWidget {
                       child: Text(
                         alternative?.right.name ?? '-',
                         style: textTheme.bodyMedium?.copyWith(
-                          fontSize: 16.sp,
+                          fontSize: 14.sp,
                         ),
                       ),
                     ),

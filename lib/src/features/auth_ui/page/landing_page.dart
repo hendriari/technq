@@ -15,7 +15,6 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   late TextTheme _textTheme;
-  late Brightness _brightness;
   late ValueNotifier<int> _indexBg;
   late List<String> _bgImages;
 
@@ -35,7 +34,6 @@ class _LandingPageState extends State<LandingPage> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     _textTheme = Theme.of(context).textTheme;
-    _brightness = Theme.of(context).brightness;
   }
 
   @override
@@ -46,7 +44,6 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = _brightness == Brightness.dark;
     return Scaffold(
       body: LayoutBuilder(builder: (context, constraints) {
         return ConstrainedBox(
@@ -130,17 +127,17 @@ class _LandingPageState extends State<LandingPage> {
                   alignment: Alignment.topCenter,
                   child: Container(
                     height: 100.h,
-                    width: 300.w,
+                    width: double.infinity,
                     margin: EdgeInsets.only(
                       top: 20.h,
                     ),
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(isDark
-                            ? Constants.splashDarkImage
-                            : Constants.splashImage),
+                        fit: BoxFit.contain,
+                        image: AssetImage(
+                          Constants.logoLandingImage,
+                        ),
                       ),
                     ),
                   ),
@@ -172,7 +169,7 @@ class _LandingPageState extends State<LandingPage> {
                         /// DOT
                         Container(
                           height: 5.h,
-                          margin: EdgeInsets.symmetric(vertical: 10.h),
+                          margin: EdgeInsets.symmetric(vertical: 15.h),
                           child: ValueListenableBuilder(
                               valueListenable: _indexBg,
                               builder: (context, content, c) {

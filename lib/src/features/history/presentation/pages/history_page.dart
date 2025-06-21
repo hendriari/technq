@@ -151,7 +151,7 @@ class _HistoryPageState extends State<HistoryPage> {
                                                 'Hasil tingkat kecocokan tertinggi',
                                                 style: _textTheme.bodyLarge
                                                     ?.copyWith(
-                                                  fontSize: 16.sp,
+                                                  fontSize: 15.sp,
                                                 ),
                                               ),
 
@@ -223,7 +223,7 @@ class _HistoryPageState extends State<HistoryPage> {
                                         /// ICON
                                         Icon(
                                           CupertinoIcons.arrow_right_square,
-                                          size: 30.h,
+                                          size: 25.h,
                                           color: CustomColors.primary100,
                                         ),
                                       ],

@@ -91,7 +91,10 @@ class _MenuWidgetState extends State<MenuWidget> {
             );
           },
           builder: (context, state) {
-            return SafeArea(child: _listMenu[state.indexMenu]);
+            return SafeArea(
+                top: true,
+                minimum: EdgeInsets.zero,
+                child: _listMenu[state.indexMenu]);
           },
         ),
       ),
@@ -104,9 +107,6 @@ class _MenuWidgetState extends State<MenuWidget> {
     return BlocBuilder<MenuBloc, MenuState>(
       builder: (context, state) {
         return Container(
-          padding: EdgeInsets.only(
-            bottom: 2.h,
-          ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(20.r),
@@ -122,9 +122,9 @@ class _MenuWidgetState extends State<MenuWidget> {
             unselectedItemColor: CustomColors.grey100,
             showSelectedLabels: true,
             type: BottomNavigationBarType.fixed,
-            selectedFontSize: 13.sp,
-            unselectedFontSize: 12.sp,
-            iconSize: 24.sp,
+            selectedFontSize: 14.sp,
+            unselectedFontSize: 13.sp,
+            iconSize: 18.sp,
             onTap: (value) {
               context.read<MenuBloc>().add(ChangeIndexMenuEvent(index: value));
             },
@@ -178,8 +178,8 @@ class _MenuWidgetState extends State<MenuWidget> {
     return selectedIndex != numberIndex
         ? SvgPicture.asset(
             iconPath,
-            height: 24.sp,
-            width: 24.sp,
+            height: 20.sp,
+            width: 20.sp,
             colorFilter: ColorFilter.mode(
               CustomColors.grey100,
               BlendMode.srcIn,
@@ -222,8 +222,8 @@ class _MenuWidgetState extends State<MenuWidget> {
                 ),
                 child: SvgPicture.asset(
                   iconPath,
-                  height: 24.sp,
-                  width: 24.sp,
+                  height: 20.sp,
+                  width: 20.sp,
                   colorFilter: ColorFilter.mode(
                     CustomColors.primary100,
                     BlendMode.srcIn,

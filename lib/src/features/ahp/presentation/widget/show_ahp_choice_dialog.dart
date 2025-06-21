@@ -79,7 +79,7 @@ class _ShowAhpChoiceWidgetState extends State<ShowAhpChoiceWidget> {
                           Text(
                             'Menurut Anda\n${widget.leftItem} atau ${widget.rightItem}\nMana yang lebih penting ?',
                             style: _textTheme.bodyLarge?.copyWith(
-                              fontSize: 18.sp,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.bold,
                             ),
                             textAlign: TextAlign.center,
@@ -154,7 +154,7 @@ class _ShowAhpChoiceWidgetState extends State<ShowAhpChoiceWidget> {
                                                 ? widget.leftItem ?? '-'
                                                 : widget.rightItem ?? '-',
                                         style: _textTheme.bodyLarge?.copyWith(
-                                          fontSize: 16.sp,
+                                          fontSize: 14.sp,
                                           color: ((_important.value ==
                                                           ChoiceMoreImportant
                                                               .same &&
@@ -196,7 +196,7 @@ class _ShowAhpChoiceWidgetState extends State<ShowAhpChoiceWidget> {
                                     Text(
                                       'Berapa rating untuk pilihanmu ?',
                                       style: _textTheme.bodyLarge?.copyWith(
-                                        fontSize: 18.sp,
+                                        fontSize: 16.sp,
                                         fontWeight: FontWeight.bold,
                                       ),
                                       textAlign: TextAlign.center,
@@ -218,10 +218,7 @@ class _ShowAhpChoiceWidgetState extends State<ShowAhpChoiceWidget> {
                                               _scale.value = i + 2;
                                             },
                                             child: Container(
-                                              padding: EdgeInsets.symmetric(
-                                                vertical: 10.h,
-                                                horizontal: 10.w,
-                                              ),
+                                              height: 30.h,
                                               width: double.infinity,
                                               alignment: Alignment.center,
                                               margin: EdgeInsets.symmetric(
@@ -246,7 +243,7 @@ class _ShowAhpChoiceWidgetState extends State<ShowAhpChoiceWidget> {
                                                 '${i + 2}',
                                                 style: _textTheme.bodyLarge
                                                     ?.copyWith(
-                                                  fontSize: 18.sp,
+                                                  fontSize: 14.sp,
                                                   color: _scale.value == i + 2
                                                       ? Colors.white
                                                       : isDark
@@ -334,7 +331,7 @@ class _ShowAhpChoiceWidgetState extends State<ShowAhpChoiceWidget> {
                                     child: Text(
                                       i == 0 ? 'Batal' : 'Simpan',
                                       style: _textTheme.bodyLarge?.copyWith(
-                                        fontSize: 18.sp,
+                                        fontSize: 16.sp,
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold,
                                       ),

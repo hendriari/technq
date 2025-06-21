@@ -34,7 +34,7 @@ class ListKriteriaWidget extends StatelessWidget {
                     child: Text(
                       criteria?.left.name ?? '-',
                       style: textTheme.bodyMedium?.copyWith(
-                        fontSize: 16.sp,
+                        fontSize: 14.sp,
                       ),
                     ),
                   ),
@@ -62,12 +62,11 @@ class ListKriteriaWidget extends StatelessWidget {
                         );
                       },
                       child: Container(
-                        height: 50.h,
                         width: double.infinity,
-                        alignment: Alignment.centerLeft,
+                        alignment: Alignment.center,
                         padding: EdgeInsets.symmetric(
                           horizontal: 5.w,
-                          vertical: 1.h,
+                          vertical: 5.h,
                         ),
                         margin: EdgeInsets.symmetric(
                           horizontal: 10,
@@ -83,10 +82,10 @@ class ListKriteriaWidget extends StatelessWidget {
                         ),
                         child: Text(
                           criteria?.preferenceValue != null
-                              ? '${criteria?.preferenceValue} - ${criteria?.isLeftMoreImportant == true ? 'kiri lebih prioritas' : 'kanan lebih prioritas'}'
-                              : 'Mana yang lebih penting ?',
+                              ? '${criteria?.preferenceValue} - ${criteria?.isLeftMoreImportant == true && (criteria?.preferenceValue ?? 0) > 1 ? 'kiri lebih prioritas' : criteria?.isLeftMoreImportant == true && (criteria?.preferenceValue ?? 0) == 1 ? 'Sama penting' : 'kanan lebih prioritas'}'
+                              : 'Mana prioritas Anda?',
                           style: textTheme.bodyMedium?.copyWith(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -100,7 +99,7 @@ class ListKriteriaWidget extends StatelessWidget {
                     child: Text(
                       criteria?.right.name ?? '-',
                       style: textTheme.bodyMedium?.copyWith(
-                        fontSize: 16.sp,
+                        fontSize: 14.sp,
                       ),
                     ),
                   ),

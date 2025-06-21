@@ -3,6 +3,7 @@ class Constants {
   static final String _imagePath = 'assets/image/';
   static String splashImage = '${_imagePath}technq_splash_image.png';
   static String splashDarkImage = '${_imagePath}technq_splash_dark_image.png';
+  static String logoLandingImage = '${_imagePath}technq_landing_image.png';
   static String logoImage = '${_imagePath}technq_logo_image.png';
   static String pmb1Image = '${_imagePath}pmb_1_image.png';
   static String pmb2Image = '${_imagePath}pmb_2_image.png';
